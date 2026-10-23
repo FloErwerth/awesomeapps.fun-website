@@ -78,7 +78,7 @@ const apps: Record<string, { folders: RegExp[]; repos: string[] }> = {
   },
   "pubg-stream-report": {
     folders: [/\/development\/pubg-[^/]*(\/|$)/],
-    repos: ["pubg-streamer-encounters", "pubg-stream-report-legal"],
+    repos: ["pubg-streamer-encounters"],
   },
 };
 

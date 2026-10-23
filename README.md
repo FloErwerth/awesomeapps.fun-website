@@ -24,6 +24,8 @@ A privacy policy is written in the app's own repository, in both languages:
 
 A policy published here is those two files, with the repository's internal header stripped and Jekyll front matter added, under `<slug>/privacy.md` and `<slug>/datenschutz.md`. **Edit the source, then republish.** A change made only here is a policy that no longer describes the app it is about, which is the one kind of wrong that is a legal problem rather than a bug report.
 
+One exception: PUBG Stream Report's policy is written here, in `pubg-stream-report/datenschutz.md` and `pubg-stream-report/privacy.md`. The old repository `pubg-stream-report-legal` is no longer the source, and the app's repository has no `docs/legal/`.
+
 A policy uses `_layouts/default.html`, which has no chrome but the Impressum link the law asks for. Everything else uses `_layouts/site.html`.
 
 ## app-ads.txt

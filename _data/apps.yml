@@ -237,8 +237,8 @@
   colour: "#f5a50b"
   store: {}
   legal:
-    datenschutz: https://floerwerth.github.io/pubg-stream-report-legal/datenschutz/
-    privacy: https://floerwerth.github.io/pubg-stream-report-legal/privacy/
+    datenschutz: /pubg-stream-report/datenschutz/
+    privacy: /pubg-stream-report/privacy/
   how:
     - title: Namen eingeben
       text: >-
