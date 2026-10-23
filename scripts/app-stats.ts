@@ -142,11 +142,13 @@ async function countCommits(repos: string[]): Promise<number> {
   return hashes.size;
 }
 
-// "1,2 Mrd." or "345 Mio.", as the page shows it.
-function label(n: number): string {
-  const [value, unit] = n >= 1e9 ? [n / 1e9, "Mrd."] : [n / 1e6, "Mio."];
+// "1,2 Mrd." or "345 Mio." as the German page shows it, "1.2B" or "345M" on
+// the English one.
+function label(n: number, locale: "de-DE" | "en-US" = "de-DE"): string {
+  const de = locale === "de-DE";
+  const [value, unit] = n >= 1e9 ? [n / 1e9, de ? " Mrd." : "B"] : [n / 1e6, de ? " Mio." : "M"];
   const digits = value < 10 ? 1 : 0;
-  return `${value.toLocaleString("de-DE", { minimumFractionDigits: digits, maximumFractionDigits: digits })} ${unit}`;
+  return `${value.toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits })}${unit}`;
 }
 
 log("Counting the tokens in ~/.claude/projects …");
@@ -170,15 +172,19 @@ const yml = [
   `updated: ${new Date().toISOString().slice(0, 10)}`,
   `tokens: ${sum(tokens)}`,
   `tokens_label: "${label(sum(tokens))}"`,
+  `tokens_label_en: "${label(sum(tokens), "en-US")}"`,
   `commits: ${sum(commits)}`,
   `commits_label: "${sum(commits).toLocaleString("de-DE")}"`,
+  `commits_label_en: "${sum(commits).toLocaleString("en-US")}"`,
   "apps:",
   ...slugs.flatMap((slug) => [
     `  ${slug}:`,
     `    tokens: ${tokens[slug]}`,
     `    tokens_label: "${label(tokens[slug])}"`,
+    `    tokens_label_en: "${label(tokens[slug], "en-US")}"`,
     `    commits: ${commits[slug]}`,
     `    commits_label: "${commits[slug].toLocaleString("de-DE")}"`,
+    `    commits_label_en: "${commits[slug].toLocaleString("en-US")}"`,
   ]),
   "",
 ].join("\n");
