@@ -3,6 +3,9 @@ description: Kleine Apps von Florian Erwerth, alle an einem Ort.
 url: https://awesomeapps.fun
 lang: de
 locale: de_DE
+# GitHub builds in UTC: without this, a post dated today is still in the
+# future there until 2 a.m. and is left out.
+timezone: Europe/Berlin
 
 # The address is printed in the Impressum and in every privacy policy. It lives
 # here once, so a move is one edit and not a hunt through every document.
