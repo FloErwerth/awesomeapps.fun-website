@@ -1318,8 +1318,7 @@ dd {
 
 /*
   The timeline: one row per milestone, the date on butter and the step on
-  white. A dot sits on the line between them, so the rows read as stops on
-  one track down the page.
+  white.
 */
 
 .timeline-list {
@@ -1339,19 +1338,6 @@ dd {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1;
   font-variant-numeric: tabular-nums;
-}
-
-.timeline-date::after {
-  content: '';
-  position: absolute;
-  top: calc(var(--pad) + 0.35rem);
-  right: -0.65rem;
-  z-index: 1;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
-  background: var(--app);
 }
 
 .timeline-body {
@@ -1412,19 +1398,11 @@ dd {
   text-decoration-thickness: 2px;
 }
 
-/* A step into a store: the date turns ink, the step pink, the dot grows. */
+/* A step into a store: the date turns ink, the step pink. */
 
 .is-key .timeline-date {
   --sheet: var(--ink);
   color: var(--cream);
-}
-
-.is-key .timeline-date::after {
-  width: 1.6rem;
-  height: 1.6rem;
-  right: -0.9rem;
-  border-color: var(--cream);
-  box-shadow: 0 0 0 2px var(--ink);
 }
 
 .is-key .timeline-body {
@@ -1446,17 +1424,6 @@ dd {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     font-size: 1.5rem;
-  }
-
-  .timeline-date::after {
-    top: auto;
-    right: var(--pad);
-    bottom: -0.65rem;
-  }
-
-  .is-key .timeline-date::after {
-    right: var(--pad);
-    bottom: -0.9rem;
   }
 }
 
