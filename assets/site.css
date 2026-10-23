@@ -1042,7 +1042,9 @@ dd {
   overflow: hidden;
   border: 2px solid var(--ink);
   border-radius: 1.75rem;
-  background: var(--white);
+  /* The colour of the border: where the round clip blends the screenshot's
+     edge with the background, a white background showed as a light line. */
+  background: var(--ink);
   box-shadow: var(--shadow);
 }
 
@@ -1068,6 +1070,7 @@ dd {
 
 .phone-demo {
   flex-basis: 17rem;
+  background: var(--white);
 }
 
 .demo {
