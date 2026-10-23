@@ -1,14 +1,21 @@
 ---
-layout: page
+layout: privacy
 title: Datenschutz
 permalink: /datenschutz/
+description: "Die Datenschutzerklärungen aller Apps auf Deutsch und Englisch, und was beim Besuch von awesomeapps.fun mit Daten passiert."
 ---
 
-# Datenschutz auf dieser Website
+# Datenschutz
+
+Jede App hat eine eigene Datenschutzerklärung, auf Deutsch und auf Englisch. Hier finden Sie alle. Darunter steht, was beim Besuch dieser Website passiert.
+
+<!-- apps -->
+
+## Diese Website
 
 Stand: 23. Oktober 2026
 
-Diese Erklärung gilt für die Website awesomeapps.fun. Für jede App gibt es eine eigene Datenschutzerklärung. Sie steht auf der Seite der App.
+Diese Erklärung gilt für die Website awesomeapps.fun.
 
 ## Kurz gesagt
 

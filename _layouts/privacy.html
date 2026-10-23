@@ -1,0 +1,16 @@
+---
+layout: site
+---
+{%- comment -%}
+  The privacy page of the site. Each app has its own policy in German and in
+  English. Their list stands between the opening of the page and the policy of
+  the site itself, where the page has the line `<!-- apps -->`.
+{%- endcomment -%}
+{%- assign parts = content | split: "<!-- apps -->" -%}
+<div class="cells doc-sheet">
+  <div class="cell doc">{{ parts[0] }}</div>
+</div>
+{% include app-policies.html %}
+<div class="cells doc-sheet">
+  <div class="cell doc doc-rest">{{ parts[1] }}</div>
+</div>

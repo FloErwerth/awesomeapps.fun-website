@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Impressum
+description: "Impressum von awesomeapps.fun, der Seite für die Apps von Florian Erwerth."
 permalink: /impressum/
 ---
 

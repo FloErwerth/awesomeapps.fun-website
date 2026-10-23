@@ -1551,6 +1551,86 @@ dd {
 }
 
 /*
+  Privacy page: the policy of every app, one row each, between the opening of
+  the page and the policy of the site. A link cell per language; an app without
+  a policy yet gets one hatched cell across both.
+*/
+
+.app-policies {
+  --sheet: var(--white);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.app-policies-title {
+  grid-column: 1 / -1;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.app-policy {
+  display: contents;
+}
+
+.app-policy-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.app-policy-name a {
+  text-decoration: none;
+}
+
+.app-policy-link {
+  display: flex;
+  align-items: center;
+  font-family: var(--small);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+.app-policy-link:hover {
+  background: var(--butter);
+}
+
+.app-policy-none {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+}
+
+/* The note sits on its own patch of sheet, so the hatching never runs through it. */
+.app-policy-none span {
+  background: var(--sheet);
+  padding: 0.25rem 0.5rem;
+  font-family: var(--small);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.doc-rest {
+  padding-top: var(--pad);
+}
+
+@media (max-width: 40rem) {
+  .app-policies {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .app-policy-name,
+  .app-policy-none {
+    grid-column: 1 / -1;
+  }
+}
+
+/*
   About page: the app page with a photo where the icon would be. The tools
   stand in cells on lilac, and the address to write to closes on orange.
 */

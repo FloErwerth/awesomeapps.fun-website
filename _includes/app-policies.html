@@ -1,0 +1,26 @@
+{%- comment -%}
+  The privacy policy of every app, in German and in English, from `legal` in
+  _data/apps.yml. An app without one yet gets a hatched cell: the sheet's sign
+  for a space that is still empty.
+{%- endcomment -%}
+<section class="cells app-policies" aria-labelledby="app-policies-title">
+  <h2 id="app-policies-title" class="cell app-policies-title">Die Apps</h2>
+  {%- for app in site.data.apps %}
+  <div class="app-policy">
+    <p class="cell app-policy-name">
+      {% include app-icon.html app=app class="icon-small" %}
+      <a href="{{ '/' | append: app.slug | append: '/' | relative_url }}">{{ app.name }}</a>
+    </p>
+    {%- if app.legal.datenschutz or app.legal.privacy %}
+    {%- if app.legal.datenschutz %}
+    <a class="cell app-policy-link" href="{{ app.legal.datenschutz | relative_url }}">Datenschutzerklärung</a>
+    {%- endif %}
+    {%- if app.legal.privacy %}
+    <a class="cell app-policy-link" href="{{ app.legal.privacy | relative_url }}" hreflang="en" lang="en">Privacy policy</a>
+    {%- endif %}
+    {%- else %}
+    <p class="cell hatch app-policy-none"><span>Noch nicht veröffentlicht. Die Datenschutzerklärung kommt mit dem Start im Store.</span></p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</section>
