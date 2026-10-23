@@ -247,7 +247,7 @@
         brauchst du nicht.
       media:
         - image: /assets/apps/pubg-stream-report/suche.webp
-          alt: "Die Suche: ein Namensfeld, der Knopf „Suchen“ und die letzten Suchanfragen."
+          alt: "Der Tab Suche: im Namensfeld „Halifax“, der Knopf „Suchen“ und die letzten Suchanfragen."
     - title: Die App gleicht ab
       text: >-
         Die App holt deine Matches der letzten 3 Tage von PUBG. Sie prüft jeden
@@ -259,11 +259,21 @@
       text: >-
         Jeder Treffer zeigt, wer wen gekillt oder geknockt hat, mit Waffe,
         Entfernung und Uhrzeit. Ein Tipp öffnet das Twitch-VOD kurz vor dem
-        Moment. Dazu kommen Statistiken, ein Vergleich mit Streamern und die
-        PUBG-News.
+        Moment. Du kannst dich auch mit Streamern und Freunden vergleichen.
       media:
         - image: /assets/apps/pubg-stream-report/treffer.webp
-          alt: "Treffer für einen Spieler, nach Tagen sortiert: rote Karten für „hat dich gekillt“, grüne für „Du hast … gekillt“."
+          alt: "Treffer für Halifax vor 9 Tagen: grüne Karten für „Du hast … gekillt“, rote für „hat dich gekillt“. Treffer ohne VOD sind blasser."
+    - title: Home und Stats
+      text: >-
+        Verbinde deinen PUBG-Namen mit der App. Dann zeigt Home deine neueste
+        Begegnung, deine Stats und die PUBG-News, ohne dass du suchst. Der Tab
+        Stats zeigt deine Zahlen für jeden Modus und jede Season, Normal und
+        Ranked.
+      media:
+        - image: /assets/apps/pubg-stream-report/home.webp
+          alt: "Home: die neueste Begegnung, „Alle Begegnungen“ (68), die Stats für Squad FPP und darunter die PUBG-News."
+        - image: /assets/apps/pubg-stream-report/stats.webp
+          alt: "Der Tab Stats für Halifax: Normal, Squad FPP, Season 43. K/D 2,56, 316 Schaden im Schnitt, 69 Siege, darunter die Details."
   milestones:
     - date: 2026-10-08
       until: 2026-10-11
