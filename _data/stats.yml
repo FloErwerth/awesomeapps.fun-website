@@ -1,6 +1,6 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-23
-tokens: 3682910350
+tokens: 3688481865
 tokens_label: "3,7 Mrd."
 tokens_label_en: "3.7B"
 commits: 1741
@@ -8,9 +8,9 @@ commits_label: "1.741"
 commits_label_en: "1,741"
 apps:
   plopp:
-    tokens: 758545809
-    tokens_label: "759 Mio."
-    tokens_label_en: "759M"
+    tokens: 764117324
+    tokens_label: "764 Mio."
+    tokens_label_en: "764M"
     commits: 178
     commits_label: "178"
     commits_label_en: "178"
