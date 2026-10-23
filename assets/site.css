@@ -1387,15 +1387,15 @@ dd {
 }
 
 .timeline-points li {
-  position: relative;
   padding-left: 1.3rem;
 }
 
+/* An inline dot hangs into the indent, so it sits on the first line in any font. */
 .timeline-points li::before {
   content: '';
-  position: absolute;
-  top: 0.55em;
-  left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 calc(0.7rem - 4px) 0 -1.3rem;
   width: 0.6rem;
   height: 0.6rem;
   border: 2px solid var(--ink);
