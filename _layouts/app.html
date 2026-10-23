@@ -137,13 +137,5 @@ layout: site
       {%- endif %}
     </ol>
   </section>
-
-  {%- if app.legal.datenschutz or app.legal.privacy %}
-  <div class="cells legal-row">
-    <p class="cell annotation">( Datenschutz )</p>
-    {%- if app.legal.datenschutz %}<a class="cell" href="{{ app.legal.datenschutz }}">Datenschutzerklärung</a>{% endif %}
-    {%- if app.legal.privacy %}<a class="cell" href="{{ app.legal.privacy }}" hreflang="en">Privacy policy (English)</a>{% endif %}
-  </div>
-  {%- endif %}
 </article>
 <script src="{{ '/assets/how.js' | relative_url }}" defer></script>

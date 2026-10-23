@@ -932,13 +932,8 @@ dd {
   color: var(--sheet);
 }
 
-.legal-row {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 @media (max-width: 40rem) {
-  .app-sheet,
-  .legal-row {
+  .app-sheet {
     grid-template-columns: 1fr;
   }
 
