@@ -1,13 +1,13 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-23
-tokens: 3644811710
+tokens: 3646491069
 tokens_label: "3,6 Mrd."
 commits: 1743
 commits_label: "1.743"
 apps:
   plopp:
-    tokens: 730359726
-    tokens_label: "730 Mio."
+    tokens: 730586876
+    tokens_label: "731 Mio."
     commits: 178
     commits_label: "178"
   grammgenau:
@@ -21,7 +21,7 @@ apps:
     commits: 901
     commits_label: "901"
   pubg-stream-report:
-    tokens: 1189134057
+    tokens: 1190586266
     tokens_label: "1,2 Mrd."
     commits: 437
     commits_label: "437"
