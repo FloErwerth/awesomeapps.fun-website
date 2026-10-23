@@ -10,3 +10,6 @@ gem "webrick"
 gem "csv"
 gem "base64"
 gem "bigdecimal"
+# The Berlin timezone in _config.yml; Windows has no zone files of its own.
+gem "tzinfo"
+gem "tzinfo-data"
