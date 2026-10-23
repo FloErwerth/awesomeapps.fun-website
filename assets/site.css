@@ -1376,14 +1376,14 @@ dd {
 
 /*
   An inline dot hangs into the indent, so it sits on the first line in any
-  font. Its centre sits 0.31em over the baseline, between the middle of
-  Newsreader's lowercase letters (0.24em) and of its capitals (0.37em).
-  "middle" puts it on the lowercase middle, which reads as too low.
+  font. 0.23em puts its centre on the middle of Newsreader's capitals,
+  measured to the pixel in a screenshot. "middle" centres it on the
+  lowercase letters, about 2px lower, which reads as too low.
 */
 .timeline-points li::before {
   content: '';
   display: inline-block;
-  vertical-align: calc(0.31em - 0.3rem);
+  vertical-align: calc(0.23em - 0.3rem);
   margin: 0 calc(0.7rem - 4px) 0 -1.3rem;
   width: 0.6rem;
   height: 0.6rem;
