@@ -1,5 +1,8 @@
 # Every app on the site, in the order the home page lists them.
 #
+# Every text an app shows comes in both languages, as `de:` and `en:`, side by
+# side, so a new line in one language is never missing from the other.
+#
 # status: live | review | testing | building
 # store:  leave a key out until the listing is public.
 # icon:   leave it out while the app still has the Expo placeholder icon; the
@@ -17,11 +20,21 @@
 
 - slug: plopp
   name: PLOPP
-  tagline: Luftpolsterfolie zum Platzenlassen. Mit Münzen, Helfern und Talenten.
-  about: >-
-    Du wischst über ein Blatt Luftpolsterfolie und lässt so viele Blasen
-    platzen, wie du in 20 Sekunden schaffst. Mit den Münzen kaufst du Helfer,
-    die mitploppen. Jedes Level wird größer und härter.
+  tagline:
+    de: Luftpolsterfolie ploppen, bis der Finger glüht.
+    en: Pop bubble wrap until your finger glows.
+  about:
+    de: >-
+      Wer kann bei Luftpolsterfolie schon widerstehen? In PLOPP wischst du über
+      ein Blatt voller Blasen und hast 20 Sekunden, um so viele wie möglich
+      platzen zu lassen. Von den Münzen holst du dir Helfer, die mitploppen.
+      Jedes Level wird größer und härter, und das ist Absicht: Ein Upgrade soll
+      sich wie eine Belohnung anfühlen.
+    en: >-
+      Who can resist bubble wrap? In PLOPP you swipe across a sheet of it and
+      have 20 seconds to pop as many bubbles as you can. With the coins you get
+      helpers that pop along with you. Every level gets bigger and harder, and
+      that's on purpose: an upgrade should feel like a reward.
   platforms: [iOS, Android]
   status: building
   icon: /assets/icons/plopp.webp
@@ -29,165 +42,337 @@
   store: {}
   legal: {}
   how:
-    - title: Erst das Intro
-      text: >-
-        Beim Start füllt sich die Folie im Takt der Musik. Eine Cartoon-Hand
-        wischt die ersten Blasen weg, aber neue kommen schneller, als sie
-        wischen kann. Dann landet PLOPP Buchstabe für Buchstabe.
+    - title:
+        de: Erst mal das Intro
+        en: First, the intro
+      text:
+        de: >-
+          Los geht's schon beim Start. Im Takt der Musik füllt sich der
+          Bildschirm mit Blasen. Eine Cartoon-Hand wischt die ersten weg, aber
+          es kommen immer schneller neue nach. Dann landet PLOPP, Buchstabe für
+          Buchstabe.
+        en: >-
+          It starts right at launch. The screen fills up with bubbles to the
+          beat of the music. A cartoon hand swipes the first ones away, but new
+          ones keep coming faster. Then PLOPP lands, letter by letter.
       media:
         - video: /assets/apps/plopp/intro.mp4
           poster: /assets/apps/plopp/intro.webp
-          alt: Das Intro von PLOPP. Blasen füllen den Bildschirm, eine Hand wischt darüber, dann erscheint der Titel PLOPP mit dem Knopf „Spielen“.
-    - title: Wischen, nicht tippen
-      text: >-
-        Eine Runde ist ein Blatt Folie und 20 Sekunden Zeit. Du reibst mit dem
-        Finger über die Blasen. Jede Berührung macht Schaden, bis die Blase
-        platzt. Goldblasen bringen fünfmal so viele Münzen und starten einen
-        Goldrausch.
+          alt:
+            de: Das Intro von PLOPP. Blasen füllen den Bildschirm, eine Cartoon-Hand wischt darüber, dann landet der Titel PLOPP Buchstabe für Buchstabe. Am Ende steht der Knopf „Spielen“.
+            en: The PLOPP intro. Bubbles fill the screen, a cartoon hand swipes across them, then the title PLOPP lands letter by letter. At the end there's the button “Spielen” (play).
+    - title:
+        de: Mit dem Finger drüberrubbeln
+        en: Rub your finger across
+      text:
+        de: >-
+          Eine Runde, das sind ein Blatt voller Blasen und 20 Sekunden. Mit
+          Tippen kommst du hier nicht weit, du rubbelst mit dem Finger über die
+          Blasen. Jede Berührung macht ein bisschen Schaden, bis die Blase
+          platzt. Erwischst du eine Goldblase, gibt's fünfmal so viele Münzen
+          und einen Goldrausch obendrauf. Und später ploppen deine Helfer mit.
+        en: >-
+          A round is one sheet full of bubbles and 20 seconds. Tapping won't
+          get you far here, you rub your finger over the bubbles. Every touch
+          does a bit of damage until the bubble pops. Catch a gold bubble, and
+          you get five times the coins plus a gold rush on top. And later on,
+          your helpers pop along.
       media:
         - video: /assets/apps/plopp/runde.mp4
           poster: /assets/apps/plopp/runde.webp
-          alt: Eine Runde PLOPP. Die Blasen füllen das Blatt als Welle, es zählt 3, 2, 1, dann platzen die Blasen, bis das Blatt fast leer ist.
-    - title: Zeit um oder alles geploppt
-      text: >-
-        Am Ende zählt, wie viel vom Blatt geplatzt ist. Für je 20 % bekommst du
-        einen Stern. Ploppst du alle Blasen vor dem Ende, gibt es die Hälfte
-        der Münzen noch einmal dazu.
+          alt:
+            de: Eine Runde auf Level 5. Die Blasen füllen das Blatt wie eine Welle, und es zählt 3, 2, 1 herunter. Dann ploppen die Helfer Blitz, Walze und Katze mit, im Goldrausch, bis das Blatt fast leer ist.
+            en: A round on level 5. The bubbles fill the sheet like a wave, and a countdown runs 3, 2, 1. Then the helpers Blitz, Walze and Katze pop along in a gold rush until the sheet is almost empty.
+    - title:
+        de: Zeit um oder alles geploppt
+        en: Time's up or all popped
+      text:
+        de: >-
+          Am Ende zählt nur, wie viel vom Blatt weg ist. Pro 20 % gibt's einen
+          Stern, fünf sind also das Maximum. Schaffst du sogar alle Blasen,
+          bevor die Zeit abläuft, bekommst du die Hälfte deiner Münzen noch mal
+          dazu.
+        en: >-
+          At the end, all that counts is how much of the sheet is gone. Every
+          20% gets you a star, so five is the max. Pop every single bubble
+          before time runs out, and you get half your coins again on top.
       media:
         - image: /assets/apps/plopp/zeit-um.webp
-          alt: "Ergebnis „Zeit um!“: 98 % geschafft, 4 Sterne, noch 2 % bis zum fünften Stern, 5.519 Münzen."
+          alt:
+            de: "Das Ergebnis „Zeit um!“ auf Level 4: 98 % geschafft, 4 Sterne, „Neuer Rekord!“, noch 2 % bis Stern 5 und 5.519 Münzen."
+            en: "The result “Zeit um!” (time's up) on level 4: 98% done, 4 stars, a new record, 2% to go to star 5, and 5,519 coins."
         - video: /assets/apps/plopp/alles-geploppt.mp4
           poster: /assets/apps/plopp/alles-geploppt.webp
-          alt: "Die letzten Blasen platzen, dann zählt das Ergebnis hoch: „Alles geploppt!“, 100 %, 5 Sterne, 31.368 Münzen und „Meisterrunde spielbar!“."
-    - title: Der Plopp-Shop
-      text: >-
-        Mit den Münzen machst du deinen Finger stärker und holst mehr Münzen
-        aus jeder Blase. Mit genug Sternen kommen Helfer dazu, die von selbst
-        ploppen: Blitz, Walze, Katze und Regen. Werbung siehst du nur, wenn du
-        willst: Für ein Video gibt es einen Bonus, zum Beispiel mehr Münzen
-        oder einen Helfer-Boost. Mit Premium bekommst du die Boni ohne Video.
+          alt:
+            de: "Die letzten Blasen platzen. Dann zählt das Ergebnis hoch: „Alles geploppt!“, 100 %, 5 Sterne und 31.368 Münzen. Darunter steht, dass die Meisterrunde spielbar ist: alle Blasen in 16 Sekunden, dann ist Level 6 offen."
+            en: "The last bubbles pop. Then the result counts up: “Alles geploppt!” (all popped), 100%, 5 stars and 31,368 coins. Below it, the game says the master round is ready: pop every bubble in 16 seconds to unlock level 6."
+    - title:
+        de: Der Plopp-Shop
+        en: The Plopp shop
+      text:
+        de: >-
+          Im Shop steckst du deine Münzen in einen stärkeren Finger und in mehr
+          Münzen pro Blase. Mit genug Sternen kommen Helfer dazu, die von
+          allein ploppen: Blitz, Walze, Katze und Regen. Nach deinem ersten
+          Prestige hat dann jede Karte im Shop ihren eigenen Talentbaum.
+          Werbung siehst du nur, wenn du selbst eine willst. Schaust du ein
+          Video, bekommst du einen Bonus, zum Beispiel mehr Münzen oder einen
+          Helfer-Boost. Mit Premium gibt's die Boni auch ohne Video.
+        en: >-
+          In the shop you put your coins into a stronger finger and into more
+          coins per bubble. With enough stars, helpers join in and pop on their
+          own: Blitz (lightning), Walze (roller), Katze (cat) and Regen (rain).
+          After your first prestige, every card in the shop gets its own talent
+          tree. You only see an ad if you want one. Watch a video, and you get
+          a bonus, like more coins or a helper boost. With Premium, you get the
+          bonuses without the video.
       media:
         - video: /assets/apps/plopp/shop.mp4
           poster: /assets/apps/plopp/shop.webp
-          alt: Im Plopp-Shop werden Finger, Blitz und Walze stärker. Dann öffnet sich der Talentbaum der Münzen, und das Talent „Fleiß“ wird gekauft.
-    - title: Level, Prestige und Talente
-      text: >-
-        Mit 5 Sternen öffnet sich die Meisterrunde: alle Blasen in 16
-        Sekunden. Schaffst du sie, ist das nächste Level spielbar, mit neuen
-        Blasen wie Stahl und Schilden. Ab Level 3 kannst du Prestige machen.
-        Dann fängst du bei Level 1 neu an und bekommst Punkte. Mit den Punkten
-        kaufst du Talente, und die bleiben für immer. Jede Karte im Shop hat
-        dafür ihren eigenen Talentbaum. Ein neues Level und ein Prestige feiert
-        das Spiel mit einer eigenen Show.
+          alt:
+            de: "Der Shop nach dem ersten Prestige. Finger, Blitz und Walze werden stärker. Dann öffnet sich der Talentbaum der Münzen, und das Talent „Fleiß“ wird gekauft: Bei „Alles geploppt“ gibt's jetzt +100 % statt +50 % Münzen."
+            en: "The shop after the first prestige. The finger, Blitz and Walze get upgraded. Then the coins' talent tree opens, and the talent “Fleiß” (diligence) gets bought: “all popped” now gives +100% coins instead of +50%."
+    - title:
+        de: Level, Prestige und Talente
+        en: Levels, prestige and talents
+      text:
+        de: >-
+          Hast du 5 Sterne, wartet die Meisterrunde: alle Blasen in 16
+          Sekunden. Packst du die, geht das nächste Level auf, mit neuen Blasen
+          wie Stahl und Schilden. Ab Level 3 kannst du Prestige machen. Dann
+          geht's zurück auf Level 1, dafür bekommst du Punkte. Die steckst du in
+          Talente, und die bleiben dir für immer. Wann du den Schritt machst,
+          entscheidest du selbst. Und egal ob neues Level oder Prestige: Beides
+          feiert das Spiel mit einer eigenen kleinen Show.
+        en: >-
+          Once you have 5 stars, the master round is waiting: every bubble in
+          16 seconds. Beat it and the next level opens up, with new bubbles
+          like steel and shields. From level 3 on you can prestige. That sends
+          you back to level 1, but you get points for it. You put those into
+          talents, and the talents stay with you for good. When you take that
+          step is up to you. And whether it's a new level or a prestige, the
+          game throws its own little show for each.
       media:
         - image: /assets/apps/plopp/level.webp
-          alt: "Die Übersicht zwischen den Runden: Prestige 2 von 10, 53 Punkte, Level 5 mit 4 Sternen, der Knopf „Prestige +4“ und der Shop."
+          alt:
+            de: "Die Übersicht zwischen den Runden: Prestige 2 von 10, 53 Punkte, Level 5 mit 4 Sternen, der Knopf „Prestige +4“ und der Plopp-Shop. Ein Kasten erklärt: Beim Prestige fängst du bei Level 1 neu an und nimmst 4 Punkte für Talente mit."
+            en: "The overview between rounds: prestige 2 of 10, 53 points, level 5 with 4 stars, the button “Prestige +4” and the Plopp shop. A box explains that a prestige sends you back to level 1 and gives you 4 points for talents."
         - video: /assets/apps/plopp/level-show.mp4
           poster: /assets/apps/plopp/level-show.webp
-          alt: "Die Show für ein neues Level: „Level geschafft!“, die Zahl springt von 4 auf 5, und die Blase von Level 5 leuchtet auf."
+          alt:
+            de: "Die Show für ein neues Level: „Level geschafft!“, die Zahl springt von 4 auf 5 von 10, und die Blase von Level 5 leuchtet auf. Dazu gibt's 1.840 Münzen und den Hinweis, dass Level 5 mehr Blasen hat und dass sie mehr aushalten."
+            en: "The show for a new level: “Level geschafft!” (level done), the number jumps from 4 to 5 of 10, and the bubble for level 5 lights up. You get 1,840 coins and a note that level 5 has more bubbles, and tougher ones."
         - video: /assets/apps/plopp/prestige-show.mp4
           poster: /assets/apps/plopp/prestige-show.webp
-          alt: "Die Show für ein Prestige: Ein Diamant landet, „Prestige 2 von 10“, die Level füllen sich neu, und es gibt 3 Punkte."
+          alt:
+            de: "Die Show für ein Prestige: Ein Diamant landet, „Prestige 2 von 10“, die Level-Blasen füllen sich neu, und es geht wieder bei Level 1 los. Dafür gibt's 3 Punkte."
+            en: "The show for a prestige: a diamond lands, “Prestige 2 von 10” (prestige 2 of 10), the level bubbles fill up again, and you're back at level 1. You get 3 points for it."
 
   milestones:
     - date: 2026-10-20
       until: 2026-10-21
-      title: Vom Browser zum Spiel
+      title:
+        de: Vom Browser zum Spiel
+        en: From the browser to a game
       points:
-        - Das Spiel läuft als echte App, nicht mehr nur im Browser. Es hat Plopp-Töne, Vibration und den violetten Sticker-Look.
-        - Eine Runde ist ein Blatt in 20 Sekunden, mit Sternen, Shop und reifen Blasen.
-        - Die Helfer Blitz, Walze, Katze und Regen ploppen mit.
-        - Prestige gibt dem Spiel ein Ziel. Du fängst neu an und baust sechs Talentbäume aus. Am Ende wartet ein Endlosmodus.
+        de:
+          - Aus der Browser-Version wird eine richtige App, mit Plopp-Tönen, Vibration und dem violetten Sticker-Look.
+          - Eine Runde ist jetzt ein Blatt in 20 Sekunden, mit Sternen, Shop und reifen Blasen.
+          - Die ersten Helfer ploppen mit, nämlich Blitz, Walze, Katze und Regen.
+          - Prestige gibt dem Ganzen ein Ziel. Du fängst neu an und baust dabei sechs Talentbäume aus, und ganz am Ende wartet ein Endlosmodus.
+        en:
+          - The browser version becomes a real app, with pop sounds, vibration and the purple sticker look.
+          - A round is now one sheet in 20 seconds, with stars, the shop and ripe bubbles.
+          - The first helpers pop along, namely Blitz, Walze, Katze and Regen.
+          - Prestige gives the whole thing a goal. You start over and build out six talent trees along the way, and at the very end there's an endless mode.
     - date: 2026-10-22
-      title: Das Spielgefühl
+      title:
+        de: Mehr Wumms
+        en: More punch
       points:
-        - Blasen wabbeln und ploppen mit Wucht. Münzen fliegen zum Zähler.
-        - Alle Töne klingen in einer Tonart.
-        - Das Spiel pausiert, wenn du die App wechselst.
-        - Eine Hand zeigt neuen Spielern das Rubbeln.
+        de:
+          - Die Blasen wabbeln und ploppen jetzt mit richtig Wumms, und die Münzen fliegen hoch zum Zähler.
+          - Alle Töne sind in derselben Tonart.
+          - Wechselst du die App, pausiert das Spiel.
+          - Wer neu ist, bekommt von einer Hand gezeigt, wie das Rubbeln geht.
+        en:
+          - Bubbles wobble and pop with real punch now, and the coins fly up to the counter.
+          - All sounds are in the same key.
+          - Switch apps and the game pauses.
+          - New players get shown by a hand how the rubbing works.
     - date: 2026-10-23
-      title: Musik, Intro und Premium
+      title:
+        de: Musik, Intro und Premium
+        en: Music, intro and Premium
       points:
-        - Musik läuft unter jedem Bildschirm, mit eigenem Regler.
-        - Im Intro füllt sich die Folie im Takt. Eine Cartoon-Hand ploppt die ersten Blasen, und PLOPP landet Buchstabe für Buchstabe.
-        - Für ein Video gibt es einen Bonus, mit Premium auch ohne Video. Farbthemen und Sounds kannst du vorher ansehen und anhören.
-        - Klarere Namen. Aus Rolle wird Level, aus Meisterfolie Meisterrunde und aus Skillbäumen Talente. Ein neues Level und Prestige bekommen eine eigene Show.
-        - App-Icon wurde generiert und ausgesucht.
+        de:
+          - Jetzt läuft überall Musik, und die Lautstärke stellst du mit einem eigenen Regler ein.
+          - Das Intro steht. Der Bildschirm füllt sich im Takt mit Blasen, eine Cartoon-Hand ploppt die ersten Blasen, und dann landet PLOPP Buchstabe für Buchstabe.
+          - Für ein Video gibt's einen Bonus, mit Premium auch ohne. Farbthemen und Sounds kannst du dir vorher anschauen und reinhören.
+          - Ich habe ein paar Sachen umbenannt, damit man sie besser versteht. Aus Rolle wird Level, aus Meisterfolie Meisterrunde und aus Skillbäumen Talente. Ein neues Level und Prestige bekommen außerdem ihre eigene kleine Show.
+          - PLOPP hat jetzt ein eigenes App-Icon. Ich habe Icons generieren lassen und mir dann eins ausgesucht.
+        en:
+          - Music plays everywhere now, and you set the volume with its own slider.
+          - The intro is done. The screen fills up with bubbles to the beat, a cartoon hand pops the first bubbles, and then PLOPP lands letter by letter.
+          - Watching a video gets you a bonus, and with Premium you get it without one. You can look at color themes and listen to sounds before you pick them.
+          - I renamed a few things so they're easier to get. Rolls become levels, master sheets become master rounds and skill trees become talents. A new level and prestige also get their own little show.
+          - PLOPP has its own app icon now. I had a few generated and then picked one.
 
 - slug: grammgenau
   name: Grammgenau
-  tagline: Ein Kalorienziel für Sportler, das jede Woche aus deinen eigenen Daten lernt.
-  about: >-
-    Grammgenau rechnet dein Tagesziel aus deinem Körper, deinem Alltag und
-    deinem Sport aus. Jede Woche fragt es, ob das Ziel passt, und vergleicht
-    deine Antwort mit deinen Wiegungen und deinem Essen. Alle Daten bleiben
-    auf deinem Gerät.
+  tagline:
+    de: Ein Kalorienrechner für Sportler, der jede Woche ein bisschen genauer wird.
+    en: A calorie calculator for athletes that gets a bit more accurate every week.
+  about:
+    de: >-
+      Ein Kalorienrechner gibt dir normalerweise eine Zahl, und dann bist du
+      damit allein. Grammgenau rechnet dein Tagesziel aus deinem Körper, deinem
+      Alltag und deinem Sport aus und fragt dann jede Woche nach: Passt das
+      noch? Deine Antwort gleicht die App mit deinen Wiegungen und deinem Essen
+      ab und lernt so dazu. Deine Daten bleiben dabei auf deinem Gerät.
+    en: >-
+      A calorie calculator usually gives you one number, and then you're on
+      your own. Grammgenau works out your daily target from your body, your
+      everyday life and your training, and then checks in every week: does
+      this still fit? The app compares your answer with your weigh-ins and
+      what you ate, and learns from it. Your data stays on your device.
   platforms: [Android]
   status: building
   colour: "#2f86f0"
   store: {}
   legal: {}
   how:
-    - title: Berechnung der Kalorien
-      text: >-
-        Im Onboarding (noch nicht fertig) werden die Kalorien aus den üblichen
-        Fragen nach dem Körpergewicht, der Größe, dem Alter und dem
-        biologischen Geschlecht berechnet. Dazu kommen noch das Level der
-        Alltagsbewegung und wie viel Sport du treibst. Anschließend kommt die
-        Frage nach dem Ziel. Daraus berechnet Grammgenau dein Tagesziel. Das
-        ist die Basis für alles.
+    - title:
+        de: Berechnung der Kalorien
+        en: Working out your calories
+      text:
+        de: >-
+          Im Onboarding (das ist noch nicht ganz fertig) kommen erst mal die
+          üblichen Fragen: Gewicht, Größe, Alter und biologisches Geschlecht.
+          Dann will die App wissen, wie viel du dich im Alltag bewegst, wie
+          viel Sport du machst und was dein Ziel ist. Daraus rechnet
+          Grammgenau dein Tagesziel aus, und auf dieser Zahl baut alles andere
+          auf.
+        en: >-
+          The onboarding (not quite finished yet) starts with the usual
+          questions: weight, height, age and biological sex. Then the app wants
+          to know how much you move in everyday life, how much you train and
+          what your goal is. From that, Grammgenau works out your daily target,
+          and everything else builds on that number.
       media:
         - image: /assets/apps/grammgenau/heute.webp
-          alt: "„Heute“ mit dem Tagesziel von 2.800 kcal: 1.791 kcal sind noch offen, darunter Kohlenhydrate, Eiweiß und Fett in Gramm."
-    - title: Essen eintragen
-      text: >-
-        Such einfach, was du gegessen hast, und gib die Gramm ein. Die App
-        kennt den Bundeslebensmittelschlüssel und viele Markenprodukte. Die
-        findest du auch über den Barcode. Automatische Rechtschreibprüfung
-        inklusive. Auf „Heute“ siehst du dann, wie viel noch geht.
+          alt:
+            de: "„Heute“ mit dem Tagesziel von 2.800 kcal: 1.791 kcal sind noch offen, darunter Kohlenhydrate, Eiweiß und Fett in Gramm."
+            en: "“Heute” (today) with a daily target of 2,800 kcal: 1,791 kcal are still open, below that carbs, protein and fat in grams."
+    - title:
+        de: Essen eintragen
+        en: Logging food
+      text:
+        de: >-
+          Du suchst einfach, was du gegessen hast, und gibst die Gramm ein. Die
+          App kennt den Bundeslebensmittelschlüssel und jede Menge
+          Markenprodukte, und die findest du auch über den Barcode. Vertippst
+          du dich, findet die Suche trotzdem das Richtige. Auf „Heute“ siehst du
+          dann sofort, wie viel noch geht.
+        en: >-
+          You just search for what you ate and enter the grams. The app knows
+          the German food database (Bundeslebensmittelschlüssel) and loads of
+          brand products, and you can find those by barcode too. If you make a
+          typo, search still finds the right thing. On “Heute” (today) you then
+          see right away how much you have left.
       media:
         - image: /assets/apps/grammgenau/suche.webp
-          alt: "Die Suche nach „Kaese“ findet Gouda, Feta, Emmentaler und Mozzarella, jeweils mit kcal pro 100 g."
+          alt:
+            de: "Die Suche nach „Kaese“ findet Gouda, Feta, Emmentaler und Mozzarella, jeweils mit kcal pro 100 g."
+            en: "Searching for “Kaese” (cheese) finds Gouda, feta, Emmental and mozzarella, each with kcal per 100 g."
         - image: /assets/apps/grammgenau/menge.webp
-          alt: "80 g Haferflocken ergeben 278 kcal. Darunter die Wahl der Mahlzeit und der Knopf „In Frühstück eintragen“."
-    - title: Passt dein Ziel?
-      text: >-
-        Einmal die Woche fragt dich die App: Nimmst du ab, nimmst du zu, oder
-        passt alles? Das vergleicht sie mit deinen Wiegungen und mit dem, was
-        du gegessen hast. So merkt sie, was du wirklich brauchst, und schlägt
-        dir ein neues Ziel vor. Je öfter du antwortest, desto genauer wird's.
+          alt:
+            de: "80 g Haferflocken ergeben 278 kcal. Darunter die Wahl der Mahlzeit und der Knopf „In Frühstück eintragen“."
+            en: "80 g of oats make 278 kcal. Below that, the choice of meal and the button “In Frühstück eintragen” (add to breakfast)."
+    - title:
+        de: Passt dein Ziel?
+        en: Does your target fit?
+      text:
+        de: >-
+          Einmal pro Woche fragt dich die App: Nimmst du ab, nimmst du zu oder
+          passt alles? Das legt sie neben deine Wiegungen und das, was du
+          gegessen hast. So merkt sie mit der Zeit, was du wirklich brauchst,
+          und schlägt dir ein neues Ziel vor. Je öfter du antwortest, desto
+          genauer wird's. Daher kommt auch der Name.
+        en: >-
+          Once a week the app asks you: are you losing, gaining, or does
+          everything fit? It puts that next to your weigh-ins and what you ate.
+          Over time, it figures out what you really need and suggests a new
+          target. The more often you answer, the more accurate it gets. That's
+          where the name comes from, too: “grammgenau” means accurate to the
+          gram.
       media:
         - image: /assets/apps/grammgenau/ziel.webp
-          alt: "„Passt dein Ziel?“ mit den Antworten „Ich nehme ab“, „Ich nehme zu“ und „Passt“."
+          alt:
+            de: "„Passt dein Ziel?“ mit den Antworten „Ich nehme ab“, „Ich nehme zu“ und „Passt“."
+            en: "“Passt dein Ziel?” (does your target fit?) with the answers I'm losing, I'm gaining and it fits."
         - image: /assets/apps/grammgenau/ziel-neu.webp
-          alt: "Nach „Ich nehme ab“: 1,1 kg weniger in 2 Wochen, aus dem Trend der Wiegungen. Das neue Ziel ist 3.120 kcal, 320 kcal mehr."
+          alt:
+            de: "Nach „Ich nehme ab“: 1,1 kg weniger in 2 Wochen, aus dem Trend der Wiegungen. Das neue Ziel ist 3.120 kcal, 320 kcal mehr."
+            en: "After “I'm losing”: 1.1 kg less in 2 weeks, from the trend of the weigh-ins. The new target is 3,120 kcal, 320 kcal more."
 
   milestones:
     - date: 2026-10-16
-      title: Erste nutzbare Version
+      title:
+        de: Die erste Version zum Benutzen
+        en: The first version you can use
       points:
-        - Du legst dein Profil an und bekommst ein tägliches Kalorienziel.
-        - Du trägst dein Essen in Gramm ein, aus dem Bundeslebensmittelschlüssel.
-        - „Heute“ fragt jede Woche, ob das Ziel passt, und passt es an. Dazu kommt eine animierte Waage.
+        de:
+          - Du legst ein Profil an und bekommst dein tägliches Kalorienziel.
+          - Dein Essen trägst du in Gramm ein, aus dem Bundeslebensmittelschlüssel.
+          - „Heute“ fragt jede Woche, ob dein Ziel passt, und passt es an. Dazu gibt's eine kleine animierte Waage.
+        en:
+          - You set up a profile and get your daily calorie target.
+          - You log your food in grams, from the German food database.
+          - “Heute” (today) asks every week whether your target fits and adjusts it. There's a little animated scale, too.
     - date: 2026-10-18
-      title: Rechner-Look, Barcode und Suche
+      title:
+        de: Sieht jetzt aus wie ein Taschenrechner
+        en: Now it looks like a pocket calculator
       points:
-        - „Heute“ und „Essen“ sehen aus wie ein Taschenrechner, mit Tasten für die Mahlzeiten, einem Kalorienbalken und Makro-Symbolen, die sich füllen.
-        - Produkte findest du über den Barcode.
-        - Du trägst dein Gewicht ein, und ein Verlauf zeigt die letzten Wochen. Vergessene Tage trägst du nach.
-        - Die Suche versteht Alltagswörter wie „Käse“, verzeiht Tippfehler und findet Markenprodukte auch ohne Internet. Was du oft isst, steht oben.
+        de:
+          - „Heute“ und „Essen“ haben jetzt den Taschenrechner-Look, mit Tasten für die Mahlzeiten, einem Kalorienbalken und Makro-Symbolen, die sich füllen.
+          - Produkte findest du jetzt auch über den Barcode.
+          - Du trägst dein Gewicht ein und siehst die letzten Wochen im Verlauf. Einen Tag vergessen? Den trägst du einfach nach.
+          - Die Suche ist viel schlauer geworden. Sie versteht Alltagswörter wie „Käse“, verzeiht Tippfehler und findet Markenprodukte auch ohne Internet. Was du oft isst, steht ganz oben.
+        en:
+          - “Heute” (today) and “Essen” (food) now have the calculator look, with keys for the meals, a calorie bar and macro icons that fill up.
+          - You can find products by barcode now.
+          - You log your weight and see the last few weeks in a history. Forgot a day? Just add it later.
+          - Search got a lot smarter. It understands everyday words like “Käse” (cheese), forgives typos and finds brand products without internet, too. What you eat often is right at the top.
     - date: 2026-10-20
-      title: Ziel nach dem Gewichtstrend
+      title:
+        de: Ziel nach dem Gewichtstrend
+        en: A target from the weight trend
       points:
-        - Das Ziel rechnet mit dem geglätteten Trend deiner Wiegungen. Ein Tag mit viel Wasser im Körper verschiebt es nicht mehr.
+        de:
+          - Das Ziel rechnet jetzt mit dem geglätteten Trend deiner Wiegungen. Ein Tag mit viel Wasser im Körper wirft es also nicht mehr um.
+        en:
+          - The target now uses the smoothed trend of your weigh-ins, so a day with a lot of water in your body doesn't throw it off anymore.
 
 - slug: movenote
   name: MoveNote
-  tagline: Workouts als freien Text schreiben. Die App versteht, was du meinst.
-  about: >-
-    Du schreibst dein Workout wie eine Notiz. MoveNote liest den Text, erkennt
-    Übungen, Sätze und Gewichte und bereitet dein nächstes Training vor.
-    Alles bleibt auf deinem iPhone.
+  tagline:
+    de: Schreib dein Workout wie eine Notiz. Die App versteht's.
+    en: Write your workout like a note. The app gets it.
+  about:
+    de: >-
+      Ich schreibe meine Workouts seit Jahren in meiner eigenen Kurzschrift.
+      Mit MoveNote kann ich genau so weiterschreiben, und die App erkennt
+      trotzdem Übungen, Sätze und Gewichte und bereitet das nächste Training
+      schon vor. Alles bleibt auf dem iPhone. Aktuell nutze ich die App nur für
+      mich, vielleicht kommt sie später in den App Store.
+    en: >-
+      I've been writing my workouts in my own shorthand for years. With
+      MoveNote I can keep writing exactly like that, and the app still picks
+      out exercises, sets and weights and gets the next workout ready.
+      Everything stays on the iPhone. Right now I only use the app myself, but
+      maybe it comes to the App Store later.
   platforms: [iOS]
   status: building
   icon: /assets/icons/movenote.webp
@@ -195,59 +380,121 @@
   store: {}
   legal: {}
   how:
-    - title: Schreib, wie du denkst
-      text: >-
-        Die erste Zeile ist der Titel. Darunter steht jede Übung mit ihrem
-        Ziel und ihrer Pause, zum Beispiel „3x8 2min“. Jede Zeile darunter ist
-        ein Gewicht und die Wiederholungen jedes Satzes. Eine Leiste über der
-        Tastatur zeigt dir die Zeichen, die gerade passen.
+    - title:
+        de: Schreib, wie du denkst
+        en: Write the way you think
+      text:
+        de: >-
+          Oben steht der Titel. Darunter kommt jede Übung mit Ziel und Pause,
+          zum Beispiel „3x8 2min“. In die Zeilen darunter schreibst du das
+          Gewicht und dahinter die Wiederholungen pro Satz. Über der Tastatur
+          gibt's eine Leiste mit genau den Zeichen, die gerade passen, damit du
+          nicht ewig suchen musst.
+        en: >-
+          The title goes at the top. Below it comes each exercise with its
+          target and rest, for example “3x8 2min”. In the lines under that you
+          write the weight and then the reps of each set. Above the keyboard
+          there's a bar with exactly the characters that fit right now, so you
+          don't have to hunt for them.
       demo: movenote-schreiben
-    - title: Die App versteht den Text
-      text: >-
-        Aus „70 8 8 7V“ wird: 70 kg, drei Sätze, der letzte bis zum Versagen.
-        Ein W steht für einen Aufwärmsatz, ein D für einen Dropsatz, 13/12 für
-        links und rechts. Mit „=> 72.5“ legst du das Gewicht für das nächste
-        Mal fest.
+    - title:
+        de: Aus Text werden Sätze
+        en: Text turns into sets
+      text:
+        de: >-
+          „70 8 8 7V“ heißt für die App: 70 kg, drei Sätze, der letzte bis zum
+          Versagen. W steht für einen Aufwärmsatz, D für einen Dropsatz, und
+          13/12 sind links und rechts. Mit „=> 72.5“ legst du gleich das
+          Gewicht fürs nächste Mal fest.
+        en: >-
+          To the app, “70 8 8 7V” means 70 kg, three sets, the last one to
+          failure (V for Versagen, the app speaks German). W stands for a
+          warm-up set, D for a drop set, and 13/12 is left and right. With
+          “=> 72.5” you set the weight for next time right away.
       demo: movenote-verstehen
-    - title: Das nächste Mal ist schon vorbereitet
-      text: >-
-        Ein neues Workout übernimmt Übungen und Gewichte vom letzten Mal. Du
-        tippst nur noch die Wiederholungen. Nach jedem Satz startet der
-        Pausentimer von selbst, auch auf dem Sperrbildschirm. Am Ende siehst du
-        Dauer, bewegtes Gewicht und Sätze.
+    - title:
+        de: Das nächste Mal ist schon vorbereitet
+        en: Next time is already set up
+      text:
+        de: >-
+          Beim nächsten Workout stehen Übungen und Gewichte vom letzten Mal
+          schon da. Du tippst nur noch ein, wie viele Wiederholungen du
+          geschafft hast. Nach jedem Satz läuft der Pausentimer von selbst los,
+          auch auf dem Sperrbildschirm. Am Ende siehst du Dauer, bewegtes
+          Gewicht und deine Sätze.
+        en: >-
+          Next workout, the exercises and weights from last time are already
+          there. You only type in how many reps you got. After every set the
+          rest timer starts on its own, even on the lock screen. At the end you
+          see the duration, the weight you moved and your sets.
       demo: movenote-vorbereitet
 
   milestones:
     - date: 2026-09-27
       until: 2026-09-29
-      title: Erste Version
+      title:
+        de: Erste Version
+        en: First version
       points:
-        - Ein Text-Editor liest Workouts, markiert falsche Zeilen rot und schlägt Übungen vom letzten Mal vor.
-        - Ein Rechner zeigt den Bedarf für Ruhe- und Trainingstage, ein Kalorienziel aus dem Wochenziel und die Makros.
+        de:
+          - Der Text-Editor liest Workouts, markiert falsche Zeilen rot und schlägt Übungen vom letzten Mal vor.
+          - Dazu kommt ein Rechner. Er zeigt deinen Bedarf an Ruhe- und Trainingstagen, macht aus dem Wochenziel ein Kalorienziel und rechnet die Makros aus.
+        en:
+          - The text editor reads workouts, marks wrong lines in red and suggests exercises from last time.
+          - A calculator comes with it. It shows what you need on rest days and training days, turns your weekly goal into a calorie target and works out your macros.
     - date: 2026-10-02
       until: 2026-10-03
-      title: Pausentimer und der Name MoveNote
+      title:
+        de: Pausentimer und der Name MoveNote
+        en: Rest timer and the name MoveNote
       points:
-        - Zwischen den Sätzen läuft ein Pausentimer mit Signal, auch auf dem Sperrbildschirm und in der Dynamic Island.
-        - Eine Leiste über der Tastatur zeigt die Zeichen, die gerade passen, und Vorschläge vom letzten Mal.
-        - Die App heißt jetzt MoveNote und hat ein eigenes Icon.
+        de:
+          - Zwischen den Sätzen läuft ein Pausentimer mit Signal, auch auf dem Sperrbildschirm und in der Dynamic Island.
+          - Über der Tastatur zeigt eine Leiste die Zeichen, die gerade passen, und Vorschläge vom letzten Mal.
+          - Die App bekommt ihren Namen, MoveNote, und ein eigenes Icon.
+        en:
+          - Between sets a rest timer runs with an alert, on the lock screen and in the Dynamic Island, too.
+          - A bar above the keyboard shows the characters that fit right now and suggestions from last time.
+          - The app gets its name, MoveNote, and its own icon.
     - date: 2026-10-06
-      title: Planen und Strava
+      title:
+        de: Planen und Strava
+        en: Planning and Strava
       points:
-        - Ein Kalender zeigt geplante und gemachte Workouts, mit der geschätzten Dauer und dem Kalorienziel für jeden Tag.
-        - Nach dem Workout siehst du Dauer und bewegtes Gewicht. Auf Wunsch geht das Workout zu Strava.
+        de:
+          - Im Kalender siehst du geplante und erledigte Workouts, mit geschätzter Dauer und dem Kalorienziel für jeden Tag.
+          - Nach dem Workout siehst du Dauer und bewegtes Gewicht. Wenn du magst, schickt die App das Workout direkt an Strava.
+        en:
+          - The calendar shows planned and finished workouts, with the estimated duration and the calorie target for each day.
+          - After a workout you see the duration and the weight you moved. If you like, the app sends the workout straight to Strava.
     - date: 2026-10-15
-      title: Rückgängig und Wiederholen
+      title:
+        de: Rückgängig und Wiederholen
+        en: Undo and redo
       points:
-        - Jede Änderung lässt sich rückgängig machen, auch ein gelöschtes Workout.
+        de:
+          - Jede Änderung lässt sich rückgängig machen. Sogar ein aus Versehen gelöschtes Workout holst du so zurück.
+        en:
+          - You can undo every change. Even a workout you deleted by accident comes back that way.
 
 - slug: pubg-stream-report
   name: PUBG Stream Report
-  tagline: Finde die PUBG-Momente, in denen du bei Twitch-Streamern im Bild warst.
-  about: >-
-    Gib deinen PUBG-Namen ein. Die App findet Runden, in denen du einen
-    Streamer oder sein Team gekillt hast oder von ihnen gekillt wurdest. Ein
-    Tipp springt an die Stelle im Twitch-VOD.
+  tagline:
+    de: Warst du schon mal bei einem Streamer im Bild? Die App findet's raus.
+    en: Ever shown up on a streamer's stream? The app finds out.
+  about:
+    de: >-
+      Du killst jemanden in PUBG und fragst dich, ob das gerade live auf Twitch
+      lief? Gib deinen PUBG-Namen ein, und die App sucht Runden, in denen du
+      einen Streamer oder sein Team gekillt hast, oder umgekehrt. Ein Tipp, und
+      du landest genau an der Stelle im VOD. Angefangen hat das Ganze als Tool
+      für mich und meine Freunde.
+    en: >-
+      You kill someone in PUBG and wonder if that just went out live on
+      Twitch? Enter your PUBG name, and the app finds matches where you killed
+      a streamer or their team, or the other way round. One tap and you land
+      right at that moment in the VOD. The whole thing started as a tool for
+      me and my friends.
   platforms: [iOS, Android]
   status: testing
   icon: /assets/icons/pubg-stream-report.webp
@@ -257,67 +504,138 @@
     datenschutz: /pubg-stream-report/datenschutz/
     privacy: /pubg-stream-report/privacy/
   how:
-    - title: Namen eingeben
-      text: >-
-        Gib deinen PUBG-Namen genau so ein wie im Spiel, mit Groß- und
-        Kleinschreibung. Die App sucht Spieler auf dem PC (Steam). Ein Konto
-        brauchst du nicht.
+    - title:
+        de: Namen eingeben
+        en: Enter your name
+      text:
+        de: >-
+          Gib deinen PUBG-Namen genau so ein wie im Spiel, Groß- und
+          Kleinschreibung inklusive. Gesucht wird auf dem PC (Steam). Ein Konto
+          brauchst du nicht.
+        en: >-
+          Type your PUBG name exactly as it is in the game, upper and lower
+          case included. The app searches on PC (Steam). You don't need an
+          account.
       media:
         - image: /assets/apps/pubg-stream-report/suche.webp
-          alt: "Der Tab Suche: im Namensfeld „Halifax“, der Knopf „Suchen“ und die letzten Suchanfragen."
-    - title: Die App gleicht ab
-      text: >-
-        Die App holt deine Matches der letzten 3 Tage von PUBG. Sie prüft jeden
-        Kill und jeden Knock zwischen dir und einem anderen Team. War dort ein
-        Streamer oder jemand aus seinem Team, der gerade live war, ist das ein
-        Treffer. „Ältere Matches“ sucht 14 Tage zurück.
+          alt:
+            de: "Der Tab Suche: im Namensfeld „Halifax“, der Knopf „Suchen“ und die letzten Suchanfragen."
+            en: "The search tab: “Halifax” in the name field, the search button and the latest searches."
+    - title:
+        de: Die App gleicht ab
+        en: The app checks your matches
+      text:
+        de: >-
+          Die App holt sich bei PUBG deine Matches der letzten 3 Tage und schaut
+          sich jeden Kill und jeden Knock zwischen dir und einem anderen Team
+          an. War auf der anderen Seite ein Streamer oder jemand aus seinem
+          Team, und lief der Stream gerade, ist das ein Treffer. Mit „Ältere
+          Matches“ geht's bis zu 14 Tage zurück.
+        en: >-
+          The app gets your matches from the last 3 days from PUBG and looks at
+          every kill and every knock between you and another team. If a
+          streamer or someone from their team was on the other side, and the
+          stream was live, that's a hit. “Older matches” goes back up to 14
+          days.
       demo: pubg-abgleich
-    - title: Treffer ansehen
-      text: >-
-        Jeder Treffer zeigt, wer wen gekillt oder geknockt hat, mit Waffe,
-        Entfernung und Uhrzeit. Ein Tipp öffnet das Twitch-VOD kurz vor dem
-        Moment. Du kannst dich auch mit Streamern und Freunden vergleichen.
+    - title:
+        de: Treffer ansehen
+        en: Watch your hits
+      text:
+        de: >-
+          Bei jedem Treffer steht, wer wen gekillt oder geknockt hat, mit Waffe,
+          Entfernung und Uhrzeit. Tipp drauf, und das Twitch-VOD startet kurz
+          vor dem Moment. Und wenn du wissen willst, wie du im Vergleich zu
+          Streamern oder deinen Freunden dastehst, geht das auch.
+        en: >-
+          Each hit says who killed or knocked whom, with weapon, distance and
+          time. Tap it, and the Twitch VOD starts just before the moment. And if
+          you want to know how you stack up against streamers or your friends,
+          you can do that too.
       media:
         - image: /assets/apps/pubg-stream-report/treffer.webp
-          alt: "Treffer für Halifax vor 9 Tagen: grüne Karten für „Du hast … gekillt“, rote für „hat dich gekillt“. Treffer ohne VOD sind blasser."
-    - title: Home und Stats
-      text: >-
-        Verbinde deinen PUBG-Namen mit der App. Dann zeigt Home deine neueste
-        Begegnung, deine Stats und die PUBG-News, ohne dass du suchst. Der Tab
-        Stats zeigt deine Zahlen für jeden Modus und jede Season, Normal und
-        Ranked.
+          alt:
+            de: "Treffer für Halifax vor 9 Tagen: grüne Karten für „Du hast … gekillt“, rote für „hat dich gekillt“. Treffer ohne VOD sind blasser."
+            en: "Hits for Halifax from 9 days ago: green cards for your kills, red ones for kills on you. Hits without a VOD are paler."
+    - title:
+        de: Home und Stats
+        en: Home and Stats
+      text:
+        de: >-
+          Verbindest du deinen PUBG-Namen mit der App, musst du gar nicht mehr
+          suchen. Home zeigt dir direkt deine neueste Begegnung, deine Stats
+          und die PUBG-News. Im Tab Stats stehen deine Zahlen für jeden Modus
+          und jede Season, Normal und Ranked.
+        en: >-
+          Link your PUBG name to the app, and you don't have to search at all
+          anymore. Home shows your latest encounter, your stats and the PUBG
+          news right away. The Stats tab has your numbers for every mode and
+          every season, Normal and Ranked.
       media:
         - image: /assets/apps/pubg-stream-report/home.webp
-          alt: "Home: die neueste Begegnung, „Alle Begegnungen“ (68), die Stats für Squad FPP und darunter die PUBG-News."
+          alt:
+            de: "Home: die neueste Begegnung, „Alle Begegnungen“ (68), die Stats für Squad FPP und darunter die PUBG-News."
+            en: "Home: the latest encounter, all encounters (68), the stats for Squad FPP and the PUBG news below."
         - image: /assets/apps/pubg-stream-report/stats.webp
-          alt: "Der Tab Stats für Halifax: Normal, Squad FPP, Season 43. K/D 2,56, 316 Schaden im Schnitt, 69 Siege, darunter die Details."
+          alt:
+            de: "Der Tab Stats für Halifax: Normal, Squad FPP, Season 43. K/D 2,56, 316 Schaden im Schnitt, 69 Siege, darunter die Details."
+            en: "The Stats tab for Halifax: Normal, Squad FPP, season 43. K/D 2.56, 316 damage on average, 69 wins, the details below."
   milestones:
     - date: 2026-10-08
       until: 2026-10-11
-      title: Vom Skript zur App
+      title:
+        de: Vom Skript zur App
+        en: From a script to an app
       points:
-        - Ein Skript findet zu einem PUBG-Namen alle Kills und Knocks gegen Streamer und öffnet das Twitch-VOD kurz vor der Szene.
-        - Die App liest das PUBG-Wasserzeichen im Vorschaubild eines Streams. So findet sie auch Streamer, deren PUBG-Name anders ist als ihr Twitch-Name.
-        - Eine App für iOS und Android startet die Suche. Die Ergebnisse kommen live, mit einem Fortschrittsbalken.
-        - Die App zeigt Werbung. Ein einmaliger Kauf schaltet sie ab.
-        - Die App gibt es auch auf Englisch. Icon, Screenshots und Texte für App Store und Google Play sind fertig.
+        de:
+          - Angefangen hat alles mit einem Skript. PUBG-Namen rein, alle Kills und Knocks gegen Streamer raus, und das Twitch-VOD springt kurz vor die Szene.
+          - Die App liest das PUBG-Wasserzeichen im Vorschaubild eines Streams. So findet sie auch Streamer, die in PUBG anders heißen als auf Twitch.
+          - Aus dem Skript wird eine App für iOS und Android. Die Ergebnisse kommen live rein, mit Fortschrittsbalken.
+          - Die App zeigt Werbung. Mit einem einmaligen Kauf ist die weg.
+          - Die App kann jetzt auch Englisch, und Icon, Screenshots und Texte für den App Store und Google Play sind fertig.
+        en:
+          - It all started with a script. PUBG name in, every kill and knock against streamers out, and the Twitch VOD jumps to just before the scene.
+          - The app reads the PUBG watermark in a stream's thumbnail. That way it also finds streamers whose PUBG name differs from their Twitch name.
+          - The script turns into an app for iOS and Android. Results come in live, with a progress bar.
+          - The app shows ads. A one-time purchase makes them go away.
+          - The app speaks English now, too, and the icon, screenshots and texts for the App Store and Google Play are done.
     - date: 2026-10-12
-      title: Geschlossener Test bei Google Play
+      title:
+        de: Geschlossener Test bei Google Play
+        en: Closed test on Google Play
       key: true
-      text: >-
-        Die App ist im geschlossenen Test bei Google Play. Die ersten Tester
-        laden sie aus dem Play Store, und ihre Rückmeldungen bestimmen die
-        nächsten Schritte.
+      text:
+        de: >-
+          Ab jetzt ist die App im geschlossenen Test bei Google Play. Die
+          ersten Tester laden sie direkt aus dem Play Store, und was sie sagen,
+          bestimmt, was ich als Nächstes baue.
+        en: >-
+          From now on the app is in closed testing on Google Play. The first
+          testers download it straight from the Play Store, and what they say
+          decides what I build next.
     - date: 2026-10-14
       until: 2026-10-18
-      title: Teilen, Tabs und was die Tester sagen
+      title:
+        de: Teilen, Tabs und was die Tester sagen
+        en: Sharing, tabs and what the testers say
       points:
-        - Ein Treffer lässt sich als Link verschicken. Freunde sehen die Szene auch ohne App im Browser.
-        - Du verbindest deinen PUBG-Namen mit der App. Tabs zeigen Home, Statistiken, PUBG-News und einen Vergleich mit Streamern oder Freunden.
-        - Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm, „Feedback senden“ und mehr Rückmeldung beim Tippen.
+        de:
+          - Einen Treffer kannst du jetzt als Link verschicken. Deine Freunde sehen die Szene dann im Browser, auch ohne App.
+          - Du kannst deinen PUBG-Namen mit der App verbinden. Dazu kommen Tabs für Home, Statistiken, PUBG-News und den Vergleich mit Streamern oder Freunden.
+          - Das Feedback der Tester ist direkt eingeflossen. Es gibt jetzt einen Willkommensbildschirm, einen Knopf „Feedback senden“ und eine deutlichere Rückmeldung beim Tippen.
+        en:
+          - You can send a hit as a link now. Your friends then see the scene in the browser, even without the app.
+          - You can link your PUBG name to the app. On top of that there are tabs for Home, stats, PUBG news and a comparison with streamers or friends.
+          - The testers' feedback went straight in. There's now a welcome screen, a send feedback button and clearer feedback when you tap.
     - date: 2026-10-22
-      title: Bei Apple eingereicht
+      title:
+        de: Bei Apple eingereicht
+        en: Submitted to Apple
       key: true
-      text: >-
-        Version 1.1.0 liegt bei Apple zur Prüfung. Gibt Apple sie frei, kommt
-        die App auch aufs iPhone.
+      text:
+        de: >-
+          Version 1.1.0 liegt bei Apple zur Prüfung. Wenn Apple sie durchwinkt,
+          gibt's die App auch fürs iPhone.
+        en: >-
+          Version 1.1.0 is in review at Apple. If Apple waves it through, the
+          app comes to the iPhone, too.

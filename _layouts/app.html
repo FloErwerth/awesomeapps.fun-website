@@ -1,8 +1,11 @@
 ---
 layout: site
 ---
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign and = " " | append: t.and | append: " " -%}
 {%- assign app = site.data.apps | where: "slug", page.app | first -%}
-{%- assign app_posts = site.posts | where_exp: "post", "post.apps contains app.slug" -%}
+{%- assign app_posts = site.posts | where: "lang", lang | where_exp: "post", "post.apps contains app.slug" -%}
 <article class="app-page" style="--app: {{ app.colour }}">
   <header class="hero hero-app">
     {% include tunnel.svg %}
@@ -14,27 +17,27 @@ layout: site
   </header>
 
   <div class="cells app-sheet">
-    <p class="cell annotation">( Was die App macht )</p>
+    <p class="cell annotation">{{ t.app_about }}</p>
     <div class="cell app-about">
-      <p class="statement-text">{{ app.tagline }}</p>
-      <p>{{ app.about }}</p>
+      <p class="statement-text">{{ app.tagline[lang] }}</p>
+      <p>{{ app.about[lang] }}</p>
       {{ content }}
     </div>
-    <dl class="cell app-fact"><dt>Für</dt><dd>{{ app.platforms | join: " und " }}</dd></dl>
-    <dl class="cell app-fact"><dt>Stand</dt><dd>{% include status.html status=app.status %}</dd></dl>
+    <dl class="cell app-fact"><dt>{{ t.app_for }}</dt><dd>{{ app.platforms | join: and }}</dd></dl>
+    <dl class="cell app-fact"><dt>{{ t.app_status }}</dt><dd>{% include status.html status=app.status %}</dd></dl>
     {%- assign stats = site.data.stats.apps[app.slug] %}
     {%- if stats %}
-    <dl class="cell app-fact"><dt>Claude-Tokens bisher</dt><dd>{{ stats.tokens_label }}</dd></dl>
-    <dl class="cell app-fact"><dt>Commits bisher</dt><dd>{{ stats.commits_label }}</dd></dl>
+    <dl class="cell app-fact"><dt>{{ t.app_tokens }}</dt><dd>{% if lang == "en" %}{{ stats.tokens_label_en }}{% else %}{{ stats.tokens_label }}{% endif %}</dd></dl>
+    <dl class="cell app-fact"><dt>{{ t.app_commits }}</dt><dd>{% if lang == "en" %}{{ stats.commits_label_en }}{% else %}{{ stats.commits_label }}{% endif %}</dd></dl>
     <div class="cell app-fact hatch app-fact-wide" aria-hidden="true"></div>
     {%- else %}
     <div class="cell app-fact hatch" aria-hidden="true"></div>
     {%- endif %}
     {%- if app.store.ios %}
-    <a class="cell app-store" href="{{ app.store.ios }}">Im App Store laden</a>
+    <a class="cell app-store" href="{{ app.store.ios }}">{{ t.app_store_ios }}</a>
     {%- endif %}
     {%- if app.store.android %}
-    <a class="cell app-store" href="{{ app.store.android }}">Bei Google Play laden</a>
+    <a class="cell app-store" href="{{ app.store.android }}">{{ t.app_store_android }}</a>
     {%- endif %}
   </div>
 
@@ -46,32 +49,32 @@ layout: site
   {%- endcomment %}
   <section class="how" aria-labelledby="how-title">
     <div class="cells">
-      <h2 id="how-title" class="cell board-title">So funktioniert's</h2>
+      <h2 id="how-title" class="cell board-title">{{ t.how_title }}</h2>
     </div>
     <ol class="how-steps">
       {%- for step in app.how %}
       <li class="cells how-step">
         <div class="cell how-text">
           <span class="how-number" aria-hidden="true">{{ forloop.index }}</span>
-          <h3 class="how-title">{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
+          <h3 class="how-title">{{ step.title[lang] }}</h3>
+          <p>{{ step.text[lang] }}</p>
         </div>
         <div class="cell how-media">
           {%- if step.media %}
-          <p class="annotation how-label">( Aus der App )</p>
+          <p class="annotation how-label">{{ t.how_media }}</p>
           <div class="how-phones">
             {%- for m in step.media %}
             <figure class="phone">
               {%- if m.video %}
-              <video src="{{ m.video | relative_url }}" poster="{{ m.poster | relative_url }}" muted loop playsinline preload="none" aria-label="{{ m.alt }}" data-how-video></video>
+              <video src="{{ m.video | relative_url }}" poster="{{ m.poster | relative_url }}" muted loop playsinline preload="none" aria-label="{{ m.alt[lang] }}" data-how-video></video>
               {%- else %}
-              <img src="{{ m.image | relative_url }}" alt="{{ m.alt }}" width="540" height="1200" loading="lazy" />
+              <img src="{{ m.image | relative_url }}" alt="{{ m.alt[lang] }}" width="540" height="1200" loading="lazy" />
               {%- endif %}
             </figure>
             {%- endfor %}
           </div>
           {%- elsif step.demo %}
-          <p class="annotation how-label">( Skizze )</p>
+          <p class="annotation how-label">{{ t.how_demo }}</p>
           <div class="how-phones">
             <figure class="phone phone-demo">
               <div class="demo">{% include how/{{ step.demo }}.html %}</div>
@@ -93,29 +96,38 @@ layout: site
   {%- assign app_posts_old_first = app_posts | reverse %}
   <section class="timeline" aria-labelledby="timeline-title">
     <div class="cells board-head">
-      <h2 id="timeline-title" class="cell board-title">Updates zu {{ app.name }}</h2>
-      <a class="cell board-all" href="{{ '/updates/' | relative_url }}">Alle Updates</a>
+      <h2 id="timeline-title" class="cell board-title">{{ t.updates_on }} {{ app.name }}</h2>
+      <a class="cell board-all" href="{{ t.base | append: '/updates/' | relative_url }}">{{ t.updates_all }}</a>
     </div>
     <ol class="timeline-list">
       {%- for m in app.milestones %}
       <li class="cells timeline-step{% if m.key %} is-key{% endif %}">
         {%- if m.until %}
-        {%- comment %} A period: "20.–21.10.2026", or "29.9.–2.10.2026" across a month. {% endcomment %}
+        {%- comment %}
+          A period: "20.–21.10.2026", or "29.9.–2.10.2026" across a month. In
+          English "Oct 20–21, 2026", or "Sep 29–Oct 2, 2026".
+        {% endcomment %}
         {%- assign from_month = m.date | date: "%m%Y" %}
         {%- assign until_month = m.until | date: "%m%Y" %}
-        {%- if from_month == until_month %}{% assign from = m.date | date: "%-d." %}{% else %}{% assign from = m.date | date: "%-d.%-m." %}{% endif %}
-        <p class="cell timeline-date"><time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ from }}</time>–<wbr><time datetime="{{ m.until | date: '%Y-%m-%d' }}">{{ m.until | date: "%-d.%-m.%Y" }}</time></p>
+        {%- if lang == "en" %}
+        {%- assign from = m.date | date: "%b %-d" %}
+        {%- if from_month == until_month %}{% assign until = m.until | date: "%-d, %Y" %}{% else %}{% assign until = m.until | date: "%b %-d, %Y" %}{% endif %}
         {%- else %}
-        <time class="cell timeline-date" datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
+        {%- if from_month == until_month %}{% assign from = m.date | date: "%-d." %}{% else %}{% assign from = m.date | date: "%-d.%-m." %}{% endif %}
+        {%- assign until = m.until | date: "%-d.%-m.%Y" %}
+        {%- endif %}
+        <p class="cell timeline-date"><time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ from }}</time>–<wbr><time datetime="{{ m.until | date: '%Y-%m-%d' }}">{{ until }}</time></p>
+        {%- else %}
+        <time class="cell timeline-date" datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: t.date }}</time>
         {%- endif %}
         <div class="cell timeline-body">
-          <h3 class="timeline-title">{{ m.title }}</h3>
+          <h3 class="timeline-title">{{ m.title[lang] }}</h3>
           {%- if m.text %}
-          <p>{{ m.text }}</p>
+          <p>{{ m.text[lang] }}</p>
           {%- endif %}
           {%- if m.points %}
           <ul class="timeline-points">
-            {%- for point in m.points %}
+            {%- for point in m.points[lang] %}
             <li>{{ point }}</li>
             {%- endfor %}
           </ul>
@@ -125,7 +137,7 @@ layout: site
       {%- endfor %}
       {%- for post in app_posts_old_first %}
       <li class="cells timeline-step">
-        <time class="cell timeline-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d.%-m.%Y" }}</time>
+        <time class="cell timeline-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: t.date }}</time>
         <div class="cell timeline-body">
           <h3 class="timeline-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           <p>{{ post.excerpt | strip_html | strip_newlines }}</p>
@@ -133,7 +145,7 @@ layout: site
       </li>
       {%- endfor %}
       {%- if app.milestones == nil and app_posts.size == 0 %}
-      <li class="cells timeline-step"><p class="cell timeline-body">Noch keine Updates.</p></li>
+      <li class="cells timeline-step"><p class="cell timeline-body">{{ t.updates_none }}</p></li>
       {%- endif %}
     </ol>
   </section>

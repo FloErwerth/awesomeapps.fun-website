@@ -1,10 +1,12 @@
 ---
 layout: site
 ---
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
 <article class="post">
   <header class="hero hero-post">
     {% include tunnel.svg %}
-    <p class="annotation">( Update vom <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d.%-m.%Y" }}</time> )</p>
+    <p class="annotation">( {{ t.post_from }} <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: t.date }}</time> )</p>
     <h1 class="giant giant-post">{{ page.title }}</h1>
   </header>
   <div class="cells post-sheet">
@@ -13,7 +15,7 @@ layout: site
     <ul class="cell post-apps">
       {%- for slug in page.apps -%}
       {%- assign tagged = site.data.apps | where: "slug", slug | first -%}
-      <li><a href="{{ '/' | append: tagged.slug | append: '/' | relative_url }}">{% include app-icon.html app=tagged class="icon-small" %}{{ tagged.name }}</a></li>
+      <li><a href="{{ t.base | append: '/' | append: tagged.slug | append: '/' | relative_url }}">{% include app-icon.html app=tagged class="icon-small" %}{{ tagged.name }}</a></li>
       {%- endfor -%}
     </ul>
     {%- endif %}

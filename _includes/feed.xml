@@ -1,0 +1,32 @@
+{%- comment -%}
+  The Atom feed of the updates in one language, `lang=de` or `lang=en`. It
+  writes what jekyll-feed wrote, so a reader that follows feed.xml sees no
+  change; only the English posts are now in their own feed.
+{%- endcomment -%}
+{%- assign t = site.data.i18n[include.lang] -%}
+{%- assign posts = site.posts | where: "lang", include.lang -%}
+{%- assign home = t.base | append: "/" | absolute_url -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ include.lang }}">
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ t.feed_url | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link href="{{ home }}" rel="alternate" type="text/html" hreflang="{{ include.lang }}" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ t.feed_url | absolute_url | xml_escape }}</id>
+  <title type="html">{{ site.title | xml_escape }}</title>
+  <subtitle>{{ t.site_description | xml_escape }}</subtitle>
+  <author><name>{{ site.author | xml_escape }}</name></author>
+  {%- for post in posts limit: 10 %}
+  <entry>
+    <title type="html">{{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <id>{{ post.id | absolute_url | xml_escape }}</id>
+    <content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}"><![CDATA[{{ post.content | strip }}]]></content>
+    <author><name>{{ site.author | xml_escape }}</name></author>
+    <summary type="html"><![CDATA[{{ post.excerpt | strip_html | normalize_whitespace }}]]></summary>
+    <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.defaults[0].values.image | absolute_url }}" />
+  </entry>
+  {%- endfor %}
+</feed>

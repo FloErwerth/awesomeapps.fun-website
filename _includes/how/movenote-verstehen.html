@@ -1,3 +1,16 @@
+{%- if page.lang == "en" -%}
+<div class="demo-head">Bench press</div>
+<p class="demo-sub">Target 3 × 8, rest 2 min</p>
+<ul class="demo-sets">
+  <li><span>Warm-up</span><b>35 kg</b><i>8</i><i>8</i></li>
+  <li><span>Working sets</span><b>70 kg</b><i>8</i><i>8</i><i class="is-fail">7 V</i></li>
+</ul>
+<p class="demo-next">Next time: <b>72.5 kg</b></p>
+<div class="demo-head">One-arm curls</div>
+<ul class="demo-sets">
+  <li><span>Left / right</span><b>14 kg</b><i>13/12</i><i>12/11</i><i class="is-fail">10/10 V</i></li>
+</ul>
+{%- else -%}
 <div class="demo-head">Bankdrücken</div>
 <p class="demo-sub">Ziel 3 × 8, Pause 2 min</p>
 <ul class="demo-sets">
@@ -9,3 +22,4 @@
 <ul class="demo-sets">
   <li><span>Links / rechts</span><b>14 kg</b><i>13/12</i><i>12/11</i><i class="is-fail">10/10 V</i></li>
 </ul>
+{%- endif %}

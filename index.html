@@ -1,8 +1,11 @@
 ---
 layout: site
 toy: true
-description: "Kleine Apps von Florian Erwerth aus München: PLOPP, Grammgenau, MoveNote und PUBG Stream Report. Mit Stand und Updates zu jeder App."
+ref: home
+description: "Florian Erwerth aus München baut Apps, meistens abends: PLOPP, Grammgenau, MoveNote und PUBG Stream Report. Hier siehst du, wie weit jede App ist und was sich zuletzt getan hat."
 ---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign posts = site.posts | where: "lang", page.lang -%}
 <section class="hero">
   {% include tunnel.svg %}
   {% include ticker.html %}
@@ -12,7 +15,7 @@ description: "Kleine Apps von Florian Erwerth aus München: PLOPP, Grammgenau, M
 
 <section class="statement cells">
   <p class="cell annotation">( Was das hier ist )</p>
-  <p class="cell statement-text">Ich baue kleine Apps, jede für eine Sache. Hier stehen alle. Und hier schreibe ich auf, was sich an ihnen tut, damit ich dranbleibe.</p>
+  <p class="cell statement-text">Ich baue Apps, meistens abends und meistens zusammen mit Claude. Hier stehen alle, auch die, die noch lange nicht fertig sind. Das macht mir ein bisschen Druck, und genau das will ich. Was sich bei den Apps tut, schreibe ich auch gleich hier auf.</p>
 </section>
 
 {% include ring.html %}
@@ -21,8 +24,8 @@ description: "Kleine Apps von Florian Erwerth aus München: PLOPP, Grammgenau, M
 
 <section class="board" aria-labelledby="updates-title">
   <div class="cells board-head">
-    <h2 id="updates-title" class="cell board-title">Updates</h2>
-    <a class="cell board-all" href="{{ '/updates/' | relative_url }}">Alle Updates</a>
+    <h2 id="updates-title" class="cell board-title">{{ t.updates_title }}</h2>
+    <a class="cell board-all" href="{{ t.base | append: '/updates/' | relative_url }}">{{ t.updates_all }}</a>
   </div>
-  {% include update-cells.html posts=site.posts key_steps=true limit=6 %}
+  {% include update-cells.html posts=posts key_steps=true limit=6 %}
 </section>

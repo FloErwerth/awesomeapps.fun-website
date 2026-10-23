@@ -1,6 +1,7 @@
 ---
 layout: app
 app: grammgenau
+ref: grammgenau
 title: Grammgenau
-description: "Grammgenau berechnet dein Kalorienziel und zählt, was du isst. Jede Woche prüft die App mit deinem Gewicht, ob das Ziel noch passt. Gemacht für Sportler."
+description: "Grammgenau rechnet dein Kalorienziel aus, zählt, was du isst, und fragt jede Woche nach, ob das Ziel noch passt. Ein Kalorienrechner für Sportler."
 ---

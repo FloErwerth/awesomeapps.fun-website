@@ -1,0 +1,31 @@
+---
+layout: site
+toy: true
+ref: home
+description: "Florian Erwerth from Munich builds apps, mostly in the evenings: PLOPP, Grammgenau, MoveNote and PUBG Stream Report. Here you can see how far along each app is and what changed lately."
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign posts = site.posts | where: "lang", page.lang -%}
+<section class="hero">
+  {% include tunnel.svg %}
+  {% include ticker.html %}
+  <h1 class="giant giant-hero"><span>Awesome</span><i aria-hidden="true">✦</i><span>Apps</span></h1>
+  {% include ticker.html reverse=true %}
+</section>
+
+<section class="statement cells">
+  <p class="cell annotation">( What this is )</p>
+  <p class="cell statement-text">I build apps, mostly in the evenings and mostly together with Claude. All of them are here, even the ones that are far from done. That puts a bit of pressure on me, and that's exactly the point. Whatever happens with the apps, I write it down here too.</p>
+</section>
+
+{% include ring.html %}
+
+{% include stats.html %}
+
+<section class="board" aria-labelledby="updates-title">
+  <div class="cells board-head">
+    <h2 id="updates-title" class="cell board-title">{{ t.updates_title }}</h2>
+    <a class="cell board-all" href="{{ t.base | append: '/updates/' | relative_url }}">{{ t.updates_all }}</a>
+  </div>
+  {% include update-cells.html posts=posts key_steps=true limit=6 %}
+</section>

@@ -3,27 +3,35 @@
   _data/stats.yml. That file is written by scripts/app-stats.ts, so run it to
   bring this up to date.
 {%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
 {%- assign stats = site.data.stats %}
+{%- assign en = false %}{% if lang == "en" %}{% assign en = true %}{% endif %}
 <section class="cells stats" aria-labelledby="stats-title">
-  <h2 id="stats-title" class="visually-hidden">Wie viel Arbeit in den Apps steckt</h2>
+  <h2 id="stats-title" class="visually-hidden">{{ t.stats_title }}</h2>
   <div class="cell stats-note">
-    <p class="annotation">( Mit Claude gebaut )</p>
-    <p class="annotation">Stand: {{ stats.updated | date: "%-d.%-m.%Y" }}</p>
+    <p class="annotation">{{ t.stats_note }}</p>
+    <p class="annotation">{{ t.stats_as_of }}: {{ stats.updated | date: t.date }}</p>
   </div>
   <div class="cell stats-total">
     <div class="stats-figures">
-      <p class="stats-figure"><span class="stats-number">{{ stats.tokens_label }}</span> Claude-Tokens</p>
-      <p class="stats-figure"><span class="stats-number">{{ stats.commits_label }}</span> Commits</p>
+      <p class="stats-figure"><span class="stats-number">{% if en %}{{ stats.tokens_label_en }}{% else %}{{ stats.tokens_label }}{% endif %}</span> {{ t.stats_tokens }}</p>
+      <p class="stats-figure"><span class="stats-number">{% if en %}{{ stats.commits_label_en }}{% else %}{{ stats.commits_label }}{% endif %}</span> {{ t.stats_commits }}</p>
     </div>
-    <p class="stats-text">So viel Text hat Claude für diese Apps bisher gelesen und geschrieben. Ein Token ist ein kleines Stück Text, oft nur eine Silbe. Ein Commit ist ein gespeicherter Schritt im Code.</p>
+    <p class="stats-text">{{ t.stats_text }}</p>
   </div>
   {%- for app in site.data.apps %}
   {%- assign s = stats.apps[app.slug] %}
-  <a class="cell stats-app" href="{{ '/' | append: app.slug | append: '/' | relative_url }}">
+  <a class="cell stats-app" href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}">
     {% include app-icon.html app=app class="icon-small" %}
     <span class="stats-app-name">{{ app.name }}</span>
-    <span class="stats-app-number">{{ s.tokens_label | default: "0 Mio." }}</span>
-    <span class="stats-app-commits">{{ s.commits_label | default: "0" }} Commits</span>
+    {%- if en %}
+    <span class="stats-app-number">{{ s.tokens_label_en | default: t.stats_zero }}</span>
+    <span class="stats-app-commits">{{ s.commits_label_en | default: "0" }} {{ t.stats_commits }}</span>
+    {%- else %}
+    <span class="stats-app-number">{{ s.tokens_label | default: t.stats_zero }}</span>
+    <span class="stats-app-commits">{{ s.commits_label | default: "0" }} {{ t.stats_commits }}</span>
+    {%- endif %}
   </a>
   {%- endfor %}
 </section>

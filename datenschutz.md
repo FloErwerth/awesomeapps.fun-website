@@ -2,6 +2,7 @@
 layout: privacy
 title: Datenschutz
 permalink: /datenschutz/
+ref: privacy
 description: "Die Datenschutzerklärungen aller Apps auf Deutsch und Englisch, und was beim Besuch von awesomeapps.fun mit Daten passiert."
 ---
 

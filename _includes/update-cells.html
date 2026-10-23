@@ -7,6 +7,8 @@
   posts. Liquid cannot sort posts and milestones together, so each entry is a
   string "date|kind|where" that sorts by its date.
 {%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
 {%- assign limit = include.limit | default: 1000 -%}
 {%- assign entries = "" | split: "" -%}
 {%- for post in include.posts %}
@@ -34,7 +36,7 @@
   {%- assign post = include.posts[i] %}
   <li class="cell bento-cell">
     <span class="cross" aria-hidden="true"></span>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d.%-m.%Y" }}</time>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: t.date }}</time>
     <a class="bento-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
     {%- if post.apps %}
     <span class="bento-apps">
@@ -51,14 +53,14 @@
   {%- assign m = app.milestones[i] %}
   <li class="cell bento-cell bento-key">
     <span class="cross" aria-hidden="true"></span>
-    <time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
-    <a class="bento-title" href="{{ '/' | append: app.slug | append: '/#timeline-title' | relative_url }}">{{ m.title }}</a>
+    <time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: t.date }}</time>
+    <a class="bento-title" href="{{ t.base | append: '/' | append: app.slug | append: '/#timeline-title' | relative_url }}">{{ m.title[lang] }}</a>
     <span class="bento-apps">{{ app.name }}</span>
   </li>
   {%- endif %}
   {%- endfor %}
   {%- if shown == 0 %}
-  <li class="cell bento-cell bento-empty">Noch keine Updates.</li>
+  <li class="cell bento-cell bento-empty">{{ t.updates_none }}</li>
   {%- endif %}
   {%- assign rest = shown | modulo: 3 -%}
   {%- if rest > 0 %}

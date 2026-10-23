@@ -3,23 +3,25 @@
   _data/apps.yml. An app without one yet gets a hatched cell: the sheet's sign
   for a space that is still empty.
 {%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
 <section class="cells app-policies" aria-labelledby="app-policies-title">
-  <h2 id="app-policies-title" class="cell app-policies-title">Die Apps</h2>
+  <h2 id="app-policies-title" class="cell app-policies-title">{{ t.apps_title }}</h2>
   {%- for app in site.data.apps %}
   <div class="app-policy">
     <p class="cell app-policy-name">
       {% include app-icon.html app=app class="icon-small" %}
-      <a href="{{ '/' | append: app.slug | append: '/' | relative_url }}">{{ app.name }}</a>
+      <a href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}">{{ app.name }}</a>
     </p>
     {%- if app.legal.datenschutz or app.legal.privacy %}
     {%- if app.legal.datenschutz %}
-    <a class="cell app-policy-link" href="{{ app.legal.datenschutz | relative_url }}">Datenschutzerklärung</a>
+    <a class="cell app-policy-link" href="{{ app.legal.datenschutz | relative_url }}" hreflang="de" lang="de">Datenschutzerklärung</a>
     {%- endif %}
     {%- if app.legal.privacy %}
     <a class="cell app-policy-link" href="{{ app.legal.privacy | relative_url }}" hreflang="en" lang="en">Privacy policy</a>
     {%- endif %}
     {%- else %}
-    <p class="cell hatch app-policy-none"><span>Noch nicht veröffentlicht. Die Datenschutzerklärung kommt mit dem Start im Store.</span></p>
+    <p class="cell hatch app-policy-none"><span>{{ t.policy_none }}</span></p>
     {%- endif %}
   </div>
   {%- endfor %}

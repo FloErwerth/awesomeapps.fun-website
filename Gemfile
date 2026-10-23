@@ -4,7 +4,6 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 3.10"
 gem "kramdown-parser-gfm"
-gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
 gem "webrick"

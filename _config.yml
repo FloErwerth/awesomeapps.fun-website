@@ -17,13 +17,11 @@ email: erwerthflorian@outlook.de
 # Updates are posts. The date is in the file name, the URL does not need it.
 permalink: /updates/:title/
 
+# The feeds are written by hand, feed.xml and en/feed.xml, one per language:
+# jekyll-feed puts every post into one feed, whatever language it is in.
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-
-feed:
-  path: feed.xml
 
 # app-ads.txt is a record for a crawler, not a page. Jekyll copies it through
 # untouched as long as it is not treated as content.
@@ -40,11 +38,27 @@ exclude:
 
 defaults:
   # The picture a shared link shows, in WhatsApp, LinkedIn and the like.
+  # Every page is German unless it sits under en/.
   - scope:
       path: ""
     values:
       image: /assets/og.png
+      lang: de
+      locale: de_DE
+  - scope:
+      path: en
+    values:
+      lang: en
+      locale: en_US
   - scope:
       type: posts
     values:
       layout: post
+  # An English update is a post in en/_posts, at /en/updates/<title>/.
+  - scope:
+      path: en
+      type: posts
+    values:
+      lang: en
+      locale: en_US
+      permalink: /en/updates/:title/

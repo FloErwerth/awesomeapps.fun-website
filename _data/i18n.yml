@@ -1,0 +1,115 @@
+# The words of the site itself, in each language a page can have (`lang:` in
+# its front matter, `de` when it has none). The words of the apps live with the
+# apps, in _data/apps.yml. German pages sit at the root, English ones under /en/.
+
+de:
+  site_description: Kleine Apps von Florian Erwerth, alle an einem Ort.
+  base: ""
+  about_url: /ueber-mich/
+  imprint_url: /impressum/
+  privacy_url: /datenschutz/
+  feed_url: /feed.xml
+  date: "%-d.%-m.%Y"
+  home_label: awesomeapps.fun, Startseite
+  nav_label: Hauptmenü
+  nav_apps: Apps
+  nav_updates: Updates
+  nav_about: Über mich
+  switch: EN
+  switch_label: English version
+  apps_built: Apps.<br />Gebaut in München.
+  imprint: Impressum
+  privacy: Datenschutz
+  made_by: Gemacht von
+  and: und
+  status:
+    live: Im Store
+    review: In der Prüfung beim Store
+    testing: Im geschlossenen Test
+    building: In Arbeit
+  apps_title: Die Apps
+  ring_hint: ( Ziehen zum Drehen, Tippen zum Öffnen )
+  ring_previous: Vorige App
+  ring_next: Nächste App
+  ring_of: von
+  stats_title: Wie viel Arbeit in den Apps steckt
+  stats_note: ( Mit Claude gebaut )
+  stats_as_of: Stand
+  stats_tokens: Claude-Tokens
+  stats_commits: Commits
+  stats_zero: 0 Mio.
+  stats_text: So viel Text hat Claude bisher für meine Apps gelesen und geschrieben. Ein Token ist ungefähr eine Silbe. Und ein Commit ist ein gespeicherter Stand im Code, quasi ein Speicherpunkt.
+  toy_label: Alle App-Icons zum Herumwerfen
+  toy_note: "( Zum Schluss noch was zum Spielen: Schnapp dir die Icons und wirf sie rum )"
+  updates_title: Updates
+  updates_all: Alle Updates
+  updates_none: Noch keine Updates.
+  updates_on: Updates zu
+  post_from: Update vom
+  app_about: ( Was die App macht )
+  app_for: Für
+  app_status: Stand
+  app_tokens: Claude-Tokens bisher
+  app_commits: Commits bisher
+  app_store_ios: Im App Store laden
+  app_store_android: Bei Google Play laden
+  how_title: So funktioniert's
+  how_media: ( Aus der App )
+  how_demo: ( Skizze )
+  policy_none: Noch keine. Die Datenschutzerklärung kommt, sobald die App in den Store geht.
+
+en:
+  site_description: Small apps by Florian Erwerth, all in one place.
+  base: /en
+  about_url: /en/about/
+  imprint_url: /en/imprint/
+  privacy_url: /en/privacy/
+  feed_url: /en/feed.xml
+  date: "%b %-d, %Y"
+  home_label: awesomeapps.fun, home page
+  nav_label: Main menu
+  nav_apps: Apps
+  nav_updates: Updates
+  nav_about: About me
+  switch: DE
+  switch_label: Deutsche Version
+  apps_built: apps.<br />Built in Munich.
+  imprint: Legal notice
+  privacy: Privacy
+  made_by: Made by
+  and: and
+  status:
+    live: In the store
+    review: In store review
+    testing: In closed testing
+    building: In the works
+  apps_title: The apps
+  ring_hint: ( Drag to spin, tap to open )
+  ring_previous: Previous app
+  ring_next: Next app
+  ring_of: of
+  stats_title: How much work went into the apps
+  stats_note: ( Built with Claude )
+  stats_as_of: As of
+  stats_tokens: Claude tokens
+  stats_commits: commits
+  stats_zero: 0M
+  stats_text: That's how much text Claude has read and written for my apps so far. A token is roughly one syllable. And a commit is a saved state of the code, basically a save point.
+  toy_label: All app icons, to throw around
+  toy_note: "( Something to play with at the end: grab the icons and throw them around )"
+  updates_title: Updates
+  updates_all: All updates
+  updates_none: No updates yet.
+  updates_on: Updates on
+  post_from: Update from
+  app_about: ( What the app does )
+  app_for: For
+  app_status: Status
+  app_tokens: Claude tokens so far
+  app_commits: Commits so far
+  app_store_ios: Download on the App Store
+  app_store_android: Get it on Google Play
+  how_title: How it works
+  how_media: ( From the app )
+  how_demo: ( Sketch )
+  policy_none: None yet. The privacy policy comes once the app goes into the store.

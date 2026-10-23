@@ -1,13 +1,15 @@
 ---
 layout: site
 title: Updates
-description: "Was sich bei meinen Apps tut: neue Funktionen, Releases und Schritte in die App Stores. Das Neueste zuerst."
+ref: updates
+description: "Was sich bei meinen Apps tut: neue Funktionen, Releases und Schritte in die App Stores. Das Neueste steht oben."
 ---
+{%- assign posts = site.posts | where: "lang", page.lang -%}
 <header class="hero hero-post">
   {% include tunnel.svg %}
   <p class="annotation">( Das Neueste zuerst )</p>
   <h1 class="giant giant-post">Updates</h1>
 </header>
 <section class="board">
-  {% include update-cells.html posts=site.posts key_steps=true %}
+  {% include update-cells.html posts=posts key_steps=true %}
 </section>

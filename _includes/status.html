@@ -1,6 +1,6 @@
-{%- case include.status -%}
-{%- when "live" -%}Im Store
-{%- when "review" -%}In der Prüfung beim Store
-{%- when "testing" -%}Im geschlossenen Test
-{%- else -%}In Arbeit
-{%- endcase -%}
+{%- comment -%}
+  Where an app stands (`status` in _data/apps.yml), in the page's language.
+{%- endcomment -%}
+{%- assign status_lang = page.lang | default: site.lang -%}
+{%- assign status_words = site.data.i18n[status_lang].status -%}
+{{- status_words[include.status] | default: status_words.building -}}
