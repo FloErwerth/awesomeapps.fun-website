@@ -54,7 +54,7 @@
     </div>
     <p class="stats-per-day annotation">{% if en %}{{ stats.tokens_per_day_label_en }}{% else %}{{ stats.tokens_per_day_label }}{% endif %} {{ t.stats_per_day }}</p>
   </div>
-  <script src="{{ '/assets/counter.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/counter.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {%- for app in site.data.apps %}
   {%- assign s = stats.apps[app.slug] %}
   <a class="cell stats-app" href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}">

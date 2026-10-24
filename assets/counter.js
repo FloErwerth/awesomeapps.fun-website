@@ -9,7 +9,9 @@
     const tokens = Number(el.dataset.tokens);
     const perMs = Number(el.dataset.perDay) / 86_400_000;
     const at = el.dataset.at ? Date.parse(el.dataset.at) : Date.now();
-    if (!perMs || !at) return [];
+    // A number that did not parse would show as "NaN"; such a counter keeps
+    // the count the page was built with.
+    if (!Number.isFinite(tokens) || !(perMs > 0) || !Number.isFinite(at)) return [];
     return [{ el, tokens, perMs, at, format: new Intl.NumberFormat(el.dataset.locale), shown: '' }];
   });
   if (!counters.length) return;

@@ -29,7 +29,7 @@
   </div>
   <div class="cells stage-controls">
     <button class="cell" type="button" data-ring-step="-1">{{ t.ring_previous }}</button>
-    <p class="cell stage-count" aria-live="polite"><span data-ring-count>1</span> {{ t.ring_of }} {{ site.data.apps.size }}</p>
+    <p class="cell stage-count" aria-live="polite"><span data-ring-count>{{ site.data.apps.size | minus: 1 | divided_by: 2 | plus: 1 }}</span> {{ t.ring_of }} {{ site.data.apps.size }}</p>
     <button class="cell" type="button" data-ring-step="1">{{ t.ring_next }}</button>
   </div>
 </section>

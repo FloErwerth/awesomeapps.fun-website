@@ -23,10 +23,14 @@
   let target = 0;
   let frame = 0;
 
+  // Before site.css applies (a slow or failed load, a stale cache) --step is
+  // empty and the cards have no width, and every angle would turn into NaN.
+  // Until both are there, the ring stays as the CSS sets it.
   function measure() {
     const style = getComputedStyle(stage);
     step = parseFloat(style.getPropertyValue('--step'));
     cardWidth = cards[0].offsetWidth;
+    return step > 0 && cardWidth > 0;
   }
 
   function indexAt(angle) {
@@ -70,7 +74,7 @@
   let drag = null;
 
   view.addEventListener('pointerdown', (event) => {
-    if (event.button !== 0) return;
+    if (event.button !== 0 || !ready) return;
     cancelAnimationFrame(frame);
     drag = { x: event.clientX, rot, moved: false, trail: [{ x: event.clientX, t: performance.now() }], id: event.pointerId };
   });
@@ -99,10 +103,15 @@
     if (!drag || event.pointerId !== drag.id) return;
     view.classList.remove('is-dragging');
     if (drag.moved) {
-      const first = drag.trail[0];
-      const span = Math.max((performance.now() - first.t) / 1000, 0.016);
-      const speed = (event.clientX - first.x) / span; // px/s
-      const thrown = rot - ((speed * 0.18) / cardWidth) * step;
+      // A cancelled press (the page took over to scroll) has no position of
+      // its own, so it is not a throw: the ring rests on the nearest card.
+      let thrown = rot;
+      if (event.type === 'pointerup') {
+        const first = drag.trail[0];
+        const span = Math.max((performance.now() - first.t) / 1000, 0.016);
+        const speed = (event.clientX - first.x) / span; // px/s
+        thrown = rot - ((speed * 0.18) / cardWidth) * step;
+      }
       goTo(indexAt(thrown));
       view.dataset.dragged = 'true';
     }
@@ -129,7 +138,7 @@
   view.addEventListener(
     'wheel',
     (event) => {
-      if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+      if (!ready || Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
       event.preventDefault();
       cancelAnimationFrame(frame);
       rot = Math.max(0, Math.min(last * step, rot + (event.deltaX / cardWidth) * step));
@@ -141,14 +150,15 @@
   );
 
   for (const button of stage.querySelectorAll('[data-ring-step]')) {
-    button.addEventListener('click', () => goTo(indexAt(target) + Number(button.dataset.ringStep)));
+    button.addEventListener('click', () => ready && goTo(indexAt(target) + Number(button.dataset.ringStep)));
   }
 
   for (const [i, card] of cards.entries()) {
-    card.addEventListener('focusin', () => goTo(i));
+    card.addEventListener('focusin', () => ready && goTo(i));
   }
 
   view.addEventListener('keydown', (event) => {
+    if (!ready) return;
     if (event.key === 'ArrowRight') goTo(indexAt(target) + 1);
     else if (event.key === 'ArrowLeft') goTo(indexAt(target) - 1);
     else return;
@@ -156,15 +166,19 @@
     cards[indexAt(target)].querySelector('a').focus({ preventScroll: true });
   });
 
-  window.addEventListener('resize', () => {
-    const index = indexAt(target);
-    measure();
+  // Start on the middle app, so there are cards to both sides.
+  let ready = false;
+  let index = Math.floor(last / 2);
+
+  function place() {
+    if (ready) index = indexAt(target);
+    ready = measure();
+    if (!ready) return;
     target = rot = index * step;
     render();
-  });
+  }
 
-  measure();
-  // Start on the middle app, so there are cards to both sides.
-  target = rot = Math.floor(last / 2) * step;
-  render();
+  window.addEventListener('resize', place);
+  window.addEventListener('load', place);
+  place();
 })();

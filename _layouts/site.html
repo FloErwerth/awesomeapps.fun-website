@@ -68,8 +68,8 @@
       <p class="cell colophon-note">{{ t.made_by }} <a href="{{ t.about_url | relative_url }}">{{ site.author }}</a></p>
     </footer>
     {%- if page.toy %}
-    <script src="{{ '/assets/ring.js' | relative_url }}" defer></script>
-    <script src="{{ '/assets/toy.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/ring.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+    <script src="{{ '/assets/toy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
     {%- endif %}
   </body>
 </html>
