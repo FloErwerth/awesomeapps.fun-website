@@ -22,6 +22,9 @@
   let rot = 0;
   let target = 0;
   let frame = 0;
+  let ready = false;
+  // Start on the middle app, so there are cards to both sides.
+  let index = Math.floor(last / 2);
 
   // Before site.css applies (a slow or failed load, a stale cache) --step is
   // empty and the cards have no width, and every angle would turn into NaN.
@@ -150,11 +153,17 @@
   );
 
   for (const button of stage.querySelectorAll('[data-ring-step]')) {
-    button.addEventListener('click', () => ready && goTo(indexAt(target) + Number(button.dataset.ringStep)));
+    button.addEventListener('click', () => {
+      if (!ready) return;
+      goTo(indexAt(target) + Number(button.dataset.ringStep));
+    });
   }
 
   for (const [i, card] of cards.entries()) {
-    card.addEventListener('focusin', () => ready && goTo(i));
+    card.addEventListener('focusin', () => {
+      if (!ready) return;
+      goTo(i);
+    });
   }
 
   view.addEventListener('keydown', (event) => {
@@ -166,10 +175,6 @@
     cards[indexAt(target)].querySelector('a').focus({ preventScroll: true });
   });
 
-  // Start on the middle app, so there are cards to both sides.
-  let ready = false;
-  let index = Math.floor(last / 2);
-
   function place() {
     if (ready) index = indexAt(target);
     ready = measure();
@@ -179,6 +184,9 @@
   }
 
   window.addEventListener('resize', place);
-  window.addEventListener('load', place);
+  // Measured too early, the ring tries again once everything has loaded.
+  window.addEventListener('load', () => {
+    if (!ready) place();
+  });
   place();
 })();

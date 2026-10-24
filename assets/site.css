@@ -1821,13 +1821,10 @@ dd {
   .bento-cell time,
   .bento-apps,
   .app-fact dt,
-  .skill dt {
-    font-size: 0.875rem;
-  }
-
+  .skill dt,
   .demo-note,
   .demo-sets span {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
 
   .bento-cell {

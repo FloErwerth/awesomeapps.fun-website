@@ -6,11 +6,11 @@
 
 (function () {
   const counters = [...document.querySelectorAll('[data-counter]')].flatMap((el) => {
-    const tokens = Number(el.dataset.tokens);
+    const tokens = parseFloat(el.dataset.tokens);
     const perMs = Number(el.dataset.perDay) / 86_400_000;
     const at = el.dataset.at ? Date.parse(el.dataset.at) : Date.now();
-    // A number that did not parse would show as "NaN"; such a counter keeps
-    // the count the page was built with.
+    // A number that is missing or did not parse would show as "NaN" or count
+    // up from 0; such a counter keeps the count the page was built with.
     if (!Number.isFinite(tokens) || !(perMs > 0) || !Number.isFinite(at)) return [];
     return [{ el, tokens, perMs, at, format: new Intl.NumberFormat(el.dataset.locale), shown: '' }];
   });
