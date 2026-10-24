@@ -1,7 +1,10 @@
 {%- comment -%}
   How many Claude tokens and commits the apps took so far, from
   _data/stats.yml. That file is written by scripts/app-stats.ts, so run it to
-  bring this up to date.
+  bring this up to date. The tokens count on live (assets/counter.js) at the
+  speed of the tokens per day, from the time of the last count. On top, the
+  tokens since the visitor opened the page; below, the three parts all the
+  tokens are made of, as 100 squares and as counters.
 {%- endcomment -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
@@ -13,12 +16,38 @@
     <p class="annotation">{{ t.stats_note }}</p>
     <p class="annotation">{{ t.stats_as_of }}: {{ stats.updated | date: t.date }}</p>
   </div>
+  {%- capture locale %}{% if en %}en-US{% else %}de-DE{% endif %}{% endcapture %}
+  {%- assign fresh = stats.parts.fresh.tokens | times: 100 | divided_by: stats.tokens %}{% if fresh < 1 %}{% assign fresh = 1 %}{% endif %}
+  {%- assign written = stats.parts.written.tokens | times: 100 | divided_by: stats.tokens %}{% if written < 1 %}{% assign written = 1 %}{% endif %}
+  {%- assign again = 100 | minus: fresh | minus: written %}
   <div class="cell stats-total">
-    <div class="stats-figures">
-      <p class="stats-figure"><span class="stats-number">{% if en %}{{ stats.tokens_label_en }}{% else %}{{ stats.tokens_label }}{% endif %}</span> {{ t.stats_tokens }}</p>
-      <p class="stats-figure"><span class="stats-number">{% if en %}{{ stats.commits_label_en }}{% else %}{{ stats.commits_label }}{% endif %}</span> {{ t.stats_commits }}</p>
+    <p class="annotation">{{ t.stats_since }}</p>
+    <p class="stats-since" data-counter data-tokens="0" data-per-day="{{ stats.tokens_per_day }}" data-locale="{{ locale }}">0</p>
+    <p class="stats-since-text">{{ t.stats_since_text }}</p>
+    <div class="stats-split">
+      <div class="stats-squares" aria-hidden="true">
+        {%- for i in (1..again) %}<i class="stats-part-again"></i>{% endfor %}
+        {%- for i in (1..fresh) %}<i class="stats-part-fresh"></i>{% endfor %}
+        {%- for i in (1..written) %}<i class="stats-part-written"></i>{% endfor %}
+      </div>
+      <div>
+        <p class="stats-sum" data-counter data-tokens="{{ stats.tokens }}" data-per-day="{{ stats.tokens_per_day }}" data-at="{{ stats.updated_at }}" data-locale="{{ locale }}">{% if en %}{{ stats.tokens_digits_en }}{% else %}{{ stats.tokens_digits }}{% endif %}</p>
+        <p class="stats-sum-label">{{ t.stats_tokens }}, {% if en %}{{ stats.commits_label_en }}{% else %}{{ stats.commits_label }}{% endif %} {{ t.stats_commits }}</p>
+        <p class="annotation">{{ t.stats_square }}</p>
+        <ul class="stats-parts">
+          {%- for part in stats.parts %}
+          {%- assign key = part[0] %}
+          {%- assign p = part[1] %}
+          {%- assign name = "stats_" | append: key %}
+          <li class="stats-part-{{ key }}">
+            <p class="stats-part-name">{{ t[name] }} <span class="stats-part-share">{% if en %}{{ p.share_label_en }}{% else %}{{ p.share_label }}{% endif %}</span></p>
+            <p class="stats-part-number" data-counter data-tokens="{{ p.tokens }}" data-per-day="{{ p.tokens_per_day }}" data-at="{{ stats.updated_at }}" data-locale="{{ locale }}">{% if en %}{{ p.tokens_digits_en }}{% else %}{{ p.tokens_digits }}{% endif %}</p>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
     </div>
-    <p class="stats-text">{{ t.stats_text }}</p>
+    <p class="stats-per-day annotation">{% if en %}{{ stats.tokens_per_day_label_en }}{% else %}{{ stats.tokens_per_day_label }}{% endif %} {{ t.stats_per_day }}</p>
   </div>
   {%- for app in site.data.apps %}
   {%- assign s = stats.apps[app.slug] %}

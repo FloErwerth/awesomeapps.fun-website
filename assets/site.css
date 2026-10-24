@@ -675,31 +675,124 @@ dd {
   padding-bottom: calc(var(--pad) * 2);
 }
 
-.stats-figures {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+/* First the tokens since the visitor opened the page, then where all of them
+   went: 100 squares, one per percent, in the colour of their part. The three
+   colours differ in hue and in lightness, so they part even for eyes that
+   mix up red and green. */
+.stats-since {
+  margin-top: 1rem;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(4rem, 13vw, 11rem);
+  line-height: 0.85;
 }
 
-.stats-figure {
+.stats-since-text {
+  max-width: 30ch;
+  margin-top: 0.75rem;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.35;
+}
+
+/* The font has no digits of one width: each digit of a counter gets a box
+   (assets/counter.js), so a running number keeps its width. */
+.stats-digit {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+.stats-split {
+  display: grid;
+  grid-template-columns: minmax(12rem, 22rem) 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 2px solid var(--line);
+}
+
+.stats-squares {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.3rem;
+}
+
+.stats-squares i {
+  aspect-ratio: 1;
+  border: 2px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--part);
+}
+
+.stats-part-again {
+  --part: var(--lilac);
+}
+
+.stats-part-fresh {
+  --part: var(--orange);
+}
+
+.stats-part-written {
+  --part: var(--ink);
+}
+
+.stats-sum {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.25rem, 4.6vw, 4.5rem);
+  line-height: 0.9;
+}
+
+.stats-sum-label {
+  margin: 0.4rem 0 0.75rem;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.stats-parts {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats-part-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--small);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.stats-part-name::before {
+  content: '';
+  flex: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--part);
+}
+
+.stats-part-share {
+  font-weight: 400;
+}
+
+.stats-part-number {
+  margin: 0.25rem 0 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
   line-height: 1;
 }
 
-.stats-number {
-  display: block;
-  margin-bottom: 0.12em;
-  font-weight: 900;
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.85;
-  font-variant-numeric: tabular-nums;
-}
-
-.stats-text {
-  max-width: 40rem;
-  margin-top: 1.25rem;
+.stats-per-day {
+  margin-top: 1.5rem;
 }
 
 .stats-app {
@@ -747,6 +840,10 @@ dd {
 
   .stats-total {
     grid-column: 1 / -1;
+  }
+
+  .stats-split {
+    grid-template-columns: 1fr;
   }
 }
 

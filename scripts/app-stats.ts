@@ -4,11 +4,20 @@
 // Tokens: Claude Code keeps a log of every session in ~/.claude/projects.
 // Each reply in it carries its token usage and the folder the session ran
 // in, and that folder says which app the reply was for. Claude Code deletes
-// logs after cleanupPeriodDays (30 by default), so run this at least once a
-// month: a token count never goes below the one written before.
+// logs after cleanupPeriodDays (30 by default), so the tokens of each day go
+// into scripts/token-days.json, and a day whose logs are gone keeps the count
+// it had there. Run this at least once a month, or the days in between are
+// lost.
+//
+// The tokens come in three parts: the chat Claude reads again for every reply
+// (the cache), what it reads for the first time, and what it writes.
 //
 // Commits: every commit on every branch of the app's repositories, each
 // commit once.
+//
+// Tokens per day: all the tokens, spread over the days since the first reply
+// for an app. The home page counts on from the last count at that speed, so
+// the number keeps running between two runs.
 //
 //   bun scripts/app-stats.ts
 //
@@ -83,7 +92,15 @@ const apps: Record<string, { folders: RegExp[]; repos: string[] }> = {
 };
 
 const out = join(site, "_data", "stats.yml");
+const ledger = join(site, "scripts", "token-days.json");
 const slugs = Object.keys(apps);
+
+const parts = ["again", "fresh", "written"] as const;
+type Part = (typeof parts)[number];
+type Counts = Record<Part, number>;
+// Per day (UTC), per app.
+type Days = Record<string, Record<string, Counts>>;
+const zero = (): Counts => ({ again: 0, fresh: 0, written: 0 });
 
 async function* logs(dir: string): AsyncGenerator<string> {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -98,8 +115,11 @@ function appOf(cwd: string): string | undefined {
   return slugs.find((slug) => apps[slug].folders.some((re) => re.test(path)));
 }
 
-async function countTokens(): Promise<Record<string, number>> {
-  const totals: Record<string, number> = Object.fromEntries(slugs.map((slug) => [slug, 0]));
+// The time of the first reply for an app, as far as the logs still go back.
+let first = Infinity;
+
+async function countTokens(): Promise<Days> {
+  const days: Days = {};
   // A reply is logged once per content block, each time with the same usage.
   const seen = new Set<string>();
   let files = 0;
@@ -121,15 +141,15 @@ async function countTokens(): Promise<Record<string, number>> {
       if (seen.has(id)) continue;
       seen.add(id);
       replies++;
-      totals[slug] +=
-        (usage.input_tokens ?? 0) +
-        (usage.cache_creation_input_tokens ?? 0) +
-        (usage.cache_read_input_tokens ?? 0) +
-        (usage.output_tokens ?? 0);
+      first = Math.min(first, Date.parse(entry.timestamp) || Infinity);
+      const day = ((days[String(entry.timestamp).slice(0, 10)] ??= {})[slug] ??= zero());
+      day.again += usage.cache_read_input_tokens ?? 0;
+      day.fresh += (usage.input_tokens ?? 0) + (usage.cache_creation_input_tokens ?? 0);
+      day.written += usage.output_tokens ?? 0;
     }
   }
   log(`Read ${files.toLocaleString("de-DE")} Claude logs: ${replies.toLocaleString("de-DE")} replies for the apps.`);
-  return totals;
+  return days;
 }
 
 async function countCommits(repos: string[]): Promise<number> {
@@ -152,14 +172,34 @@ function label(n: number, locale: "de-DE" | "en-US" = "de-DE"): string {
 }
 
 log("Counting the tokens in ~/.claude/projects …");
-const tokens = await countTokens();
+const counted = await countTokens();
 const before = await readFile(out, "utf8").catch(() => "");
 const old = (slug: string, key: string) =>
   Number(before.match(new RegExp(`^  ${slug}:\\n(?:    .*\\n)*?    ${key}: (\\d+)`, "m"))?.[1] ?? 0);
-for (const slug of slugs) {
-  // The logs Claude Code has deleted since the last run no longer count.
-  if (tokens[slug] < old(slug, "tokens")) log(`${slug}: older logs are gone, so the count stays at the last one.`);
-  tokens[slug] = Math.max(tokens[slug], old(slug, "tokens"));
+
+// A day only grows while its logs are there, and shrinks when Claude Code
+// deletes them. So each day keeps the highest count it ever had.
+const known: Days = JSON.parse(await readFile(ledger, "utf8").catch(() => "{}"));
+for (const [day, perApp] of Object.entries(counted)) {
+  for (const [slug, counts] of Object.entries(perApp)) {
+    const kept = ((known[day] ??= {})[slug] ??= zero());
+    for (const part of parts) kept[part] = Math.max(kept[part], counts[part]);
+  }
+}
+const gone = Object.entries(known).filter(([day, perApp]) => Object.keys(perApp).some((slug) => !counted[day]?.[slug]));
+if (gone.length) log(`${gone.length} day(s) have no logs any more and keep their count.`);
+const sorted = Object.fromEntries(Object.keys(known).sort().map((day) => [day, known[day]]));
+await writeFile(ledger, JSON.stringify(sorted, null, 2) + "\n");
+
+const tokens: Record<string, number> = Object.fromEntries(slugs.map((slug) => [slug, 0]));
+const byPart = zero();
+for (const perApp of Object.values(known)) {
+  for (const [slug, counts] of Object.entries(perApp)) {
+    for (const part of parts) {
+      tokens[slug] += counts[part];
+      byPart[part] += counts[part];
+    }
+  }
 }
 
 log(`Counting the commits in ${slugs.flatMap((slug) => apps[slug].repos).length} repositories …`);
@@ -167,12 +207,50 @@ const commits: Record<string, number> = {};
 for (const slug of slugs) commits[slug] = await countCommits(apps[slug].repos);
 
 const sum = (counts: Record<string, number>) => Object.values(counts).reduce((a, b) => a + b, 0);
+
+// The first day stays even when its logs are gone.
+const oldSince = before.match(/^since: "?([^"\s]+)/m)?.[1];
+const since = [oldSince, Number.isFinite(first) ? new Date(first).toISOString() : undefined]
+  .filter((time): time is string => !!time)
+  .sort()[0];
+const now = new Date();
+const days = since ? Math.max(1, (now.getTime() - Date.parse(since)) / 86_400_000) : 1;
+const perDay = Math.round(sum(tokens) / days);
+// "97,1" of every hundred tokens.
+const share = (part: Part, locale: string) =>
+  ((byPart[part] / Math.max(1, sum(tokens))) * 100).toLocaleString(locale, {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  });
+
 const yml = [
   "# Written by scripts/app-stats.ts. Run it again rather than editing this.",
-  `updated: ${new Date().toISOString().slice(0, 10)}`,
+  `updated: ${now.toISOString().slice(0, 10)}`,
+  `updated_at: "${now.toISOString()}"`,
+  `since: "${since ?? now.toISOString()}"`,
   `tokens: ${sum(tokens)}`,
   `tokens_label: "${label(sum(tokens))}"`,
   `tokens_label_en: "${label(sum(tokens), "en-US")}"`,
+  `tokens_digits: "${sum(tokens).toLocaleString("de-DE")}"`,
+  `tokens_digits_en: "${sum(tokens).toLocaleString("en-US")}"`,
+  `tokens_per_day: ${perDay}`,
+  `tokens_per_day_label: "${label(perDay)}"`,
+  `tokens_per_day_label_en: "${label(perDay, "en-US")}"`,
+  "parts:",
+  ...parts.flatMap((part) => {
+    const partPerDay = Math.round(byPart[part] / days);
+    return [
+      `  ${part}:`,
+      `    tokens: ${byPart[part]}`,
+      `    share_label: "${share(part, "de-DE")} %"`,
+      `    share_label_en: "${share(part, "en-US")}%"`,
+      `    tokens_digits: "${byPart[part].toLocaleString("de-DE")}"`,
+      `    tokens_digits_en: "${byPart[part].toLocaleString("en-US")}"`,
+      `    tokens_per_day: ${partPerDay}`,
+      `    tokens_per_day_label: "${label(partPerDay)}"`,
+      `    tokens_per_day_label_en: "${label(partPerDay, "en-US")}"`,
+    ];
+  }),
   `commits: ${sum(commits)}`,
   `commits_label: "${sum(commits).toLocaleString("de-DE")}"`,
   `commits_label_en: "${sum(commits).toLocaleString("en-US")}"`,
@@ -208,8 +286,9 @@ const rows = [
 console.table(Object.fromEntries(rows.map(({ App, ...row }) => [App, row])));
 
 // A new day alone is no news: "Stand" on the page is the day the numbers
-// last changed.
-const withoutDate = (text: string) => text.replace(/^updated: .*$/m, "");
+// last changed. The tokens per day then stay as well, so the page keeps
+// counting at the same speed from the same point.
+const withoutDate = (text: string) => text.replace(/^ *(updated|updated_at|since|tokens_per_day\w*): .*$/gm, "");
 if (withoutDate(yml) !== withoutDate(before)) {
   await writeFile(out, yml);
   log("Wrote _data/stats.yml.");
@@ -218,8 +297,10 @@ if (withoutDate(yml) !== withoutDate(before)) {
 }
 
 if (publish) {
-  if (git("status", "--porcelain", "--", "_data/stats.yml").out) {
-    if (git("commit", "-q", "-m", message, "--", "_data/stats.yml").ok) {
+  const files = ["_data/stats.yml", "scripts/token-days.json"];
+  if (git("status", "--porcelain", "--", ...files).out) {
+    git("add", "--", ...files);
+    if (git("commit", "-q", "-m", message, "--", ...files).ok) {
       log(`Committed ${git("rev-parse", "--short", "HEAD").out}.`);
     }
   }
