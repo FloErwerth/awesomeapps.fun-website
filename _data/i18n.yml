@@ -35,15 +35,15 @@ de:
   stats_title: Wie viel Arbeit in den Apps steckt
   stats_note: ( Mit Claude gebaut )
   stats_as_of: Stand
-  stats_tokens: Claude-Tokens
+  stats_tokens: Claude-Tokens ohne Cache
   stats_commits: Commits
   stats_zero: 0 Mio.
   stats_per_day: "Tokens am Tag, im Schnitt. So schnell läuft der Zähler weiter, bis ich wieder nachzähle."
   stats_since: ( Seit du auf dieser Seite bist )
   stats_since_text: Tokens, wenn Claude im üblichen Tempo an meinen Apps weiterarbeitet.
   stats_square: ( Ein Kästchen ist ein Prozent )
-  stats_again: Wieder gelesen
-  stats_fresh: Neu gelesen
+  stats_again: Aus dem Cache
+  stats_fresh: Gelesen
   stats_written: Geschrieben
   toy_label: Alle App-Icons zum Herumwerfen
   toy_note: "( Zum Schluss noch was zum Spielen: Schnapp dir die Icons und wirf sie rum )"
@@ -97,15 +97,15 @@ en:
   stats_title: How much work went into the apps
   stats_note: ( Built with Claude )
   stats_as_of: As of
-  stats_tokens: Claude tokens
+  stats_tokens: Claude tokens without the cache
   stats_commits: commits
   stats_zero: 0M
   stats_per_day: "tokens a day, on average. That's how fast the counter keeps going until I count again."
   stats_since: ( Since you opened this page )
   stats_since_text: tokens, if Claude keeps working on my apps at its usual pace.
   stats_square: ( One square is one percent )
-  stats_again: Read again
-  stats_fresh: Read for the first time
+  stats_again: From the cache
+  stats_fresh: Read
   stats_written: Written
   toy_label: All app icons, to throw around
   toy_note: "( Something to play with at the end: grab the icons and throw them around )"

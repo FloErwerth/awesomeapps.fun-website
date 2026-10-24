@@ -4,7 +4,8 @@
   bring this up to date. The tokens count on live (assets/counter.js) at the
   speed of the tokens per day, from the time of the last count. On top, the
   tokens since the visitor opened the page; below, the three parts all the
-  tokens are made of, as 100 squares and as counters.
+  tokens are made of, as 100 squares. Only what Claude read and wrote counts
+  on; the cache, which it reads again for every reply, shows as its share.
 {%- endcomment -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
@@ -18,32 +19,34 @@
   </div>
   {%- capture locale %}{% if en %}en-US{% else %}de-DE{% endif %}{% endcapture %}
   {%- comment %} Squares per part, rounded like the percent next to them; a part with tokens keeps at least one. {% endcomment %}
-  {%- assign total = stats.tokens | at_least: 1 %}
+  {%- assign total = stats.tokens_with_cache | at_least: 1 %}
   {%- assign fresh = stats.parts.fresh.tokens | times: 1000 | divided_by: total | plus: 5 | divided_by: 10 | at_least: 1 %}
   {%- assign written = stats.parts.written.tokens | times: 1000 | divided_by: total | plus: 5 | divided_by: 10 | at_least: 1 %}
   {%- assign again = 100 | minus: fresh | minus: written %}
+  {%- assign keys = "fresh,written,again" | split: "," %}
   <div class="cell stats-total">
     <p class="annotation">{{ t.stats_since }}</p>
     <p class="stats-since" data-counter data-tokens="0" data-per-day="{{ stats.tokens_per_day }}" data-locale="{{ locale }}">0</p>
     <p class="stats-since-text">{{ t.stats_since_text }}</p>
     <div class="stats-split">
       <div class="stats-squares" aria-hidden="true">
-        {%- for i in (1..again) %}<span class="stats-part-again"></span>{% endfor %}
         {%- for i in (1..fresh) %}<span class="stats-part-fresh"></span>{% endfor %}
         {%- for i in (1..written) %}<span class="stats-part-written"></span>{% endfor %}
+        {%- for i in (1..again) %}<span class="stats-part-again"></span>{% endfor %}
       </div>
       <div>
         <p class="stats-sum" data-counter data-tokens="{{ stats.tokens }}" data-per-day="{{ stats.tokens_per_day }}" data-at="{{ stats.updated_at }}" data-locale="{{ locale }}">{% if en %}{{ stats.tokens_digits_en }}{% else %}{{ stats.tokens_digits }}{% endif %}</p>
         <p class="stats-sum-label">{{ t.stats_tokens }}, {% if en %}{{ stats.commits_label_en }}{% else %}{{ stats.commits_label }}{% endif %} {{ t.stats_commits }}</p>
         <p class="annotation">{{ t.stats_square }}</p>
         <ul class="stats-parts">
-          {%- for part in stats.parts %}
-          {%- assign key = part[0] %}
-          {%- assign p = part[1] %}
+          {%- for key in keys %}
+          {%- assign p = stats.parts[key] %}
           {%- assign name = "stats_" | append: key %}
           <li class="stats-part-{{ key }}">
             <p class="stats-part-name">{{ t[name] }} <span class="stats-part-share">{% if en %}{{ p.share_label_en }}{% else %}{{ p.share_label }}{% endif %}</span></p>
+            {%- unless key == "again" %}
             <p class="stats-part-number" data-counter data-tokens="{{ p.tokens }}" data-per-day="{{ p.tokens_per_day }}" data-at="{{ stats.updated_at }}" data-locale="{{ locale }}">{% if en %}{{ p.tokens_digits_en }}{% else %}{{ p.tokens_digits }}{% endif %}</p>
+            {%- endunless %}
           </li>
           {%- endfor %}
         </ul>

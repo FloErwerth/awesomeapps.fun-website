@@ -10,14 +10,16 @@
 // lost.
 //
 // The tokens come in three parts: the chat Claude reads again for every reply
-// (the cache), what it reads for the first time, and what it writes.
+// (the cache), what it reads for the first time, and what it writes. Only the
+// last two count as the tokens of an app; the cache shows only as its share
+// of all three.
 //
 // Commits: every commit on every branch of the app's repositories, each
 // commit once.
 //
-// Tokens per day: all the tokens, spread over the days since the first reply
-// for an app. The home page counts on from the last count at that speed, so
-// the number keeps running between two runs.
+// Tokens per day: the tokens of the apps, spread over the days since the
+// first reply for an app. The home page counts on from the last count at
+// that speed, so the number keeps running between two runs.
 //
 //   bun scripts/app-stats.ts
 //
@@ -221,10 +223,8 @@ for (const perApp of Object.values(known)) {
       unknown.add(slug);
       continue;
     }
-    for (const part of parts) {
-      tokens[slug] += counts[part];
-      byPart[part] += counts[part];
-    }
+    for (const part of parts) byPart[part] += counts[part];
+    tokens[slug] += counts.fresh + counts.written;
   }
 }
 
@@ -244,9 +244,9 @@ const since = [oldSince, Number.isFinite(first) ? new Date(first).toISOString() 
 const now = new Date();
 const days = since ? Math.max(1, (now.getTime() - Date.parse(since)) / 86_400_000) : 1;
 const perDay = Math.round(sum(tokens) / days);
-// "97,1" of every hundred tokens.
+// "97,1" of every hundred tokens, the cache included.
 const share = (part: Part, locale: string) =>
-  ((byPart[part] / Math.max(1, sum(tokens))) * 100).toLocaleString(locale, {
+  ((byPart[part] / Math.max(1, sum(byPart))) * 100).toLocaleString(locale, {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   });
@@ -257,6 +257,7 @@ const yml = [
   `updated_at: "${now.toISOString()}"`,
   `since: "${since ?? now.toISOString()}"`,
   `tokens: ${sum(tokens)}`,
+  `tokens_with_cache: ${sum(byPart)}`,
   `tokens_label: "${label(sum(tokens))}"`,
   `tokens_label_en: "${label(sum(tokens), "en-US")}"`,
   `tokens_digits: "${sum(tokens).toLocaleString("de-DE")}"`,
@@ -297,7 +298,7 @@ const yml = [
 
 // Every number, with how much it grew since the last run.
 const grew = (now: number, then: number, format: (n: number) => string) =>
-  now === then ? "" : ` (+${format(now - then)})`;
+  now === then ? "" : ` (${now > then ? "+" : "-"}${format(Math.abs(now - then))})`;
 const tokensText = (n: number) => (n < 1e6 ? `${n.toLocaleString("de-DE")}` : label(n));
 const rows = [
   ...slugs.map((slug) => ({
