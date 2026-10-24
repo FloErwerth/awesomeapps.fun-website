@@ -212,6 +212,17 @@ dd {
   .masthead-note {
     display: none;
   }
+
+  /* Taller links, so a thumb hits them. */
+  .masthead-nav {
+    gap: 0 1.25rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .masthead-nav a {
+    padding: 0.5rem 0;
+  }
 }
 
 /* Hero: the room, two bands of names, and the name across the room. */
@@ -454,6 +465,8 @@ dd {
 
 .card .card-icon {
   position: relative;
+  /* A name on two lines must push the text down, not squeeze the icon. */
+  flex-shrink: 0;
   width: 7.5rem;
   height: 7.5rem;
   margin: 2.5rem auto 0;
@@ -525,7 +538,7 @@ dd {
     --R: 560px;
     --step: 36deg;
     --cw: 15rem;
-    --ch: 22rem;
+    --ch: 24rem;
   }
 
   .card .card-icon {
@@ -563,6 +576,13 @@ dd {
   align-items: flex-end;
   font-family: var(--small);
   font-size: 0.875rem;
+}
+
+/* A long app name fills the row, so the link goes below it. */
+@media (max-width: 40rem) {
+  .board-head {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bento {
@@ -795,6 +815,13 @@ dd {
   padding: 0 0.02em 0.06em;
 }
 
+/* On a phone the ink frame takes a larger share of the width. */
+@media (max-width: 40rem) {
+  .giant-foot {
+    font-size: calc((100vw - 2 * var(--frame)) * 0.138);
+  }
+}
+
 .toy:not(.is-ready) .toy-bodies {
   position: static;
   display: flex;
@@ -878,7 +905,7 @@ dd {
   position: relative;
   align-self: stretch;
   padding: 0 var(--pad) 0.05em;
-  font-size: clamp(4rem, 15vw, 15rem);
+  font-size: clamp(2.5rem, 15vw, 15rem);
   text-transform: uppercase;
   white-space: normal;
   overflow-wrap: anywhere;
@@ -1448,6 +1475,23 @@ dd {
   font-size: clamp(3.5rem, 10vw, 10rem);
 }
 
+/* On a phone the room would fill the whole screen, so it only frames the name. */
+@media (max-width: 40rem) {
+  .hero {
+    min-height: 55svh;
+  }
+
+  .hero-app {
+    min-height: 0;
+    gap: 1.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .hero-post {
+    min-height: 40svh;
+  }
+}
+
 .post-sheet {
   grid-template-columns: 3fr 1fr;
 }
@@ -1501,10 +1545,11 @@ dd {
 .doc h1 {
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.8;
   text-transform: uppercase;
   max-width: none;
+  overflow-wrap: break-word;
   margin-bottom: 2rem;
 }
 

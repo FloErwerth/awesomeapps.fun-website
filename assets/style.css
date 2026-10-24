@@ -50,6 +50,9 @@ h1 {
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin: 0 0 1.5rem;
+  /* "Datenschutzerklärung" alone is wider than a small phone. */
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 h2 {
