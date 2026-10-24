@@ -17,8 +17,10 @@
     <p class="annotation">{{ t.stats_as_of }}: {{ stats.updated | date: t.date }}</p>
   </div>
   {%- capture locale %}{% if en %}en-US{% else %}de-DE{% endif %}{% endcapture %}
-  {%- assign fresh = stats.parts.fresh.tokens | times: 100 | divided_by: stats.tokens %}{% if fresh < 1 %}{% assign fresh = 1 %}{% endif %}
-  {%- assign written = stats.parts.written.tokens | times: 100 | divided_by: stats.tokens %}{% if written < 1 %}{% assign written = 1 %}{% endif %}
+  {%- comment %} Squares per part, rounded like the percent next to them; a part with tokens keeps at least one. {% endcomment %}
+  {%- assign total = stats.tokens | at_least: 1 %}
+  {%- assign fresh = stats.parts.fresh.tokens | times: 1000 | divided_by: total | plus: 5 | divided_by: 10 | at_least: 1 %}
+  {%- assign written = stats.parts.written.tokens | times: 1000 | divided_by: total | plus: 5 | divided_by: 10 | at_least: 1 %}
   {%- assign again = 100 | minus: fresh | minus: written %}
   <div class="cell stats-total">
     <p class="annotation">{{ t.stats_since }}</p>
@@ -26,9 +28,9 @@
     <p class="stats-since-text">{{ t.stats_since_text }}</p>
     <div class="stats-split">
       <div class="stats-squares" aria-hidden="true">
-        {%- for i in (1..again) %}<i class="stats-part-again"></i>{% endfor %}
-        {%- for i in (1..fresh) %}<i class="stats-part-fresh"></i>{% endfor %}
-        {%- for i in (1..written) %}<i class="stats-part-written"></i>{% endfor %}
+        {%- for i in (1..again) %}<span class="stats-part-again"></span>{% endfor %}
+        {%- for i in (1..fresh) %}<span class="stats-part-fresh"></span>{% endfor %}
+        {%- for i in (1..written) %}<span class="stats-part-written"></span>{% endfor %}
       </div>
       <div>
         <p class="stats-sum" data-counter data-tokens="{{ stats.tokens }}" data-per-day="{{ stats.tokens_per_day }}" data-at="{{ stats.updated_at }}" data-locale="{{ locale }}">{% if en %}{{ stats.tokens_digits_en }}{% else %}{{ stats.tokens_digits }}{% endif %}</p>
@@ -49,6 +51,7 @@
     </div>
     <p class="stats-per-day annotation">{% if en %}{{ stats.tokens_per_day_label_en }}{% else %}{{ stats.tokens_per_day_label }}{% endif %} {{ t.stats_per_day }}</p>
   </div>
+  <script src="{{ '/assets/counter.js' | relative_url }}" defer></script>
   {%- for app in site.data.apps %}
   {%- assign s = stats.apps[app.slug] %}
   <a class="cell stats-app" href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}">

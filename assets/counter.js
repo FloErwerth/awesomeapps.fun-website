@@ -29,10 +29,30 @@
     }
   }
 
-  show();
-  if (still) setInterval(show, 1000);
-  else requestAnimationFrame(function tick() {
+  // Count only while a counter is on the screen. The number comes from the
+  // clock, so it is right again as soon as it shows.
+  const seen = new Set();
+  let running = false;
+  function tick() {
+    if (!seen.size) {
+      running = false;
+      return;
+    }
     show();
-    requestAnimationFrame(tick);
+    if (still) setTimeout(tick, 1000);
+    else requestAnimationFrame(tick);
+  }
+  const watch = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) seen.add(entry.target);
+      else seen.delete(entry.target);
+    }
+    if (seen.size && !running) {
+      running = true;
+      tick();
+    }
   });
+
+  show();
+  for (const c of counters) watch.observe(c.el);
 })();
