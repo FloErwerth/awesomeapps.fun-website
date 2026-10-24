@@ -940,9 +940,18 @@ dd {
   font-size: 0.875rem;
 }
 
+/* The note fills the rest of the row; an empty cell would show as a black hole. */
+.colophon-note {
+  grid-column: span 2;
+}
+
 @media (max-width: 40rem) {
   .colophon {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .colophon-note {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1784,5 +1793,44 @@ dd {
 @media (max-width: 52rem) {
   .skills {
     grid-template-columns: 1fr;
+  }
+}
+
+/*
+  Phones. A light serif and labels of 12 or 13 px read well on a large
+  screen, but on a phone they blur. Here the text gets heavier, no label is
+  smaller than 14 px, and the cells lose the height they only need beside
+  each other.
+*/
+@media (max-width: 40rem) {
+  body {
+    font-weight: 400;
+  }
+
+  .statement-text,
+  .post-body > p:first-child {
+    font-weight: 350;
+  }
+
+  .annotation {
+    font-size: 0.9375rem;
+  }
+
+  .ticker,
+  .card-meta,
+  .bento-cell time,
+  .bento-apps,
+  .app-fact dt,
+  .skill dt {
+    font-size: 0.875rem;
+  }
+
+  .demo-note,
+  .demo-sets span {
+    font-size: 0.8125rem;
+  }
+
+  .bento-cell {
+    min-height: 10rem;
   }
 }
