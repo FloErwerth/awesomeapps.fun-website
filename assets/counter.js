@@ -6,7 +6,7 @@
 
 (function () {
   const counters = [...document.querySelectorAll('[data-counter]')].flatMap((el) => {
-    const tokens = parseFloat(el.dataset.tokens);
+    const tokens = el.dataset.tokens?.trim() ? Number(el.dataset.tokens) : NaN;
     const perMs = Number(el.dataset.perDay) / 86_400_000;
     const at = el.dataset.at ? Date.parse(el.dataset.at) : Date.now();
     // A number that is missing or did not parse would show as "NaN" or count

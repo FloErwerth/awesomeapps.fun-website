@@ -183,7 +183,11 @@
     render();
   }
 
-  window.addEventListener('resize', place);
+  // A phone resizes when its address bar comes and goes; mid-drag that would
+  // pull the ring away from the finger.
+  window.addEventListener('resize', () => {
+    if (!drag) place();
+  });
   // Measured too early, the ring tries again once everything has loaded.
   window.addEventListener('load', () => {
     if (!ready) place();

@@ -13,7 +13,7 @@
   </div>
   <div class="ring-view" data-ring>
     <div class="ring-floor" aria-hidden="true"></div>
-    <ul class="ring" data-ring-track style="--n: {{ site.data.apps.size }}">
+    <ul class="ring" data-ring-track style="--start: {{ site.data.apps.size | minus: 1 | divided_by: 2 }}">
       {%- for app in site.data.apps %}
       <li class="card" data-ring-card style="--i: {{ forloop.index0 }}; --app: {{ app.colour }}">
         <a href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}" draggable="false">

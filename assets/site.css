@@ -420,7 +420,9 @@ dd {
 }
 
 .ring {
-  --rot: calc((var(--n) - 1) / 2 * var(--step));
+  /* --start is the middle card, as in ring.js; with an even count the
+     middle of the drum would fall between two cards. */
+  --rot: calc(var(--start) * var(--step));
   position: absolute;
   left: 50%;
   top: 44%;
