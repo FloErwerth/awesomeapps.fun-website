@@ -314,19 +314,16 @@ const rows = [
 ];
 console.table(Object.fromEntries(rows.map(({ App, ...row }) => [App, row])));
 
-// A new day alone is no news: "Stand" on the page is the day the numbers
-// last changed. The tokens per day then stay as well, so the page keeps
-// counting at the same speed from the same point. After days without Claude
-// the page has counted on too far, and the next count puts it back. That is
-// accepted: this only runs when Claude runs, so writing the time on every run
-// would not stop it, only add a commit every 15 minutes.
+// The home page counts on from updated_at at the tokens per day. Without a
+// new time it would count on too far in the hours without Claude for an app,
+// so every run writes the time and the tokens per day, and the page counts
+// on from the real count again. A new time alone is no news, though: "Stand"
+// on the page stays the day the numbers last changed.
 const withoutDate = (text: string) => text.replace(/^ *(updated|updated_at|since|tokens_per_day\w*): .*$/gm, "");
-if (withoutDate(yml) !== withoutDate(before)) {
-  await writeFile(out, yml);
-  log("Wrote _data/stats.yml.");
-} else {
-  log("Nothing changed, _data/stats.yml stays as it is.");
-}
+const changed = withoutDate(yml) !== withoutDate(before);
+const oldUpdated = before.match(/^updated: .*$/m)?.[0];
+await writeFile(out, changed || !oldUpdated ? yml : yml.replace(/^updated: .*$/m, oldUpdated));
+log(changed ? "Wrote _data/stats.yml." : "Numbers unchanged; wrote the new time to _data/stats.yml.");
 
 if (publish) {
   const files = ["_data/stats.yml", "scripts/token-days.json"];
