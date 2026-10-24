@@ -1,19 +1,19 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-24
-tokens: 3689118261
+tokens: 3690918431
 tokens_label: "3,7 Mrd."
 tokens_label_en: "3.7B"
-commits: 1741
-commits_label: "1.741"
-commits_label_en: "1,741"
+commits: 1743
+commits_label: "1.743"
+commits_label_en: "1,743"
 apps:
   plopp:
-    tokens: 764753720
-    tokens_label: "765 Mio."
-    tokens_label_en: "765M"
-    commits: 178
-    commits_label: "178"
-    commits_label_en: "178"
+    tokens: 766553890
+    tokens_label: "767 Mio."
+    tokens_label_en: "767M"
+    commits: 180
+    commits_label: "180"
+    commits_label_en: "180"
   grammgenau:
     tokens: 1243300410
     tokens_label: "1,2 Mrd."
