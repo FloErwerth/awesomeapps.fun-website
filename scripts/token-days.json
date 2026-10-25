@@ -241,9 +241,14 @@
   },
   "2026-10-25": {
     "plopp": {
-      "again": 13881224,
-      "fresh": 109769,
-      "written": 44912
+      "again": 14789980,
+      "fresh": 112418,
+      "written": 46815
+    },
+    "grammgenau": {
+      "again": 56390,
+      "fresh": 29681,
+      "written": 525
     }
   }
 }
