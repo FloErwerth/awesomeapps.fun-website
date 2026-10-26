@@ -354,6 +354,20 @@
           - Das Ziel rechnet jetzt mit dem geglätteten Trend deiner Wiegungen. Ein Tag mit viel Wasser im Körper wirft es also nicht mehr um.
         en:
           - The target now uses the smoothed trend of your weigh-ins, so a day with a lot of water in your body doesn't throw it off anymore.
+    - date: 2026-10-25
+      until: 2026-10-26
+      title:
+        de: Die Rechnung ist neu
+        en: The math is new
+      points:
+        de:
+          - Dein Training hebt genau das Ziel von dem Tag, an dem du es machst. Du trägst es von Hand ein oder holst es von deiner Uhr, über Apple Health oder Health Connect.
+          - Wiegungen und Schritte kommen von selbst. Aus den Wiegungen lernt die App, wie weit die Formel bei dir danebenliegt, und korrigiert dein Ziel.
+          - 'Neu sind auch das Onboarding und eine Frage pro Woche: „Hast du dein Ziel gegessen?“'
+        en:
+          - Your training raises the target of exactly the day you do it. You enter it by hand or pull it from your watch, through Apple Health or Health Connect.
+          - Weigh-ins and steps come in on their own. From your weigh-ins, the app learns how far off the formula is for you and corrects your target.
+          - "The onboarding is new too, and so is one question a week: “Hast du dein Ziel gegessen?” (did you eat your target?)"
 
 - slug: movenote
   name: MoveNote
