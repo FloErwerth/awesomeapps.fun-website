@@ -265,9 +265,16 @@
       "written": 73066
     },
     "grammgenau": {
-      "again": 152533542,
-      "fresh": 2145299,
-      "written": 522194
+      "again": 153536800,
+      "fresh": 2147018,
+      "written": 522932
+    }
+  },
+  "2026-10-28": {
+    "grammgenau": {
+      "again": 101834,
+      "fresh": 36042,
+      "written": 1410
     }
   }
 }
