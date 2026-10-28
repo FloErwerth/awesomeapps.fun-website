@@ -654,3 +654,19 @@
         en: >-
           Version 1.1.0 is in review at Apple. If Apple waves it through, the
           app comes to the iPhone, too.
+    - date: 2026-10-28
+      title:
+        de: Release bei Google Play
+        en: Release on Google Play
+      key: true
+      text:
+        de: >-
+          Es ist so weit: Bei Google Play kann jetzt jeder die App laden, ganz
+          ohne Testerliste. Was die Tester im geschlossenen Test gesagt haben,
+          steckt schon drin. Fürs iPhone liegt sie noch bei Apple. Mal schauen,
+          wie lange das dauert.
+        en: >-
+          It's here: anyone can get the app on Google Play now, no tester list
+          needed. What the testers said in the closed test is already in it.
+          For the iPhone, it's still in review at Apple. We'll see how long
+          that takes.

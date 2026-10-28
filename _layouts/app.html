@@ -89,18 +89,33 @@ layout: site
   {%- endif %}
 
   {%- comment -%}
-    Everything that happened to the app, oldest first, as one line: the
-    milestones from its commit history, then the posts that name it. The
-    posts are newer than the history, since they began with this site.
+    Everything that happened to the app, newest first, as one line: the
+    milestones from its commit history and the posts that name it. Liquid
+    cannot sort the two together, so each entry is a string
+    "date|kind|index" that sorts by its date; a period sorts by its last day.
   {%- endcomment %}
-  {%- assign app_posts_old_first = app_posts | reverse %}
+  {%- assign steps = "" | split: "" %}
+  {%- for m in app.milestones %}
+  {%- assign last_day = m.until | default: m.date %}
+  {%- assign step = last_day | date: "%Y-%m-%d" | append: "|m|" | append: forloop.index0 %}
+  {%- assign steps = steps | push: step %}
+  {%- endfor %}
+  {%- for post in app_posts %}
+  {%- assign step = post.date | date: "%Y-%m-%d" | append: "|p|" | append: forloop.index0 %}
+  {%- assign steps = steps | push: step %}
+  {%- endfor %}
+  {%- assign steps = steps | sort | reverse %}
   <section class="timeline" aria-labelledby="timeline-title">
     <div class="cells board-head">
       <h2 id="timeline-title" class="cell board-title">{{ t.updates_on }} {{ app.name }}</h2>
       <a class="cell board-all" href="{{ t.base | append: '/updates/' | relative_url }}">{{ t.updates_all }}</a>
     </div>
     <ol class="timeline-list">
-      {%- for m in app.milestones %}
+      {%- for step in steps %}
+      {%- assign part = step | split: "|" %}
+      {%- assign i = part[2] | plus: 0 %}
+      {%- if part[1] == "m" %}
+      {%- assign m = app.milestones[i] %}
       <li class="cells timeline-step{% if m.key %} is-key{% endif %}">
         {%- if m.until %}
         {%- comment %}
@@ -134,8 +149,8 @@ layout: site
           {%- endif %}
         </div>
       </li>
-      {%- endfor %}
-      {%- for post in app_posts_old_first %}
+      {%- else %}
+      {%- assign post = app_posts[i] %}
       <li class="cells timeline-step">
         <time class="cell timeline-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: t.date }}</time>
         <div class="cell timeline-body">
@@ -143,6 +158,7 @@ layout: site
           <p>{{ post.excerpt | strip_html | strip_newlines }}</p>
         </div>
       </li>
+      {%- endif %}
       {%- endfor %}
       {%- if app.milestones == nil and app_posts.size == 0 %}
       <li class="cells timeline-step"><p class="cell timeline-body">{{ t.updates_none }}</p></li>
