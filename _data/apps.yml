@@ -510,10 +510,11 @@
       right at that moment in the VOD. The whole thing started as a tool for
       me and my friends.
   platforms: [iOS, Android]
-  status: testing
+  status: live
   icon: /assets/icons/pubg-stream-report.webp
   colour: "#f5a50b"
-  store: {}
+  store:
+    android: https://play.google.com/store/apps/details?id=com.floerwerth.pubgstreamerencounters
   legal:
     datenschutz: /pubg-stream-report/datenschutz/
     privacy: /pubg-stream-report/privacy/
