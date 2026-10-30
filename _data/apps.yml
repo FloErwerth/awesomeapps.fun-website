@@ -509,7 +509,7 @@
       a streamer or their team, or the other way round. One tap and you land
       right at that moment in the VOD. The whole thing started as a tool for
       me and my friends.
-  platforms: [iOS, Android]
+  platforms: [Android]
   status: live
   icon: /assets/icons/pubg-stream-report.webp
   colour: "#f5a50b"

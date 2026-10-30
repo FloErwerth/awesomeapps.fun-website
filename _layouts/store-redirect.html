@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%- comment -%}
+  A short link for social media: it sends the visitor straight on to the
+  store of `page.app`. The store link comes from the app's entry in
+  `_data/apps.yml`, so a new store link is one edit there. While an app is
+  only on Google Play, every visitor goes there, also from an iPhone or a PC.
+{%- endcomment -%}
+{%- assign app = site.data.apps | where: "slug", page.app | first -%}
+{%- assign store = app.store.android | default: app.store.ios -%}
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="0; url={{ store }}" />
+    <link rel="canonical" href="{{ store }}" />
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
+    <script>location.replace({{ store | jsonify }});</script>
+  </head>
+  <body>
+    <main><p><a href="{{ store }}">{{ page.title }}</a></p></main>
+    <footer><a href="{{ '/impressum/' | relative_url }}">Impressum</a></footer>
+  </body>
+</html>

@@ -15,6 +15,10 @@ The site is German at the root and English under `/en/`. Every page has its twin
 - The Claude tokens and commits on the home page and the app pages come from `_data/stats.yml`. Run `bun scripts/app-stats.ts` to count them again; it reads `~/.claude/projects` and the app repositories under `~/development`, so it only works on this machine. On the home page the tokens keep counting: `assets/counter.js` adds the tokens per day (the tokens over the days since the first one) to the last count, spread over every millisecond. The tokens are what Claude reads for the first time and what it writes; the chat it reads again from the cache for every reply only shows as its share of all three. Claude Code deletes its logs after 30 days, so the script keeps the tokens of every day in `scripts/token-days.json`; commit that file with `_data/stats.yml`.
 - An update is a post: `_posts/YYYY-MM-DD-title.md` with `title:`, `ref:` and `apps: [<slug>, …]`, and its English twin in `en/_posts/` with the same `ref:`. It shows on the home page, on each named app's page, in `/updates/` and in `/feed.xml` (`/en/updates/` and `/en/feed.xml` for the English one). The feeds are written by hand in `_includes/feed.xml`, since jekyll-feed would put both languages into one feed.
 
+## Short store links
+
+A store link is too long for a social media bio, and a link in a TikTok caption cannot be tapped. So an app can have a short link, `<slug>/get.html` with `layout: store-redirect`, `app: <slug>` and `permalink: /<slug>/get/`. It sends every visitor on to the app's store link in `_data/apps.yml`, Google Play first, and it is in no language, in no sitemap and in no search index. PUBG Stream Report has one: <https://awesomeapps.fun/pubg-stream-report/get/>.
+
 ## About me
 
 `ueber-mich/index.html` is the career from the CV, told from the side of React Native. The photo is `assets/florian.webp`. The phone number and the street stay off this page: the Impressum carries the address, the page carries only the e-mail.
