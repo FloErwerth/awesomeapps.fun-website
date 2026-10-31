@@ -291,9 +291,14 @@
   },
   "2026-10-31": {
     "pubg-stream-report": {
-      "again": 1780245,
-      "fresh": 76497,
-      "written": 23276
+      "again": 12504807,
+      "fresh": 203480,
+      "written": 93619
+    },
+    "grammgenau": {
+      "again": 5944908,
+      "fresh": 277653,
+      "written": 54025
     }
   }
 }
