@@ -1,47 +1,47 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-31
-updated_at: "2026-10-31T12:11:09.467Z"
+updated_at: "2026-10-31T12:28:12.848Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 132576635
-tokens_with_cache: 4852882145
+tokens: 132631565
+tokens_with_cache: 4854591272
 tokens_label: "133 Mio."
 tokens_label_en: "133M"
-tokens_digits: "132.576.635"
-tokens_digits_en: "132,576,635"
-tokens_per_day: 3879562
+tokens_digits: "132.631.565"
+tokens_digits_en: "132,631,565"
+tokens_per_day: 3879825
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 4720305510
+    tokens: 4721959707
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "4.720.305.510"
-    tokens_digits_en: "4,720,305,510"
-    tokens_per_day: 138129299
+    tokens_digits: "4.721.959.707"
+    tokens_digits_en: "4,721,959,707"
+    tokens_per_day: 138129829
     tokens_per_day_label: "138 Mio."
     tokens_per_day_label_en: "138M"
   fresh:
-    tokens: 107927384
+    tokens: 107975492
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "107.927.384"
-    tokens_digits_en: "107,927,384"
-    tokens_per_day: 3158256
+    tokens_digits: "107.975.492"
+    tokens_digits_en: "107,975,492"
+    tokens_per_day: 3158569
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 24649251
+    tokens: 24656073
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "24.649.251"
-    tokens_digits_en: "24,649,251"
-    tokens_per_day: 721306
+    tokens_digits: "24.656.073"
+    tokens_digits_en: "24,656,073"
+    tokens_per_day: 721255
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
-commits: 2194
-commits_label: "2.194"
-commits_label_en: "2,194"
+commits: 2196
+commits_label: "2.196"
+commits_label_en: "2,196"
 apps:
   plopp:
     tokens: 26139529
@@ -51,12 +51,12 @@ apps:
     commits_label: "275"
     commits_label_en: "275"
   grammgenau:
-    tokens: 51661401
+    tokens: 51668553
     tokens_label: "52 Mio."
     tokens_label_en: "52M"
-    commits: 576
-    commits_label: "576"
-    commits_label_en: "576"
+    commits: 578
+    commits_label: "578"
+    commits_label_en: "578"
   movenote:
     tokens: 17312225
     tokens_label: "17 Mio."
@@ -65,9 +65,9 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   pubg-stream-report:
-    tokens: 37463480
-    tokens_label: "37 Mio."
-    tokens_label_en: "37M"
+    tokens: 37511258
+    tokens_label: "38 Mio."
+    tokens_label_en: "38M"
     commits: 442
     commits_label: "442"
     commits_label_en: "442"
