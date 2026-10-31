@@ -220,6 +220,8 @@
 
 - slug: grammgenau
   name: Grammgenau
+  # Off the site while its texts are reworked (31.10.2026). Its pages have `published: false` too.
+  hidden: true
   tagline:
     de: Ein Kalorienrechner für Sportler, der jede Woche ein bisschen genauer wird.
     en: A calorie calculator for athletes that gets a bit more accurate every week.

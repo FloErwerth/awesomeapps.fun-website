@@ -9,6 +9,7 @@ The site is German at the root and English under `/en/`. Every page has its twin
 ## Adding an app or an update
 
 - An app is one entry in `_data/apps.yml` and a three-line `<slug>/index.md`, with its English twin `en/<slug>/index.md`. Its icon goes to `assets/icons/<slug>.webp` (256 px).
+- To take an app off the site for a while, set `hidden: true` in its entry and `published: false` in both of its `index.md`. It then is in no list, ring, ticker, count or update, and its pages are not built. Its texts stay, so it comes back by removing both lines.
 - "So funktioniert's" on an app page is the `how` list of that entry. Screenshots and screen recordings go to `assets/apps/<slug>/`: 540 px wide WebP, and MP4 (H.264, no sound, a few MB at most) with a WebP poster. An app with no recordings yet gets a drawing in `_includes/how/`, which the page labels "Skizze".
 - "Updates zu <App>" on an app page is the `milestones` list of that entry, oldest first, with the posts that name the app; the page shows them newest first. Take the milestones from the app’s commit history on its main branch. One milestone is a period of at least a day (`date`, and `until` for several days), with a `title` for the period and one entry in `points` per change a user would notice. Several commits on the same day are one milestone, never one each.
 - A milestone with `key: true` is a step into a store (a test track, a submission, a release): one day, with a `text` instead of `points`. The app page shows it larger, and the home page and `/updates/` list it among the posts.

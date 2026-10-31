@@ -3,11 +3,13 @@
   _data/apps.yml. An app without one yet gets a hatched cell: the sheet's sign
   for a space that is still empty.
 {%- endcomment -%}
+{%- comment %} An app with `hidden: true` in _data/apps.yml is left out everywhere. {% endcomment %}
+{%- assign apps = site.data.apps | where_exp: "app", "app.hidden != true" -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
 <section class="cells app-policies" aria-labelledby="app-policies-title">
   <h2 id="app-policies-title" class="cell app-policies-title">{{ t.apps_title }}</h2>
-  {%- for app in site.data.apps %}
+  {%- for app in apps %}
   <div class="app-policy">
     <p class="cell app-policy-name">
       {% include app-icon.html app=app class="icon-small" %}

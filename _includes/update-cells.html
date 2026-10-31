@@ -7,6 +7,8 @@
   posts. Liquid cannot sort posts and milestones together, so each entry is a
   string "date|kind|where" that sorts by its date.
 {%- endcomment -%}
+{%- comment %} An app with `hidden: true` in _data/apps.yml is left out everywhere. {% endcomment %}
+{%- assign apps = site.data.apps | where_exp: "app", "app.hidden != true" -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign limit = include.limit | default: 1000 -%}
@@ -16,7 +18,7 @@
 {%- assign entries = entries | push: entry %}
 {%- endfor %}
 {%- if include.key_steps %}
-{%- for app in site.data.apps %}
+{%- for app in apps %}
 {%- for m in app.milestones %}
 {%- if m.key %}
 {%- assign entry = m.date | date: "%Y-%m-%d" | append: "|m|" | append: app.slug | append: "|" | append: forloop.index0 %}

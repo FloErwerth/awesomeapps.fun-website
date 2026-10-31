@@ -1,5 +1,7 @@
 ---
 layout: app
+# Hidden while its texts are reworked (31.10.2026): `hidden: true` in _data/apps.yml.
+published: false
 app: grammgenau
 ref: grammgenau
 title: Grammgenau

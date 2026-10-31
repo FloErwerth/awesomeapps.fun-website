@@ -2,11 +2,13 @@
   A thin band of small text running sideways between two rules. It repeats
   the apps and where each one stands. Pass `reverse=true` for the other way.
 {%- endcomment -%}
+{%- comment %} An app with `hidden: true` in _data/apps.yml is left out everywhere. {% endcomment %}
+{%- assign apps = site.data.apps | where_exp: "app", "app.hidden != true" -%}
 <div class="ticker{% if include.reverse %} ticker-reverse{% endif %}" aria-hidden="true">
   <div class="ticker-track">
     {%- for round in (1..4) %}
     <span>
-      {%- for app in site.data.apps -%}
+      {%- for app in apps -%}
       {{ app.name }} ({% include status.html status=app.status %}) <i>✦</i>
       {%- endfor -%}
     </span>

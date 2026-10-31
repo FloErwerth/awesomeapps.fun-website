@@ -3,6 +3,8 @@
   drum, and you turn the drum. Each card sits at its own angle, set here,
   so the ring holds its shape without script; assets/ring.js adds dragging.
 {%- endcomment -%}
+{%- comment %} An app with `hidden: true` in _data/apps.yml is left out everywhere. {% endcomment %}
+{%- assign apps = site.data.apps | where_exp: "app", "app.hidden != true" -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign and = " " | append: t.and | append: " " -%}
@@ -13,8 +15,8 @@
   </div>
   <div class="ring-view" data-ring>
     <div class="ring-floor" aria-hidden="true"></div>
-    <ul class="ring" data-ring-track style="--start: {{ site.data.apps.size | minus: 1 | divided_by: 2 }}">
-      {%- for app in site.data.apps %}
+    <ul class="ring" data-ring-track style="--start: {{ apps.size | minus: 1 | divided_by: 2 }}">
+      {%- for app in apps %}
       <li class="card" data-ring-card style="--i: {{ forloop.index0 }}; --app: {{ app.colour }}">
         <a href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}" draggable="false">
           <span class="card-glow" aria-hidden="true"></span>
@@ -29,7 +31,7 @@
   </div>
   <div class="cells stage-controls">
     <button class="cell" type="button" data-ring-step="-1">{{ t.ring_previous }}</button>
-    <p class="cell stage-count" aria-live="polite"><span data-ring-count>{{ site.data.apps.size | minus: 1 | divided_by: 2 | plus: 1 }}</span> {{ t.ring_of }} {{ site.data.apps.size }}</p>
+    <p class="cell stage-count" aria-live="polite"><span data-ring-count>{{ apps.size | minus: 1 | divided_by: 2 | plus: 1 }}</span> {{ t.ring_of }} {{ apps.size }}</p>
     <button class="cell" type="button" data-ring-step="1">{{ t.ring_next }}</button>
   </div>
 </section>

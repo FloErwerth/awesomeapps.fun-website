@@ -54,7 +54,7 @@
         <a href="{{ t.about_url | relative_url }}">{{ t.nav_about }}</a>
         <a href="{{ other_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" aria-label="{{ t.switch_label }}">{{ t.switch }}</a>
       </nav>
-      <p class="cell masthead-note">{{ site.data.apps.size }} {{ t.apps_built }}</p>
+      <p class="cell masthead-note">{{ site.data.apps | where_exp: "app", "app.hidden != true" | size }} {{ t.apps_built }}</p>
     </header>
 
     <main>{{ content }}</main>

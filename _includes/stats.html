@@ -7,6 +7,8 @@
   tokens are made of, as 100 squares. Only what Claude read and wrote counts
   on; the cache, which it reads again for every reply, shows as its share.
 {%- endcomment -%}
+{%- comment %} An app with `hidden: true` in _data/apps.yml is left out everywhere. {% endcomment %}
+{%- assign apps = site.data.apps | where_exp: "app", "app.hidden != true" -%}
 {%- assign lang = page.lang | default: site.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign stats = site.data.stats %}
@@ -55,7 +57,7 @@
     <p class="stats-per-day annotation">{% if en %}{{ stats.tokens_per_day_label_en }}{% else %}{{ stats.tokens_per_day_label }}{% endif %} {{ t.stats_per_day }}</p>
   </div>
   <script src="{{ '/assets/counter.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
-  {%- for app in site.data.apps %}
+  {%- for app in apps %}
   {%- assign s = stats.apps[app.slug] %}
   <a class="cell stats-app" href="{{ t.base | append: '/' | append: app.slug | append: '/' | relative_url }}">
     {% include app-icon.html app=app class="icon-small" %}
