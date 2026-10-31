@@ -1,6 +1,6 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
-updated: 2026-10-30
-updated_at: "2026-10-30T16:07:22.434Z"
+updated: 2026-10-31
+updated_at: "2026-10-31T07:17:13.747Z"
 since: "2026-09-27T08:01:54.154Z"
 tokens: 125582536
 tokens_with_cache: 4556315575
@@ -8,9 +8,9 @@ tokens_label: "126 Mio."
 tokens_label_en: "126M"
 tokens_digits: "125.582.536"
 tokens_digits_en: "125,582,536"
-tokens_per_day: 3767047
-tokens_per_day_label: "3,8 Mio."
-tokens_per_day_label_en: "3.8M"
+tokens_per_day: 3696977
+tokens_per_day_label: "3,7 Mio."
+tokens_per_day_label_en: "3.7M"
 parts:
   again:
     tokens: 4430733039
@@ -18,30 +18,30 @@ parts:
     share_label_en: "97.2%"
     tokens_digits: "4.430.733.039"
     tokens_digits_en: "4,430,733,039"
-    tokens_per_day: 132906842
-    tokens_per_day_label: "133 Mio."
-    tokens_per_day_label_en: "133M"
+    tokens_per_day: 130434692
+    tokens_per_day_label: "130 Mio."
+    tokens_per_day_label_en: "130M"
   fresh:
     tokens: 102568738
     share_label: "2,3 %"
     share_label_en: "2.3%"
     tokens_digits: "102.568.738"
     tokens_digits_en: "102,568,738"
-    tokens_per_day: 3076711
-    tokens_per_day_label: "3,1 Mio."
-    tokens_per_day_label_en: "3.1M"
+    tokens_per_day: 3019483
+    tokens_per_day_label: "3,0 Mio."
+    tokens_per_day_label_en: "3.0M"
   written:
     tokens: 23013798
     share_label: "0,5 %"
     share_label_en: "0.5%"
     tokens_digits: "23.013.798"
     tokens_digits_en: "23,013,798"
-    tokens_per_day: 690335
+    tokens_per_day: 677495
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
-commits: 2090
-commits_label: "2.090"
-commits_label_en: "2,090"
+commits: 2092
+commits_label: "2.092"
+commits_label_en: "2,092"
 apps:
   plopp:
     tokens: 26139529
@@ -54,9 +54,9 @@ apps:
     tokens: 44964401
     tokens_label: "45 Mio."
     tokens_label_en: "45M"
-    commits: 472
-    commits_label: "472"
-    commits_label_en: "472"
+    commits: 474
+    commits_label: "474"
+    commits_label_en: "474"
   movenote:
     tokens: 17312225
     tokens_label: "17 Mio."
