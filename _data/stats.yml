@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-31
-updated_at: "2026-10-31T14:09:15.281Z"
+updated_at: "2026-10-31T14:42:00.448Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 133451056
-tokens_with_cache: 4875563384
+tokens: 133455195
+tokens_with_cache: 4876059480
 tokens_label: "133 Mio."
 tokens_label_en: "133M"
-tokens_digits: "133.451.056"
-tokens_digits_en: "133,451,056"
-tokens_per_day: 3895800
+tokens_digits: "133.455.195"
+tokens_digits_en: "133,455,195"
+tokens_per_day: 3893336
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 4742112328
+    tokens: 4742604285
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "4.742.112.328"
-    tokens_digits_en: "4,742,112,328"
-    tokens_per_day: 138435198
+    tokens_digits: "4.742.604.285"
+    tokens_digits_en: "4,742,604,285"
+    tokens_per_day: 138357692
     tokens_per_day_label: "138 Mio."
     tokens_per_day_label_en: "138M"
   fresh:
-    tokens: 108644905
+    tokens: 108647523
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "108.644.905"
-    tokens_digits_en: "108,644,905"
-    tokens_per_day: 3171641
+    tokens_digits: "108.647.523"
+    tokens_digits_en: "108,647,523"
+    tokens_per_day: 3169613
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 24806151
+    tokens: 24807672
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "24.806.151"
-    tokens_digits_en: "24,806,151"
-    tokens_per_day: 724159
+    tokens_digits: "24.807.672"
+    tokens_digits_en: "24,807,672"
+    tokens_per_day: 723723
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2203
@@ -51,7 +51,7 @@ apps:
     commits_label: "275"
     commits_label_en: "275"
   grammgenau:
-    tokens: 52430878
+    tokens: 52433638
     tokens_label: "52 Mio."
     tokens_label_en: "52M"
     commits: 585
@@ -65,7 +65,7 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   pubg-stream-report:
-    tokens: 37568424
+    tokens: 37569803
     tokens_label: "38 Mio."
     tokens_label_en: "38M"
     commits: 442
