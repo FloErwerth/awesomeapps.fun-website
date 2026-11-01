@@ -303,9 +303,14 @@
   },
   "2026-11-01": {
     "grammgenau": {
-      "again": 98777847,
-      "fresh": 1871083,
-      "written": 604368
+      "again": 137995090,
+      "fresh": 2439836,
+      "written": 746126
+    },
+    "pubg-stream-report": {
+      "again": 132135,
+      "fresh": 15787,
+      "written": 643
     }
   }
 }
