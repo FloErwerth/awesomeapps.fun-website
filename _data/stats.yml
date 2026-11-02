@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-02
-updated_at: "2026-11-02T09:53:34.121Z"
+updated_at: "2026-11-02T11:50:58.762Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 140488068
-tokens_with_cache: 5252529123
-tokens_label: "140 Mio."
-tokens_label_en: "140M"
-tokens_digits: "140.488.068"
-tokens_digits_en: "140,488,068"
-tokens_per_day: 3894058
+tokens: 140535608
+tokens_with_cache: 5252817361
+tokens_label: "141 Mio."
+tokens_label_en: "141M"
+tokens_digits: "140.535.608"
+tokens_digits_en: "140,535,608"
+tokens_per_day: 3886592
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 5112041055
+    tokens: 5112281753
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.112.041.055"
-    tokens_digits_en: "5,112,041,055"
-    tokens_per_day: 141695920
-    tokens_per_day_label: "142 Mio."
-    tokens_per_day_label_en: "142M"
+    tokens_digits: "5.112.281.753"
+    tokens_digits_en: "5,112,281,753"
+    tokens_per_day: 141383066
+    tokens_per_day_label: "141 Mio."
+    tokens_per_day_label_en: "141M"
   fresh:
-    tokens: 113997521
+    tokens: 114041936
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "113.997.521"
-    tokens_digits_en: "113,997,521"
-    tokens_per_day: 3159791
+    tokens_digits: "114.041.936"
+    tokens_digits_en: "114,041,936"
+    tokens_per_day: 3153895
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 26490547
+    tokens: 26493672
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "26.490.547"
-    tokens_digits_en: "26,490,547"
-    tokens_per_day: 734267
+    tokens_digits: "26.493.672"
+    tokens_digits_en: "26,493,672"
+    tokens_per_day: 732698
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2315
@@ -65,7 +65,7 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   pubg-stream-report:
-    tokens: 38146613
+    tokens: 38194153
     tokens_label: "38 Mio."
     tokens_label_en: "38M"
     commits: 444
