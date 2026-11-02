@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Datenschutzerklärung – PUBG Stream Report
-permalink: /pubg-stream-report/datenschutz/
+title: Datenschutzerklärung – Stream Report
+permalink: /stream-report/datenschutz/
 lang: de
 ---
 
-# Datenschutzerklärung für die App „PUBG Stream Report“
+# Datenschutzerklärung für die App „Stream Report – Streamer Kills“
 
-Stand: 14. Oktober 2026 · [English version]({{ site.baseurl }}/pubg-stream-report/privacy/)
+Stand: 2. November 2026 · [English version]({{ site.baseurl }}/stream-report/privacy/)
 
-Diese Erklärung sagt dir, welche Daten die App „PUBG Stream Report“ (iOS und Android), die Website pubgstreamreport.com und diese Website verarbeiten, warum, auf welcher Rechtsgrundlage und welche Rechte du hast.
+Diese Erklärung sagt dir, welche Daten die App „Stream Report – Streamer Kills“ (iOS und Android), die Website pubgstreamreport.com und diese Website verarbeiten, warum, auf welcher Rechtsgrundlage und welche Rechte du hast.
 
 ## 1. Verantwortlicher
 

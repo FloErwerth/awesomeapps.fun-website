@@ -64,7 +64,7 @@ apps:
     commits: 901
     commits_label: "901"
     commits_label_en: "901"
-  pubg-stream-report:
+  stream-report:
     tokens: 38316117
     tokens_label: "38 Mio."
     tokens_label_en: "38M"

@@ -493,8 +493,8 @@
         en:
           - You can undo every change. Even a workout you deleted by accident comes back that way.
 
-- slug: pubg-stream-report
-  name: PUBG Stream Report
+- slug: stream-report
+  name: Stream Report
   tagline:
     de: Warst du schon mal bei einem Streamer im Bild? Die App findet's raus.
     en: Ever shown up on a streamer's stream? The app finds out.
@@ -513,13 +513,13 @@
       me and my friends.
   platforms: [Android]
   status: live
-  icon: /assets/icons/pubg-stream-report.webp
+  icon: /assets/icons/stream-report.webp
   colour: "#f5a50b"
   store:
     android: https://play.google.com/store/apps/details?id=com.floerwerth.pubgstreamerencounters
   legal:
-    datenschutz: /pubg-stream-report/datenschutz/
-    privacy: /pubg-stream-report/privacy/
+    datenschutz: /stream-report/datenschutz/
+    privacy: /stream-report/privacy/
   how:
     - title:
         de: Namen eingeben
@@ -534,7 +534,7 @@
           case included. The app searches on PC (Steam). You don't need an
           account.
       media:
-        - image: /assets/apps/pubg-stream-report/suche.webp
+        - image: /assets/apps/stream-report/suche.webp
           alt:
             de: "Der Tab Suche: im Namensfeld „Halifax“, der Knopf „Suchen“ und die letzten Suchanfragen."
             en: "The search tab: “Halifax” in the name field, the search button and the latest searches."
@@ -570,7 +570,7 @@
           you want to know how you stack up against streamers or your friends,
           you can do that too.
       media:
-        - image: /assets/apps/pubg-stream-report/treffer.webp
+        - image: /assets/apps/stream-report/treffer.webp
           alt:
             de: "Treffer für Halifax vor 9 Tagen: grüne Karten für „Du hast … gekillt“, rote für „hat dich gekillt“. Treffer ohne VOD sind blasser."
             en: "Hits for Halifax from 9 days ago: green cards for your kills, red ones for kills on you. Hits without a VOD are paler."
@@ -589,11 +589,11 @@
           news right away. The Stats tab has your numbers for every mode and
           every season, Normal and Ranked.
       media:
-        - image: /assets/apps/pubg-stream-report/home.webp
+        - image: /assets/apps/stream-report/home.webp
           alt:
             de: "Home: die neueste Begegnung, „Alle Begegnungen“ (68), die Stats für Squad FPP und darunter die PUBG-News."
             en: "Home: the latest encounter, all encounters (68), the stats for Squad FPP and the PUBG news below."
-        - image: /assets/apps/pubg-stream-report/stats.webp
+        - image: /assets/apps/stream-report/stats.webp
           alt:
             de: "Der Tab Stats für Halifax: Normal, Squad FPP, Season 43. K/D 2,56, 316 Schaden im Schnitt, 69 Siege, darunter die Details."
             en: "The Stats tab for Halifax: Normal, Squad FPP, season 43. K/D 2.56, 316 damage on average, 69 wins, the details below."

@@ -14,4 +14,4 @@ Information according to § 5 DDG (German Digital Services Act)
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-PUBG Stream Report is a fan project. It is not affiliated with or endorsed by KRAFTON, PUBG Studios or Twitch. PUBG and PLAYERUNKNOWN'S BATTLEGROUNDS are trademarks of KRAFTON, Inc.
+Stream Report is an unofficial fan project. It is not affiliated with, endorsed or approved by KRAFTON, PUBG Studios or Twitch. PUBG and PLAYERUNKNOWN'S BATTLEGROUNDS are trademarks of KRAFTON, Inc.

@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Privacy Policy – PUBG Stream Report
-permalink: /pubg-stream-report/privacy/
+title: Privacy Policy – Stream Report
+permalink: /stream-report/privacy/
 lang: en
 ---
 
-# Privacy Policy for the app “PUBG Stream Report”
+# Privacy Policy for the app “Stream Report – Streamer Kills”
 
-Last updated: 14 October 2026 · [Deutsche Fassung]({{ site.baseurl }}/pubg-stream-report/datenschutz/)
+Last updated: 2 November 2026 · [Deutsche Fassung]({{ site.baseurl }}/stream-report/datenschutz/)
 
-This is a translation. If the versions differ, the [German version]({{ site.baseurl }}/pubg-stream-report/datenschutz/) applies.
+This is a translation. If the versions differ, the [German version]({{ site.baseurl }}/stream-report/datenschutz/) applies.
 
-This policy tells you which data the app “PUBG Stream Report” (iOS and Android), the website pubgstreamreport.com and this website process, why, on which legal basis, and what rights you have.
+This policy tells you which data the app “Stream Report – Streamer Kills” (iOS and Android), the website pubgstreamreport.com and this website process, why, on which legal basis, and what rights you have.
 
 ## 1. Controller
 

@@ -15,4 +15,4 @@ Angaben gemäß § 5 DDG
 
 E-Mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-PUBG Stream Report ist ein Fan-Projekt. Es gehört nicht zu KRAFTON, PUBG Studios oder Twitch und wird von ihnen nicht unterstützt. PUBG und PLAYERUNKNOWN'S BATTLEGROUNDS sind Marken von KRAFTON, Inc.
+Stream Report ist ein inoffizielles Fan-Projekt. Es gehört nicht zu KRAFTON, PUBG Studios oder Twitch und wird von ihnen nicht unterstützt oder genehmigt. PUBG und PLAYERUNKNOWN'S BATTLEGROUNDS sind Marken von KRAFTON, Inc.

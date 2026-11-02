@@ -18,7 +18,11 @@ The site is German at the root and English under `/en/`. Every page has its twin
 
 ## Short store links
 
-A store link is too long for a social media bio, and a link in a TikTok caption cannot be tapped. So an app can have a short link, `<slug>/get.html` with `layout: store-redirect`, `app: <slug>` and `permalink: /<slug>/get/`. It sends every visitor on to the app's store link in `_data/apps.yml`, Google Play first, and it is in no language, in no sitemap and in no search index. PUBG Stream Report has one: <https://awesomeapps.fun/pubg-stream-report/get/>.
+A store link is too long for a social media bio, and a link in a TikTok caption cannot be tapped. So an app can have a short link, `<slug>/get.html` with `layout: store-redirect`, `app: <slug>` and `permalink: /<slug>/get/`. It sends every visitor on to the app's store link in `_data/apps.yml`, Google Play first, and it is in no language, in no sitemap and in no search index. PUBG Stream Report has one: <https://awesomeapps.fun/stream-report/get/>.
+
+## Moved addresses
+
+When an app gets a new slug, its old addresses keep working: one page per old address in `redirects/`, with `layout: redirect`, the old `permalink:` and the new path in `to:`. Old app builds and store listings still link to the old addresses. Stream Report moved from `/pubg-stream-report/` to `/stream-report/` on 2 November 2026, because Google Play rejected the name with “PUBG” in it.
 
 ## About me
 
@@ -33,7 +37,7 @@ A privacy policy is written in the app's own repository, in both languages:
 
 A policy published here is those two files, with the repository's internal header stripped and Jekyll front matter added, under `<slug>/privacy.md` and `<slug>/datenschutz.md`. **Edit the source, then republish.** A change made only here is a policy that no longer describes the app it is about, which is the one kind of wrong that is a legal problem rather than a bug report.
 
-One exception: PUBG Stream Report's policy is written here, in `pubg-stream-report/datenschutz.md` and `pubg-stream-report/privacy.md`. The old repository `pubg-stream-report-legal` is no longer the source, and the app's repository has no `docs/legal/`.
+One exception: Stream Report's policy is written here, in `stream-report/datenschutz.md` and `stream-report/privacy.md`. The old repository `pubg-stream-report-legal` is no longer the source, and the app's repository has no `docs/legal/`.
 
 A policy uses `_layouts/default.html`, which has no chrome but the Impressum link the law asks for. Everything else uses `_layouts/site.html`.
 

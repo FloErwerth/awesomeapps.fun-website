@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%- comment -%}
+  An old address that moved: it sends the visitor on to `page.to`, a path on
+  this site. Used when an app gets a new slug, so links in old app builds and
+  store listings keep working.
+{%- endcomment -%}
+{%- assign target = page.to | relative_url -%}
+<html lang="{{ page.lang | default: 'de' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="0; url={{ target }}" />
+    <link rel="canonical" href="{{ target | absolute_url }}" />
+    <script>location.replace({{ target | jsonify }});</script>
+  </head>
+  <body>
+    <main><p><a href="{{ target }}">{{ page.title }}</a></p></main>
+  </body>
+</html>

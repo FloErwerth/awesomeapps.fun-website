@@ -87,7 +87,7 @@ const apps: Record<string, { folders: RegExp[]; repos: string[] }> = {
     folders: [/\/development\/workout-tracker[^/]*(\/|$)/, /\/\.t3\/worktrees\/workout-tracker(\/|$)/],
     repos: ["workout-tracker", "workout-tracker-server"],
   },
-  "pubg-stream-report": {
+  "stream-report": {
     folders: [/\/development\/pubg-[^/]*(\/|$)/],
     repos: ["pubg-streamer-encounters"],
   },
