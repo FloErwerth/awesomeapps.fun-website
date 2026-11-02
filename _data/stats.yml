@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-02
-updated_at: "2026-11-02T12:55:21.027Z"
+updated_at: "2026-11-02T13:44:51.351Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 140737641
-tokens_with_cache: 5266492658
+tokens: 140879521
+tokens_with_cache: 5274365850
 tokens_label: "141 Mio."
 tokens_label_en: "141M"
-tokens_digits: "140.737.641"
-tokens_digits_en: "140,737,641"
-tokens_per_day: 3887374
+tokens_digits: "140.879.521"
+tokens_digits_en: "140,879,521"
+tokens_per_day: 3887601
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 5125755017
+    tokens: 5133486329
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.125.755.017"
-    tokens_digits_en: "5,125,755,017"
-    tokens_per_day: 141580646
+    tokens_digits: "5.133.486.329"
+    tokens_digits_en: "5,133,486,329"
+    tokens_per_day: 141659677
     tokens_per_day_label: "142 Mio."
     tokens_per_day_label_en: "142M"
   fresh:
-    tokens: 114178866
+    tokens: 114297566
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "114.178.866"
-    tokens_digits_en: "114,178,866"
-    tokens_per_day: 3153783
+    tokens_digits: "114.297.566"
+    tokens_digits_en: "114,297,566"
+    tokens_per_day: 3154066
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 26558775
+    tokens: 26581955
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "26.558.775"
-    tokens_digits_en: "26,558,775"
-    tokens_per_day: 733591
+    tokens_digits: "26.581.955"
+    tokens_digits_en: "26,581,955"
+    tokens_per_day: 733535
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2317
@@ -65,9 +65,9 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   stream-report:
-    tokens: 38396186
-    tokens_label: "38 Mio."
-    tokens_label_en: "38M"
+    tokens: 38538066
+    tokens_label: "39 Mio."
+    tokens_label_en: "39M"
     commits: 446
     commits_label: "446"
     commits_label_en: "446"
