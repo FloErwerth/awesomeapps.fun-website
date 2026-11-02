@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-02
-updated_at: "2026-11-02T18:00:58.667Z"
+updated_at: "2026-11-02T18:29:24.589Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 141026156
-tokens_with_cache: 5274573135
+tokens: 141108966
+tokens_with_cache: 5276229005
 tokens_label: "141 Mio."
 tokens_label_en: "141M"
-tokens_digits: "141.026.156"
-tokens_digits_en: "141,026,156"
-tokens_per_day: 3872640
+tokens_digits: "141.108.966"
+tokens_digits_en: "141,108,966"
+tokens_per_day: 3872814
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 5133546979
+    tokens: 5135120039
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.133.546.979"
-    tokens_digits_en: "5,133,546,979"
-    tokens_per_day: 140969451
+    tokens_digits: "5.135.120.039"
+    tokens_digits_en: "5,135,120,039"
+    tokens_per_day: 140936234
     tokens_per_day_label: "141 Mio."
     tokens_per_day_label_en: "141M"
   fresh:
-    tokens: 114442259
+    tokens: 114512299
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "114.442.259"
-    tokens_digits_en: "114,442,259"
-    tokens_per_day: 3142635
+    tokens_digits: "114.512.299"
+    tokens_digits_en: "114,512,299"
+    tokens_per_day: 3142854
     tokens_per_day_label: "3,1 Mio."
     tokens_per_day_label_en: "3.1M"
   written:
-    tokens: 26583897
+    tokens: 26596667
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "26.583.897"
-    tokens_digits_en: "26,583,897"
-    tokens_per_day: 730005
+    tokens_digits: "26.596.667"
+    tokens_digits_en: "26,596,667"
+    tokens_per_day: 729960
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2317
@@ -65,7 +65,7 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   stream-report:
-    tokens: 38684701
+    tokens: 38767511
     tokens_label: "39 Mio."
     tokens_label_en: "39M"
     commits: 446
