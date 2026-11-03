@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-03
-updated_at: "2026-11-03T16:56:25.691Z"
+updated_at: "2026-11-03T17:13:40.679Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 145435338
-tokens_with_cache: 5389592003
-tokens_label: "145 Mio."
-tokens_label_en: "145M"
-tokens_digits: "145.435.338"
-tokens_digits_en: "145,435,338"
-tokens_per_day: 3891642
+tokens: 145575819
+tokens_with_cache: 5395141050
+tokens_label: "146 Mio."
+tokens_label_en: "146M"
+tokens_digits: "145.575.819"
+tokens_digits_en: "145,575,819"
+tokens_per_day: 3894153
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
   again:
-    tokens: 5244156665
+    tokens: 5249565231
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.244.156.665"
-    tokens_digits_en: "5,244,156,665"
-    tokens_per_day: 140326158
+    tokens_digits: "5.249.565.231"
+    tokens_digits_en: "5,249,565,231"
+    tokens_per_day: 140425871
     tokens_per_day_label: "140 Mio."
     tokens_per_day_label_en: "140M"
   fresh:
-    tokens: 118005171
+    tokens: 118098365
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "118.005.171"
-    tokens_digits_en: "118,005,171"
-    tokens_per_day: 3157650
+    tokens_digits: "118.098.365"
+    tokens_digits_en: "118,098,365"
+    tokens_per_day: 3159131
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 27430167
+    tokens: 27477454
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "27.430.167"
-    tokens_digits_en: "27,430,167"
-    tokens_per_day: 733992
+    tokens_digits: "27.477.454"
+    tokens_digits_en: "27,477,454"
+    tokens_per_day: 735022
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2387
@@ -51,7 +51,7 @@ apps:
     commits_label: "275"
     commits_label_en: "275"
   grammgenau:
-    tokens: 63083313
+    tokens: 63223794
     tokens_label: "63 Mio."
     tokens_label_en: "63M"
     commits: 765
