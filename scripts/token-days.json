@@ -327,9 +327,14 @@
       "written": 15912
     },
     "grammgenau": {
-      "again": 199459818,
-      "fresh": 5990974,
-      "written": 1455254
+      "again": 206688759,
+      "fresh": 6303207,
+      "written": 1542827
+    },
+    "movenote": {
+      "again": 135628,
+      "fresh": 20506,
+      "written": 1029
     }
   }
 }
