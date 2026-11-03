@@ -315,9 +315,16 @@
   },
   "2026-11-02": {
     "stream-report": {
-      "again": 23202614,
-      "fresh": 549623,
-      "written": 108588
+      "again": 24187473,
+      "fresh": 561242,
+      "written": 112755
+    }
+  },
+  "2026-11-03": {
+    "stream-report": {
+      "again": 134778,
+      "fresh": 36288,
+      "written": 1793
     }
   }
 }

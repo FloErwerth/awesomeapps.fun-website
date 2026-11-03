@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
-updated: 2026-11-02
-updated_at: "2026-11-02T18:29:24.589Z"
+updated: 2026-11-03
+updated_at: "2026-11-03T11:08:54.906Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 141108966
-tokens_with_cache: 5276229005
+tokens: 141162833
+tokens_with_cache: 5277402509
 tokens_label: "141 Mio."
 tokens_label_en: "141M"
-tokens_digits: "141.108.966"
-tokens_digits_en: "141,108,966"
-tokens_per_day: 3872814
-tokens_per_day_label: "3,9 Mio."
-tokens_per_day_label_en: "3.9M"
+tokens_digits: "141.162.833"
+tokens_digits_en: "141,162,833"
+tokens_per_day: 3801867
+tokens_per_day_label: "3,8 Mio."
+tokens_per_day_label_en: "3.8M"
 parts:
   again:
-    tokens: 5135120039
+    tokens: 5136239676
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.135.120.039"
-    tokens_digits_en: "5,135,120,039"
-    tokens_per_day: 140936234
-    tokens_per_day_label: "141 Mio."
-    tokens_per_day_label_en: "141M"
+    tokens_digits: "5.136.239.676"
+    tokens_digits_en: "5,136,239,676"
+    tokens_per_day: 138331745
+    tokens_per_day_label: "138 Mio."
+    tokens_per_day_label_en: "138M"
   fresh:
-    tokens: 114512299
+    tokens: 114560206
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "114.512.299"
-    tokens_digits_en: "114,512,299"
-    tokens_per_day: 3142854
+    tokens_digits: "114.560.206"
+    tokens_digits_en: "114,560,206"
+    tokens_per_day: 3085392
     tokens_per_day_label: "3,1 Mio."
     tokens_per_day_label_en: "3.1M"
   written:
-    tokens: 26596667
+    tokens: 26602627
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "26.596.667"
-    tokens_digits_en: "26,596,667"
-    tokens_per_day: 729960
+    tokens_digits: "26.602.627"
+    tokens_digits_en: "26,602,627"
+    tokens_per_day: 716475
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2317
@@ -65,7 +65,7 @@ apps:
     commits_label: "901"
     commits_label_en: "901"
   stream-report:
-    tokens: 38767511
+    tokens: 38821378
     tokens_label: "39 Mio."
     tokens_label_en: "39M"
     commits: 446
