@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-04
-updated_at: "2026-11-04T00:16:51.784Z"
+updated_at: "2026-11-04T07:05:34.567Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 150350776
-tokens_with_cache: 5538826979
+tokens: 150470064
+tokens_with_cache: 5539038632
 tokens_label: "150 Mio."
 tokens_label_en: "150M"
-tokens_digits: "150.350.776"
-tokens_digits_en: "150,350,776"
-tokens_per_day: 3990513
+tokens_digits: "150.470.064"
+tokens_digits_en: "150,470,064"
+tokens_per_day: 3963819
 tokens_per_day_label: "4,0 Mio."
 tokens_per_day_label_en: "4.0M"
 parts:
   again:
-    tokens: 5388476203
+    tokens: 5388568568
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.388.476.203"
-    tokens_digits_en: "5,388,476,203"
-    tokens_per_day: 143017443
-    tokens_per_day_label: "143 Mio."
-    tokens_per_day_label_en: "143M"
+    tokens_digits: "5.388.568.568"
+    tokens_digits_en: "5,388,568,568"
+    tokens_per_day: 141950554
+    tokens_per_day_label: "142 Mio."
+    tokens_per_day_label_en: "142M"
   fresh:
-    tokens: 121878251
+    tokens: 121996468
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "121.878.251"
-    tokens_digits_en: "121,878,251"
-    tokens_per_day: 3234814
+    tokens_digits: "121.996.468"
+    tokens_digits_en: "121,996,468"
+    tokens_per_day: 3213741
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
-    tokens: 28472525
+    tokens: 28473596
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "28.472.525"
-    tokens_digits_en: "28,472,525"
-    tokens_per_day: 755699
+    tokens_digits: "28.473.596"
+    tokens_digits_en: "28,473,596"
+    tokens_per_day: 750077
     tokens_per_day_label: "0,8 Mio."
     tokens_per_day_label_en: "0.8M"
 commits: 2429
@@ -51,7 +51,7 @@ apps:
     commits_label: "275"
     commits_label_en: "275"
   grammgenau:
-    tokens: 67977216
+    tokens: 68096504
     tokens_label: "68 Mio."
     tokens_label_en: "68M"
     commits: 805
