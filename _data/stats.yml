@@ -1,6 +1,6 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
-updated: 2026-11-04
-updated_at: "2026-11-05T09:23:44.306Z"
+updated: 2026-11-05
+updated_at: "2026-11-05T09:40:13.171Z"
 since: "2026-09-27T08:01:54.154Z"
 tokens: 153585448
 tokens_with_cache: 5644802568
@@ -8,7 +8,7 @@ tokens_label: "154 Mio."
 tokens_label_en: "154M"
 tokens_digits: "153.585.448"
 tokens_digits_en: "153,585,448"
-tokens_per_day: 3932358
+tokens_per_day: 3931206
 tokens_per_day_label: "3,9 Mio."
 tokens_per_day_label_en: "3.9M"
 parts:
@@ -18,7 +18,7 @@ parts:
     share_label_en: "97.3%"
     tokens_digits: "5.491.217.120"
     tokens_digits_en: "5,491,217,120"
-    tokens_per_day: 140595564
+    tokens_per_day: 140554376
     tokens_per_day_label: "141 Mio."
     tokens_per_day_label_en: "141M"
   fresh:
@@ -27,7 +27,7 @@ parts:
     share_label_en: "2.2%"
     tokens_digits: "124.447.493"
     tokens_digits_en: "124,447,493"
-    tokens_per_day: 3186318
+    tokens_per_day: 3185385
     tokens_per_day_label: "3,2 Mio."
     tokens_per_day_label_en: "3.2M"
   written:
@@ -36,12 +36,12 @@ parts:
     share_label_en: "0.5%"
     tokens_digits: "29.137.955"
     tokens_digits_en: "29,137,955"
-    tokens_per_day: 746040
+    tokens_per_day: 745821
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
-commits: 2464
-commits_label: "2.464"
-commits_label_en: "2,464"
+commits: 2479
+commits_label: "2.479"
+commits_label_en: "2,479"
 apps:
   plopp:
     tokens: 26139529
@@ -54,9 +54,9 @@ apps:
     tokens: 71211888
     tokens_label: "71 Mio."
     tokens_label_en: "71M"
-    commits: 837
-    commits_label: "837"
-    commits_label_en: "837"
+    commits: 852
+    commits_label: "852"
+    commits_label_en: "852"
   movenote:
     tokens: 17333760
     tokens_label: "17 Mio."
