@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-09
-updated_at: "2026-11-09T15:01:36.580Z"
+updated_at: "2026-11-09T15:28:25.353Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 157667134
-tokens_with_cache: 5828381014
+tokens: 158062853
+tokens_with_cache: 5843927193
 tokens_label: "158 Mio."
 tokens_label_en: "158M"
-tokens_digits: "157.667.134"
-tokens_digits_en: "157,667,134"
-tokens_per_day: 3641991
+tokens_digits: "158.062.853"
+tokens_digits_en: "158,062,853"
+tokens_per_day: 3649562
 tokens_per_day_label: "3,6 Mio."
 tokens_per_day_label_en: "3.6M"
 parts:
   again:
-    tokens: 5670713880
+    tokens: 5685864340
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.670.713.880"
-    tokens_digits_en: "5,670,713,880"
-    tokens_per_day: 130989194
+    tokens_digits: "5.685.864.340"
+    tokens_digits_en: "5,685,864,340"
+    tokens_per_day: 131282692
     tokens_per_day_label: "131 Mio."
     tokens_per_day_label_en: "131M"
   fresh:
-    tokens: 127683665
+    tokens: 127986825
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "127.683.665"
-    tokens_digits_en: "127,683,665"
-    tokens_per_day: 2949396
-    tokens_per_day_label: "2,9 Mio."
-    tokens_per_day_label_en: "2.9M"
+    tokens_digits: "127.986.825"
+    tokens_digits_en: "127,986,825"
+    tokens_per_day: 2955128
+    tokens_per_day_label: "3,0 Mio."
+    tokens_per_day_label_en: "3.0M"
   written:
-    tokens: 29983469
+    tokens: 30076028
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "29.983.469"
-    tokens_digits_en: "29,983,469"
-    tokens_per_day: 692595
+    tokens_digits: "30.076.028"
+    tokens_digits_en: "30,076,028"
+    tokens_per_day: 694435
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2963
@@ -51,9 +51,9 @@ apps:
     commits_label: "276"
     commits_label_en: "276"
   grammgenau:
-    tokens: 75293574
-    tokens_label: "75 Mio."
-    tokens_label_en: "75M"
+    tokens: 75689293
+    tokens_label: "76 Mio."
+    tokens_label_en: "76M"
     commits: 1336
     commits_label: "1.336"
     commits_label_en: "1,336"
