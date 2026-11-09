@@ -1,42 +1,42 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-11-09
-updated_at: "2026-11-09T17:25:20.143Z"
+updated_at: "2026-11-09T18:53:12.789Z"
 since: "2026-09-27T08:01:54.154Z"
-tokens: 158826463
-tokens_with_cache: 5886317872
+tokens: 159099102
+tokens_with_cache: 5889410439
 tokens_label: "159 Mio."
 tokens_label_en: "159M"
-tokens_digits: "158.826.463"
-tokens_digits_en: "158,826,463"
-tokens_per_day: 3660332
+tokens_digits: "159.099.102"
+tokens_digits_en: "159,099,102"
+tokens_per_day: 3661466
 tokens_per_day_label: "3,7 Mio."
 tokens_per_day_label_en: "3.7M"
 parts:
   again:
-    tokens: 5727491409
+    tokens: 5730311337
     share_label: "97,3 %"
     share_label_en: "97.3%"
-    tokens_digits: "5.727.491.409"
-    tokens_digits_en: "5,727,491,409"
-    tokens_per_day: 131996390
+    tokens_digits: "5.730.311.337"
+    tokens_digits_en: "5,730,311,337"
+    tokens_per_day: 131875907
     tokens_per_day_label: "132 Mio."
     tokens_per_day_label_en: "132M"
   fresh:
-    tokens: 128558227
+    tokens: 128806186
     share_label: "2,2 %"
     share_label_en: "2.2%"
-    tokens_digits: "128.558.227"
-    tokens_digits_en: "128,558,227"
-    tokens_per_day: 2962767
+    tokens_digits: "128.806.186"
+    tokens_digits_en: "128,806,186"
+    tokens_per_day: 2964312
     tokens_per_day_label: "3,0 Mio."
     tokens_per_day_label_en: "3.0M"
   written:
-    tokens: 30268236
+    tokens: 30292916
     share_label: "0,5 %"
     share_label_en: "0.5%"
-    tokens_digits: "30.268.236"
-    tokens_digits_en: "30,268,236"
-    tokens_per_day: 697565
+    tokens_digits: "30.292.916"
+    tokens_digits_en: "30,292,916"
+    tokens_per_day: 697153
     tokens_per_day_label: "0,7 Mio."
     tokens_per_day_label_en: "0.7M"
 commits: 2963
@@ -51,9 +51,9 @@ apps:
     commits_label: "276"
     commits_label_en: "276"
   grammgenau:
-    tokens: 76452903
-    tokens_label: "76 Mio."
-    tokens_label_en: "76M"
+    tokens: 76725542
+    tokens_label: "77 Mio."
+    tokens_label_en: "77M"
     commits: 1336
     commits_label: "1.336"
     commits_label_en: "1,336"
