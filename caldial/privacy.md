@@ -145,9 +145,9 @@ The app sends no name, no e-mail and no identifier of your device.
 
 1. Our service at **Cloudflare** (section 7) stores the feedback in storage in the EU (Cloudflare R2, EU jurisdiction).
 2. Every morning our service sends the new feedback to **Anthropic** (AI “Claude”, section 7). Claude reads the text and image, assigns the feedback to a topic, gives it a priority and summarises everything. Anthropic does not use the data for training.
-3. Our service writes the feedback and its classification into a spreadsheet and puts the image in a folder at **Google Workspace**. It then sends us an e-mail with the summary. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, as processor. Google may transfer data to the USA. Google LLC is certified under the EU-US Data Privacy Framework (Art. 45 GDPR). The spreadsheet and the folder are not shared.
+3. Our service writes the feedback and its classification into a spreadsheet at **Google Workspace**. It then sends us an e-mail with the summary. The image stays at Cloudflare. The spreadsheet and e-mail only hold a protected link to it, which shows nothing without its secret part. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, as processor. Google may transfer data to the USA. Google LLC is certified under the EU-US Data Privacy Framework (Art. 45 GDPR). The spreadsheet is not shared.
 
-**Retention:** 30 days at Cloudflare, 90 days in the spreadsheet, folder and e-mail. After that we delete the feedback.
+**Retention:** image and feedback 30 days at Cloudflare. Text and classification 90 days in the spreadsheet and e-mail. After that we delete the feedback.
 
 ## 11. Reminders, ratings and links
 
@@ -168,7 +168,7 @@ The app schedules **reminders** on your device. It uses no push service and send
 - **Data on your device:** until you delete it in the app or delete the app.
 - **Usage measurement at PostHog:** at most 2 years. After you withdraw, the app sends nothing more.
 - **Voice control:** Cloudflare does not store the sentence. We use the count per identifier and day only for the daily limit.
-- **Feedback:** 30 days at Cloudflare, 90 days at Google Workspace (section 10).
+- **Feedback:** 30 days at Cloudflare (with image), 90 days at Google Workspace (without image, section 10).
 - **Purchase data:** is held by Apple, Google and RevenueCat. We keep tax records as long as the law requires (Section 147 AO).
 
 ## 14. Your rights

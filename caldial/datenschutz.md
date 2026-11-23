@@ -143,9 +143,9 @@ Die App sendet keinen Namen, keine E-Mail und keine Kennung deines Geräts mit.
 
 1. Unser Dienst bei **Cloudflare** (Abschnitt 7) speichert das Feedback in einem Speicher in der EU (Cloudflare R2, Rechtsraum EU).
 2. Jeden Morgen schickt unser Dienst das neue Feedback an **Anthropic** (KI „Claude“, Abschnitt 7). Claude liest Text und Bild, ordnet das Feedback einem Thema zu, gibt ihm eine Priorität und fasst alles zusammen. Anthropic nutzt die Daten nicht zum Training.
-3. Unser Dienst schreibt das Feedback mit der Einordnung in eine Tabelle und legt das Bild in einen Ordner bei **Google Workspace**. Dann schickt er uns eine E-Mail mit der Zusammenfassung. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, als Auftragsverarbeiter. Google kann Daten in die USA übermitteln. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Die Tabelle und der Ordner sind nicht geteilt.
+3. Unser Dienst schreibt das Feedback mit der Einordnung in eine Tabelle bei **Google Workspace**. Dann schickt er uns eine E-Mail mit der Zusammenfassung. Das Bild bleibt bei Cloudflare. In Tabelle und E-Mail steht nur ein geschützter Link darauf, der ohne seinen geheimen Teil nichts zeigt. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, als Auftragsverarbeiter. Google kann Daten in die USA übermitteln. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Die Tabelle ist nicht geteilt.
 
-**Speicherdauer:** bei Cloudflare 30 Tage, in Tabelle, Ordner und E-Mail 90 Tage. Danach löschen wir das Feedback.
+**Speicherdauer:** Bild und Feedback bei Cloudflare 30 Tage. Text und Einordnung in Tabelle und E-Mail 90 Tage. Danach löschen wir das Feedback.
 
 ## 11. Erinnerungen, Bewertung und Links
 
@@ -166,7 +166,7 @@ Die App sendet keinen Namen, keine E-Mail und keine Kennung deines Geräts mit.
 - **Daten auf deinem Gerät:** bis du sie in der App löschst oder die App löschst.
 - **Nutzungsmessung bei PostHog:** höchstens 2 Jahre. Nach einem Widerruf sendet die App nichts mehr.
 - **Sprachsteuerung:** Cloudflare speichert den Satz nicht. Die Zählung pro Kennung und Tag nutzen wir nur für die Grenze pro Tag.
-- **Feedback:** 30 Tage bei Cloudflare, 90 Tage bei Google Workspace (Abschnitt 10).
+- **Feedback:** 30 Tage bei Cloudflare (mit Bild), 90 Tage bei Google Workspace (ohne Bild, Abschnitt 10).
 - **Kaufdaten:** liegen bei Apple, Google und RevenueCat. Belege für die Steuer bewahren wir auf, so lange das Gesetz es verlangt (§ 147 AO).
 
 ## 14. Deine Rechte
