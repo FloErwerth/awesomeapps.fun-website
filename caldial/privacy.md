@@ -144,7 +144,7 @@ The app sends no name, no e-mail and no identifier of your device.
 **How it works:**
 
 1. Our service at **Cloudflare** (section 7) stores the feedback in storage in the EU (Cloudflare R2, EU jurisdiction).
-2. Every morning a task at **Anthropic** (AI “Claude”, section 7) collects the new feedback. Claude reads the text and image, assigns the feedback to a topic, gives it a priority and summarises everything.
+2. Every morning our service sends the new feedback to **Anthropic** (AI “Claude”, section 7). Claude reads the text and image, assigns the feedback to a topic, gives it a priority and summarises everything. Anthropic does not use the data for training.
 3. Our service writes the feedback and its classification into a spreadsheet and puts the image in a folder at **Google Workspace**. It then sends us an e-mail with the summary. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, as processor. Google may transfer data to the USA. Google LLC is certified under the EU-US Data Privacy Framework (Art. 45 GDPR). The spreadsheet and the folder are not shared.
 
 **Retention:** 30 days at Cloudflare, 90 days in the spreadsheet, folder and e-mail. After that we delete the feedback.
